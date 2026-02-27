@@ -1,0 +1,115 @@
+# 北魏历史小说智能体 - 主配置
+
+project:
+  name: "北魏历史小说智能体"
+  version: "0.1.0"
+  data_dir: "./data"
+  log_level: "INFO"
+
+# LLM 配置
+llm:
+  # 各模型 API 配置 (LiteLLM 格式)
+  models:
+    claude-opus-4-6:
+      model: "openai/kimi-k2-thinking-251104"
+      api_key: "${ARK_API_KEY}"
+      api_base: "https://ark.cn-beijing.volces.com/api/v3"
+      max_tokens: 4096
+      temperature: 0.7
+
+    gpt-4o:
+      model: "openai/gpt-4o"
+      api_key: "${OPENAI_API_KEY}"
+      max_tokens: 4096
+      temperature: 0.7
+
+    deepseek-reasoner:
+      model: "deepseek/deepseek-reasoner"
+      api_key: "${DEEPSEEK_API_KEY}"
+      api_base: "https://api.deepseek.com"
+      max_tokens: 4096
+      temperature: 0.7
+
+    deepseek-chat:
+      model: "deepseek/deepseek-chat"
+      api_key: "${DEEPSEEK_API_KEY}"
+      api_base: "https://api.deepseek.com"
+      max_tokens: 4096
+      temperature: 0.7
+
+    deepseek-v3-2-sf:
+      model: "openai/deepseek-ai/DeepSeek-V3.2"
+      api_key: "${SILICONFLOW_API_KEY}"
+      api_base: "https://api.siliconflow.cn/v1"
+      max_tokens: 4096
+      temperature: 0.7
+
+    kimi:
+      model: "openai/kimi-k2-thinking-251104"
+      api_key: "${ARK_API_KEY}"
+      api_base: "https://ark.cn-beijing.volces.com/api/v3"
+      max_tokens: 4096
+      temperature: 0.7
+
+    minimax:
+      model: "openrouter/minimax/minimax-01"
+      api_key: "${OPENROUTER_API_KEY}"
+      max_tokens: 4096
+      temperature: 0.7
+
+# Agent 模型分配
+agents:
+  world_builder:
+    model: "deepseek-chat"
+    max_tokens: 4096
+
+  plot_designer:
+    model: "deepseek-chat"
+    max_tokens: 4096
+
+  writer:
+    model: "deepseek-chat"
+    max_tokens: 3072
+
+  sandbox_debater:
+    npc_model: "deepseek-chat"
+    host_model: "deepseek-chat"
+    max_rounds: 5
+    npc_concurrent: true
+
+  consistency_checker:
+    model: "deepseek-chat"
+    max_tokens: 4096
+
+  style_polisher:
+    model: "deepseek-chat"
+    max_tokens: 4096
+
+  emotion_risk_control:
+    model: "deepseek-chat"
+    max_tokens: 4096
+
+  summarizer:
+    model: "deepseek-chat"
+    max_tokens: 2048
+
+# RAG 配置
+rag:
+  embedding_model: "BAAI/bge-m3"
+  vector_db_path: "./data/knowledge_base/chroma_db"
+  chunk_size: 800
+  chunk_overlap: 150
+  top_k: 5
+
+# 记忆系统配置
+memory:
+  short_term_window: 3
+  summary_max_tokens: 500
+
+# 工作流配置
+workflow:
+  auto_mode: false
+  review_points:
+    - world_setting
+    - outline
+    - emotion_risk_fail

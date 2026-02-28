@@ -1,0 +1,71 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="zh-TW" lang="zh-TW">
+<head profile="http://a9.com/-/spec/opensearch/1.1/">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-TW" />
+<meta name="Author" content="Donald Sturgeon" />
+<meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="if" content="gb" />
+<meta name="remap" content="" />
+<link rel="pingback" href="https://ctext.org/xml-rpc.pl" />
+<meta name="robots" content="noarchive,noindex" />
+<meta name="ctp-urn" content="ctp:ws809237" />
+<title>中國哲學書電子化計劃</title>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@chinesetextproj" />
+<meta name="twitter:title" content="中國哲學書電子化計劃" />
+<meta name="twitter:image" content="https://ctext.org/static/twitterbanner.png"/>
+<meta property="og:image" content="https://ctext.org/static/facebookbanner.png"/>
+<meta property="fb:admins" content="598074208"/>
+<link href="//ctext.org/static/text14.css" rel="stylesheet" title="" type="text/css" />
+<!--[if IE 7]><style type="text/css">#content { height: auto; left: 0; top: 0; bottom: 0; right: 0; margin-bottom: 0px; position: absolute; }</style><![endif]-->
+<link href="//ctext.org/static/compact4.css" rel="alternate stylesheet" title="Compact" type="text/css" />
+<link href="https://ctext.org/wiki.pl?if=gb&chapter=809237" rel="canonical" />
+<link href="https://ctext.org/static/apple-touch-icon.png" rel="apple-touch-icon" />
+<link href="https://ctext.org/static/apple-touch-icon-72.png" rel="apple-touch-icon" sizes="72x72" />
+<link href="https://ctext.org/static/apple-touch-icon-114.png" rel="apple-touch-icon" sizes="114x114" />
+<link href="//api.ctext.org/" rel="dns-prefetch" />
+<link href="//library.ctext.org/" rel="dns-prefetch" />
+<link href="//dimage.ctext.org/" rel="dns-prefetch" />
+<link href="https://ctext.org/wiki.pl?if=gb&chapter=809237&remap=gb" rel="alternate" hreflang="zh-Hans" />
+<link href="https://ctext.org/wiki.pl?if=gb&chapter=809237" rel="alternate" hreflang="zh-Hant" />
+<link href="https://ctext.org/wiki.pl?if=en&chapter=809237" rel="alternate" hreflang="en" />
+<link href="https://ctext.org/wiki.pl?if=en&chapter=809237&remap=gb" rel="alternate" hreflang="en-Hans" />
+<script language="javascript" type="text/javascript" async src="//ctext.org/static/text21.js" onload="setuppage"></script>
+<script type="text/javascript" >if (top.location != self.location) { top.location = self.location; }</script>
+<link href="https://ctext.org/searchxml.pl?type=text&if=gb&remap=" rel="search" priority="low" type="application/opensearchdescription+xml" title="中國哲學書電子化計劃（原典）" />
+<link href="https://ctext.org/searchxml.pl?type=dic&if=gb&remap=" rel="search" priority="low" type="application/opensearchdescription+xml" title="中國哲學書電子化計劃（辭典）" />
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B" alink="#FF0000" >
+<div id="menubar">
+<div id="language" style="zoom: 1;">
+</span></span>
+<div id="search">
+<form id="searchform" method="get" action="wiki.pl">
+<input type="hidden" name="if" value="gb" />
+<input type="hidden" name="chapter" value="809237" />
+<input type="text" name="searchu" size="20" value="" class="searchbox" /><br />
+</form>
+</div>
+<div id="searchbooks">
+<form id="searchform" method="get" action="searchbooks.pl">
+<input type="hidden" name="if" value="gb" />
+<input type="text" name="searchu" size="20"  value="" class="searchbox" /><br />
+</form>
+</span></div>
+<script type="text/javascript">
+function applyfilter(topicid) {
+var x=document.getElementById("categoriesform");
+var y=document.getElementById("filtervalue");
+y.value = topicid;
+x.submit();
+}
+</script>
+<div id="logininfo">
+</div>
+<div id="content"><div class="noprint opt" style="height: 47px; margin: 5px; float: right; text-align: right;"><a href="https://zh-tw.facebook.com/pages/Chinese-Text-Project/112118272147647" rel="nofollow"><img src="icons/facebook.gif" border="0" width="44" height="44" alt="在Facebook上關注我們，隨時得到最新消息" title="在Facebook上關注我們，隨時得到最新消息" /></a> <a href="https://www.twitter.com/chinesetextproj" rel="nofollow"><img src="icons/twitter.gif" width="45" height="44" border="0" alt="在Twitter上關注我們，隨時得到最新消息" title="在Twitter上關注我們，隨時得到最新消息" /></a> <a href="http://weibo.com/ctext" rel="nofollow"><img src="icons/xinlang.gif" border="0" width="44" height="44" alt="在新浪微博上關注我們，隨時得到最新消息" title="在新浪微博上關注我們，隨時得到最新消息" /></a> <a href="https://site.douban.com/137325/" rel="nofollow"><img src="icons/douban.png" border="0" width="44" height="44" alt="在豆瓣上關注我們，隨時得到最新消息" title="在豆瓣上關注我們，隨時得到最新消息" /></a></div>
+<table id="titleline" border="0">
+<tr><td valign="top"><div style="display: inline-block; zoom: 1; *display: inline;'"><a href="http://ctext.org/zh" class="sprite-logo" title="中國哲學書電子化計劃" >中國哲學書電子化計劃<div style="display: inline;"></div></a></div></td>
+<td valign="middle"><font size="+3">中國哲學書電子化計劃</font> <span style="border: 1px solid; background-color: #f27c4e; font-weight: bold; padding: 0 4px 0 4px; -moz-border-radius: 10px;    -webkit-border-radius: 10px;    -khtml-border-radius: 10px;    border-radius: 10px;"><a href="wiki.pl?if=gb" class="noulblack" title="維基區：開放共同編輯的原典文獻">維基</a></span></td>
+</tr>
+</table>
+<div style="margin-top: 10px; margin-bottom: 10px;"></div><h2 class="wikisectiontitle">《》<span style="margin-left: 10px; font-size: 14px; float: right;">[<a href="wiki.pl?if=gb&chapter=809237">查看正文</a>] [<a href="instructions/wiki/zh#editing" style="color: #AAAAAA;">修改</a>] [<a href="instructions/wiki/zh#editing" style="color: #AAAAAA;">查看歷史</a>]</span></h2><table style="width: 100%;"></table><div style="border: 1px solid; background: #EEEEEE; margin: 2px; padding: 5px; font-weight: bold;"><div style="display: inline-block; *display: inline; zoom: 1;'"><div class="sprite-warn" title="" ><div></div></div></div> 該資料已刪除。若要還原，請參考歷史頁面並透過「修改」功能還原其標題及其它資料。</div><style>.urnlabel {opacity: 0.2; float: right;} .urnlabel:hover { opacity: 0.8;}</style><div class="urnlabel etext"><a href="tools/api/zh#urn" class="noul">URN</a>: <span title="該電子資源的CTP URN（唯一標識符）。">ctp:ws809237</span></div><div style="clear: both"></div><hr /><table border="0"><tr><td class="etext"><b>喜歡<span class="opt">我們的網站</span>？<a href="help-us/zh">請支持<span class="opt">我們的發展</span></a>。</b></td><td class="etext"><i>網站的設計與内容<a href="faq/zh#copyright">(c)版權2006-2026</a>。<span class="opt">如果您想引用本網站上的内容，請同時加上至本站的鏈接：<a href="http://ctext.org/zh">http://ctext.org/zh</a>。請注意：<u>嚴禁使用自動下載軟体</u>下載本網站的大量網頁，違者自動封鎖，不另行通知。<a href="http://www.miibeian.gov.cn/" rel="nofollow">沪ICP备09015720号-3</a></span></i></td><td class="etext"><b>若有任何意見或建議，請<a href="discuss.pl?if=gb&board=7">在此提出</a>。</b><span style="opacity: 0.0; font-size: 1px;"><a href="https://ctext.org/hpt.pl?src=h" rel="nofollow">Do not click this link</a></span></td></tr></table></div></body></html>

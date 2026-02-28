@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import logging
 from pathlib import Path
 
@@ -27,44 +28,86 @@ class NovelStorage:
         self.logger.info(f"Initialized novel directory: {novel_dir}")
         return novel_dir
 
-    def _save_json(self, path: Path, data: dict) -> None:
+    def _save_json(self, path: Path, data: dict[str, object]) -> None:
         """Save data as JSON file."""
         with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
         self.logger.info(f"Saved JSON to: {path}")
 
-    def _load_json(self, path: Path) -> dict | None:
+    def _load_json(self, path: Path) -> dict[str, object] | None:
         """Load data from JSON file. Return None if file doesn't exist."""
         if not path.exists():
             self.logger.debug(f"JSON file not found: {path}")
             return None
-        with open(path, encoding="utf-8") as f:
-            data = json.load(f)
-        self.logger.debug(f"Loaded JSON from: {path}")
-        return data
 
-    def save_state(self, novel_id: str, state: dict) -> None:
+        text = path.read_text(encoding="utf-8")
+        try:
+            data = json.loads(text)
+            self.logger.debug(f"Loaded JSON from: {path}")
+            return data
+        except json.JSONDecodeError:
+            pass
+
+        stripped = text.strip()
+        if stripped.startswith("```"):
+            lines = stripped.splitlines()
+            if lines:
+                lines = lines[1:]
+            if lines and lines[-1].strip() == "```":
+                lines = lines[:-1]
+            candidate = "\n".join(lines).strip()
+            try:
+                data = json.loads(candidate)
+                self.logger.warning(
+                    "Loaded fenced JSON from %s; consider normalizing file format.",
+                    path,
+                )
+                return data
+            except json.JSONDecodeError:
+                pass
+
+        # Last fallback: extract first JSON object block if present.
+        match = re.search(r"\{[\s\S]*\}", text)
+        if match:
+            try:
+                data = json.loads(match.group(0))
+                self.logger.warning(
+                    "Loaded loosely formatted JSON from %s; consider normalizing file format.",
+                    path,
+                )
+                return data
+            except json.JSONDecodeError:
+                pass
+
+        self.logger.warning("Failed to parse JSON file: %s", path)
+        return None
+
+    def save_state(self, novel_id: str, state: dict[str, object]) -> None:
         """Save novel state to novel_state.json."""
         path = self._novel_dir(novel_id) / "novel_state.json"
         self._save_json(path, state)
 
-    def load_state(self, novel_id: str) -> dict | None:
+    def load_state(self, novel_id: str) -> dict[str, object] | None:
         """Load novel state from novel_state.json."""
         path = self._novel_dir(novel_id) / "novel_state.json"
         return self._load_json(path)
 
-    def save_world_setting(self, novel_id: str, setting: dict) -> None:
+    def save_world_setting(self, novel_id: str, setting: dict[str, object]) -> None:
         """Save world setting to world_setting.json."""
         path = self._novel_dir(novel_id) / "world_setting.json"
         self._save_json(path, setting)
 
-    def load_world_setting(self, novel_id: str) -> dict | None:
+    def load_world_setting(self, novel_id: str) -> dict[str, object] | None:
         """Load world setting from world_setting.json."""
         path = self._novel_dir(novel_id) / "world_setting.json"
         return self._load_json(path)
 
     def save_chapter(
-        self, novel_id: str, chapter_id: str, content: str, metadata: dict
+        self,
+        novel_id: str,
+        chapter_id: str,
+        content: str,
+        metadata: dict[str, object],
     ) -> None:
         """Save chapter content and metadata."""
         novel_dir = self._novel_dir(novel_id)
@@ -79,7 +122,7 @@ class NovelStorage:
 
     def load_chapter(
         self, novel_id: str, chapter_id: str
-    ) -> tuple[str | None, dict | None]:
+    ) -> tuple[str | None, dict[str, object] | None]:
         """Load chapter content and metadata. Returns (content, metadata)."""
         novel_dir = self._novel_dir(novel_id)
         content_path = novel_dir / "chapters" / f"{chapter_id}.md"
@@ -94,22 +137,26 @@ class NovelStorage:
         metadata = self._load_json(metadata_path)
         return content, metadata
 
-    def save_outline(self, novel_id: str, outline: dict) -> None:
+    def save_outline(self, novel_id: str, outline: dict[str, object]) -> None:
         """Save outline to outline.json."""
         path = self._novel_dir(novel_id) / "outline" / "outline.json"
         self._save_json(path, outline)
 
-    def load_outline(self, novel_id: str) -> dict | None:
+    def load_outline(self, novel_id: str) -> dict[str, object] | None:
         """Load outline from outline.json."""
         path = self._novel_dir(novel_id) / "outline" / "outline.json"
         return self._load_json(path)
 
-    def save_character(self, novel_id: str, character_id: str, character: dict) -> None:
+    def save_character(
+        self, novel_id: str, character_id: str, character: dict[str, object]
+    ) -> None:
         """Save character data to characters/{character_id}.json."""
         path = self._novel_dir(novel_id) / "characters" / f"{character_id}.json"
         self._save_json(path, character)
 
-    def load_character(self, novel_id: str, character_id: str) -> dict | None:
+    def load_character(
+        self, novel_id: str, character_id: str
+    ) -> dict[str, object] | None:
         """Load character data from characters/{character_id}.json."""
         path = self._novel_dir(novel_id) / "characters" / f"{character_id}.json"
         return self._load_json(path)
@@ -125,12 +172,14 @@ class NovelStorage:
                 character_ids.append(f.stem)
         return sorted(character_ids)
 
-    def save_summary(self, novel_id: str, chapter_id: str, summary: dict) -> None:
+    def save_summary(
+        self, novel_id: str, chapter_id: str, summary: dict[str, object]
+    ) -> None:
         """Save summary to summaries/{chapter_id}.json."""
         path = self._novel_dir(novel_id) / "summaries" / f"{chapter_id}.json"
         self._save_json(path, summary)
 
-    def load_summary(self, novel_id: str, chapter_id: str) -> dict | None:
+    def load_summary(self, novel_id: str, chapter_id: str) -> dict[str, object] | None:
         """Load summary from summaries/{chapter_id}.json."""
         path = self._novel_dir(novel_id) / "summaries" / f"{chapter_id}.json"
         return self._load_json(path)

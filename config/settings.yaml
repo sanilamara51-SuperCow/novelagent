@@ -113,3 +113,17 @@ workflow:
     - world_setting
     - outline
     - emotion_risk_fail
+  write_range_defaults:
+    default_range: "1-10"
+    overwrite: false
+    stage_timeout_seconds: 300
+  fallback_retry_policy:
+    max_retries: 0
+    retry_delay: 1.0
+    fallback_aliases:
+      - kimi
+  role_model_chains: {}
+  trace_logging:
+    enable: true
+    log_path: "./logs"
+    format: "json"

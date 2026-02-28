@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import time
 from abc import ABC, abstractmethod
 from pathlib import Path
 from types import SimpleNamespace
@@ -32,8 +33,8 @@ class AgentOutput(BaseModel):
     success: bool
     content: str
     error: str = ""
-    metadata: dict = {}
-    token_usage: dict = {}
+    metadata: dict[str, Any] = {}
+    token_usage: dict[str, Any] = {}
     cost: float = 0.0
 
     model_config = ConfigDict(from_attributes=True)
@@ -68,7 +69,9 @@ class BaseAgent(ABC):
             if prompt_file.exists():
                 self.system_prompt = prompt_file.read_text(encoding="utf-8")
             else:
-                self.logger.warning(f"System prompt file not found: {system_prompt_path}")
+                self.logger.warning(
+                    f"System prompt file not found: {system_prompt_path}"
+                )
 
     @abstractmethod
     async def process(self, input_data: AgentInput) -> AgentOutput:
@@ -84,7 +87,7 @@ class BaseAgent(ABC):
 
     async def _call_llm(
         self,
-        messages: list[dict],
+        messages: list[dict[str, str]],
         model: str | None = None,
         max_tokens: int | None = None,
         temperature: float | None = None,
@@ -107,11 +110,21 @@ class BaseAgent(ABC):
         if model is None:
             raise ValueError("model is required")
 
+        self.logger.info(
+            "Agent start: %s model=%s messages=%d max_tokens=%s temperature=%s",
+            self.name,
+            model,
+            len(messages),
+            str(max_tokens),
+            str(temperature),
+        )
+        started_at = time.monotonic()
+
         response = await self.llm_client.acompletion(
             messages=messages,
             model=model,
-            max_tokens=max_tokens,
-            temperature=temperature,
+            max_tokens=max_tokens if max_tokens is not None else 2000,
+            temperature=temperature if temperature is not None else 0.7,
             agent_id=agent_id or self.name,
         )
 
@@ -124,6 +137,19 @@ class BaseAgent(ABC):
             parsed_content=None,
         )
 
+        elapsed = time.monotonic() - started_at
+        in_tokens = getattr(response, "input_tokens", 0)
+        out_tokens = getattr(response, "output_tokens", 0)
+        self.logger.info(
+            "Agent done: %s model=%s in=%s out=%s cost=%s elapsed=%.2fs",
+            self.name,
+            model,
+            str(in_tokens),
+            str(out_tokens),
+            str(getattr(response, "cost", 0.0)),
+            elapsed,
+        )
+
         if response_format == "json":
             try:
                 normalized.parsed_content = json.loads(content)
@@ -132,7 +158,7 @@ class BaseAgent(ABC):
                 end = content.rfind("}")
                 if start != -1 and end != -1 and end > start:
                     try:
-                        normalized.parsed_content = json.loads(content[start:end + 1])
+                        normalized.parsed_content = json.loads(content[start : end + 1])
                     except json.JSONDecodeError:
                         self.logger.warning("Failed to parse response as JSON")
                 else:
@@ -171,7 +197,7 @@ class BaseAgent(ABC):
 
         return str(response)
 
-    def _build_messages(self, parts: list[tuple[str, str]]) -> list[dict]:
+    def _build_messages(self, parts: list[tuple[str, str]]) -> list[dict[str, str]]:
         """Build message list from role-content tuples.
 
         Args:

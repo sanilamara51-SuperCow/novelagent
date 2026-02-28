@@ -97,6 +97,11 @@ class WorkflowConfig(BaseModel):
 
     auto_mode: bool = False
     review_points: List[str]
+    # Automation-specific configs
+    write_range_defaults: Dict[str, Any] = {}
+    fallback_retry_policy: Dict[str, Any] = {}
+    role_model_chains: Dict[str, List[str]] = {}
+    trace_logging: Dict[str, Any] = {}
 
 
 class AppConfig(BaseModel):
@@ -117,7 +122,7 @@ def _resolve_env_vars(data: Any) -> Any:
     elif isinstance(data, list):
         return [_resolve_env_vars(item) for item in data]
     elif isinstance(data, str):
-        pattern = r'\$\{(\w+)\}'
+        pattern = r"\$\{(\w+)\}"
         matches = re.findall(pattern, data)
         for var_name in matches:
             env_value = os.environ.get(var_name, "")

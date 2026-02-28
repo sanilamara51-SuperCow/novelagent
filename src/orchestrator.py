@@ -88,6 +88,28 @@ class Orchestrator:
         self.state_machine = NovelStateMachine(state_path=state_path)
         self.review_manager = review_manager or ReviewManager()
 
+        defaults = self.config.workflow.write_range_defaults or {}
+        try:
+            self.stage_timeout_seconds = int(defaults.get("stage_timeout_seconds", 60))
+        except Exception:
+            self.stage_timeout_seconds = 60
+
+    async def _run_stage(self, stage: str, awaitable: Any) -> Any:
+        self.logger.info("Stage start: %s", stage)
+        try:
+            result = await asyncio.wait_for(
+                awaitable, timeout=self.stage_timeout_seconds
+            )
+            self.logger.info("Stage done: %s", stage)
+            return result
+        except TimeoutError as exc:
+            self.logger.error(
+                "Stage timeout: %s (>%ss)", stage, self.stage_timeout_seconds
+            )
+            raise RuntimeError(
+                f"Stage '{stage}' timed out after {self.stage_timeout_seconds}s"
+            ) from exc
+
     async def start(self, user_input: str) -> None:
         _ = user_input
         self.storage.init_novel_dir(self.novel_id)
@@ -100,7 +122,9 @@ class Orchestrator:
         debate_result = None
         if chapter_outline.requires_debate and chapter_outline.debate_config:
             self._safe_transition("needs_debate")
-            debate_result = await self._run_debate(chapter_outline.debate_config)
+            debate_result = await self._run_stage(
+                "debate", self._run_debate(chapter_outline.debate_config)
+            )
             self._safe_transition("debate_done")
 
         writer_context = await self._assemble_writer_context(
@@ -111,7 +135,9 @@ class Orchestrator:
             context=writer_context,
             instruction="Write the chapter content in Markdown format.",
         )
-        writer_output = await self.writer.process(writer_input)
+        writer_output = await self._run_stage(
+            "writer", self.writer.process(writer_input)
+        )
         if not writer_output.success:
             raise RuntimeError(writer_output.error or "Writer agent failed")
 
@@ -122,18 +148,24 @@ class Orchestrator:
         consistency_context = self._build_consistency_context(chapter_outline)
         consistency_report = None
         for _ in range(2):
-            consistency_report = await self.consistency_checker.check_with_retry(
-                chapter_content,
-                chapter_outline,
-                consistency_context,
-                max_retries=1,
+            consistency_report = await self._run_stage(
+                f"consistency_check_{_ + 1}",
+                self.consistency_checker.check_with_retry(
+                    chapter_content,
+                    chapter_outline,
+                    consistency_context,
+                    max_retries=1,
+                ),
             )
             if consistency_report.passed or not consistency_report.issues:
                 break
 
-            revision_output = await self.writer.revise_for_consistency(
-                chapter_content,
-                consistency_report.issues,
+            revision_output = await self._run_stage(
+                f"revise_for_consistency_{_ + 1}",
+                self.writer.revise_for_consistency(
+                    chapter_content,
+                    consistency_report.issues,
+                ),
             )
             if not revision_output.success:
                 break
@@ -145,33 +177,46 @@ class Orchestrator:
         else:
             self._safe_transition("consistency_fail")
 
-        polish_output = await self.style_polisher.polish(chapter_content)
+        polish_output = await self._run_stage(
+            "style_polish", self.style_polisher.polish(chapter_content)
+        )
         if polish_output.success:
             chapter_content = polish_output.content
             metadata.update(polish_output.metadata or {})
         self._safe_transition("polish_done")
 
-        risk_report = await self.emotion_risk_control.assess(
-            chapter_content,
-            chapter_outline,
+        risk_report = await self._run_stage(
+            "emotion_risk",
+            self.emotion_risk_control.assess(
+                chapter_content,
+                chapter_outline,
+            ),
         )
         if risk_report.rewrite_required:
             self._safe_transition("risk_fail")
         else:
             self._safe_transition("risk_pass")
 
-        review_action, review_feedback = await self.review_manager.review_chapter(
-            chapter_content,
-            risk_report=json.dumps(risk_report.model_dump(), indent=2, ensure_ascii=True),
-        )
+        if self.config.workflow.auto_mode:
+            review_action, review_feedback = "pass", None
+        else:
+            review_action, review_feedback = await self.review_manager.review_chapter(
+                chapter_content,
+                risk_report=json.dumps(
+                    risk_report.model_dump(), indent=2, ensure_ascii=True
+                ),
+            )
         if review_action == "quit":
             raise RuntimeError("Review aborted by user")
 
         if review_action in {"modify", "rewrite"}:
-            revision_output = await self.writer.revise(
-                chapter_content,
-                review_feedback or "",
-                chapter_outline,
+            revision_output = await self._run_stage(
+                "review_revision",
+                self.writer.revise(
+                    chapter_content,
+                    review_feedback or "",
+                    chapter_outline,
+                ),
             )
             if revision_output.success:
                 chapter_content = revision_output.content
@@ -182,9 +227,12 @@ class Orchestrator:
         else:
             self._safe_transition("chapter_revise")
 
-        await self.memory_manager.update_after_chapter(
-            chapter_content,
-            chapter_outline,
+        await self._run_stage(
+            "memory_update",
+            self.memory_manager.update_after_chapter(
+                chapter_content,
+                chapter_outline,
+            ),
         )
         self._safe_transition("memory_updated")
 
@@ -201,6 +249,52 @@ class Orchestrator:
             "consistency_report": consistency_report,
             "risk_report": risk_report,
             "debate_result": debate_result,
+            "review_action": review_action,
+        }
+
+    async def write_range(
+        self,
+        chapter_outlines: list[ChapterOutline],
+        overwrite: bool = False,
+    ) -> dict[str, Any]:
+        generated: list[dict[str, Any]] = []
+        skipped: list[str] = []
+        failed: list[dict[str, str]] = []
+
+        for outline in chapter_outlines:
+            self.logger.info("Chapter start: %s %s", outline.chapter_id, outline.title)
+            existing_content, _ = self.storage.load_chapter(
+                self.novel_id, outline.chapter_id
+            )
+            if existing_content is not None and not overwrite:
+                skipped.append(outline.chapter_id)
+                self.logger.info("Chapter skipped (exists): %s", outline.chapter_id)
+                continue
+
+            try:
+                result = await self.write_chapter(outline)
+                generated.append(
+                    {
+                        "chapter_id": outline.chapter_id,
+                        "chapter_number": outline.chapter_number,
+                        "title": outline.title,
+                        "review_action": result.get("review_action", "pass"),
+                    }
+                )
+                self.logger.info("Chapter done: %s", outline.chapter_id)
+            except Exception as exc:
+                failed.append({"chapter_id": outline.chapter_id, "error": str(exc)})
+                self.logger.error("Chapter failed: %s (%s)", outline.chapter_id, exc)
+
+        return {
+            "generated": generated,
+            "skipped": skipped,
+            "failed": failed,
+            "summary": {
+                "generated_count": len(generated),
+                "skipped_count": len(skipped),
+                "failed_count": len(failed),
+            },
         }
 
     async def _assemble_writer_context(
@@ -221,7 +315,9 @@ class Orchestrator:
 
         return "\n\n".join(context_parts)
 
-    def _build_consistency_context(self, chapter_outline: ChapterOutline) -> dict[str, Any]:
+    def _build_consistency_context(
+        self, chapter_outline: ChapterOutline
+    ) -> dict[str, Any]:
         context = self.memory_manager.get_writer_context(chapter_outline)
         world_setting = self.storage.load_world_setting(self.novel_id) or {}
         context["world_setting"] = world_setting
@@ -251,13 +347,15 @@ class Orchestrator:
             f"Round {speech.round} - {speech.speaker_name}: {speech.content}"
             for speech in debate_result.transcript
         )
-        return "\n".join([
-            f"Topic: {debate_result.topic}",
-            f"Rounds: {debate_result.rounds}",
-            f"Outcome: {debate_result.outcome}",
-            "Transcript:",
-            transcript,
-        ])
+        return "\n".join(
+            [
+                f"Topic: {debate_result.topic}",
+                f"Rounds: {debate_result.rounds}",
+                f"Outcome: {debate_result.outcome}",
+                "Transcript:",
+                transcript,
+            ]
+        )
 
     def _safe_transition(self, transition: str) -> None:
         transition_fn = getattr(self.state_machine, transition, None)

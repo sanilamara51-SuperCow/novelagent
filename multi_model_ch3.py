@@ -1,12 +1,22 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 《窃魏》第三章 - 多模型协作写作
 DeepSeek + 豆包 + Kimi K2 协同创作
 """
 
 import os
+import sys
+import io
+
+# Fix Windows console encoding
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+
 import json
 import asyncio
+from datetime import datetime
 from pathlib import Path
 from dotenv import load_dotenv
 from openai import AsyncOpenAI
@@ -23,14 +33,14 @@ client_deepseek = AsyncOpenAI(
 # 2. 豆包 (字节火山引擎)
 # doubao-seed-1-8-251228
 client_doubao = AsyncOpenAI(
-    api_key="257cc276-9d75-47d3-bae2-80301418b833",
+    api_key=os.getenv("ARK_API_KEY"),
     base_url="https://ark.cn-beijing.volces.com/api/v3",  # 火山引擎北京节点
 )
 
 # 3. Kimi K2 Thinking (火山引擎托管)
 # kimi-k2-thinking-251104
 client_kimi = AsyncOpenAI(
-    api_key="257cc276-9d75-47d3-bae2-80301418b833",
+    api_key=os.getenv("ARK_API_KEY"),
     base_url="https://ark.cn-beijing.volces.com/api/v3",
 )
 

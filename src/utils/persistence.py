@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 import json
+import os
 import re
-import logging
+import tempfile
 from pathlib import Path
 
 from src.utils.logger import get_logger
@@ -29,10 +30,25 @@ class NovelStorage:
         return novel_dir
 
     def _save_json(self, path: Path, data: dict[str, object]) -> None:
-        """Save data as JSON file."""
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        self.logger.info(f"Saved JSON to: {path}")
+        """Save data as JSON file atomically."""
+        # Write to temp file first, then rename (atomic on most filesystems)
+        dir_path = path.parent
+        dir_path.mkdir(parents=True, exist_ok=True)
+        
+        # Create temp file in same directory to ensure atomic rename
+        fd, tmp_path = tempfile.mkstemp(dir=dir_path, suffix=".json.tmp")
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+            
+            # Atomic rename
+            os.replace(tmp_path, path)
+            self.logger.info(f"Saved JSON to: {path}")
+        except Exception:
+            # Clean up temp file on failure
+            if os.path.exists(tmp_path):
+                os.unlink(tmp_path)
+            raise
 
     def _load_json(self, path: Path) -> dict[str, object] | None:
         """Load data from JSON file. Return None if file doesn't exist."""

@@ -35,10 +35,10 @@ class WorldBuilderAgent(BaseAgent):
         Returns:
             AgentOutput with generated world setting.
         """
-        messages = [
-            {"role": "system", "content": self.system_prompt},
-            {"role": "user", "content": input_data.instruction}
-        ]
+        messages = []
+        if self.system_prompt:
+            messages.append({"role": "system", "content": self.system_prompt})
+        messages.append({"role": "user", "content": input_data.instruction})
 
         response = await self._call_llm(
             messages=messages,
@@ -47,6 +47,14 @@ class WorldBuilderAgent(BaseAgent):
             response_format="json",
             agent_id="world_builder"
         )
+
+        token_usage = {}
+        if hasattr(response, "usage") and response.usage:
+            token_usage = {
+                "prompt_tokens": getattr(response.usage, "prompt_tokens", 0),
+                "completion_tokens": getattr(response.usage, "completion_tokens", 0),
+            }
+        cost = getattr(response, "cost", 0.0)
 
         try:
             parsed_data = json.loads(response.content)
@@ -57,8 +65,8 @@ class WorldBuilderAgent(BaseAgent):
                 content=response.content,
                 error="",
                 metadata={"parsed": True},
-                token_usage=response.token_usage,
-                cost=response.cost
+                token_usage=token_usage,
+                cost=cost,
             )
         except (json.JSONDecodeError, Exception) as e:
             return AgentOutput(
@@ -67,8 +75,8 @@ class WorldBuilderAgent(BaseAgent):
                 content=response.content,
                 error=str(e),
                 metadata={"parsed": False},
-                token_usage=response.token_usage,
-                cost=response.cost
+                token_usage=token_usage,
+                cost=cost,
             )
 
     async def refine(self, current_setting: WorldSetting, feedback: str) -> AgentOutput:
@@ -84,10 +92,10 @@ class WorldBuilderAgent(BaseAgent):
         setting_json = current_setting.model_dump_json(indent=2)
         prompt = f"请根据以下反馈修改世界观设定:\n{feedback}\n\n当前设定:\n{setting_json}"
 
-        messages = [
-            {"role": "system", "content": self.system_prompt},
-            {"role": "user", "content": prompt}
-        ]
+        messages = []
+        if self.system_prompt:
+            messages.append({"role": "system", "content": self.system_prompt})
+        messages.append({"role": "user", "content": prompt})
 
         response = await self._call_llm(
             messages=messages,
@@ -96,6 +104,14 @@ class WorldBuilderAgent(BaseAgent):
             response_format="json",
             agent_id="world_builder"
         )
+
+        token_usage = {}
+        if hasattr(response, "usage") and response.usage:
+            token_usage = {
+                "prompt_tokens": getattr(response.usage, "prompt_tokens", 0),
+                "completion_tokens": getattr(response.usage, "completion_tokens", 0),
+            }
+        cost = getattr(response, "cost", 0.0)
 
         try:
             parsed_data = json.loads(response.content)
@@ -106,8 +122,8 @@ class WorldBuilderAgent(BaseAgent):
                 content=response.content,
                 error="",
                 metadata={"parsed": True},
-                token_usage=response.token_usage,
-                cost=response.cost
+                token_usage=token_usage,
+                cost=cost,
             )
         except (json.JSONDecodeError, Exception) as e:
             return AgentOutput(
@@ -116,6 +132,6 @@ class WorldBuilderAgent(BaseAgent):
                 content=response.content,
                 error=str(e),
                 metadata={"parsed": False},
-                token_usage=response.token_usage,
-                cost=response.cost
+                token_usage=token_usage,
+                cost=cost,
             )

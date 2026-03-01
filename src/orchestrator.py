@@ -364,7 +364,14 @@ class Orchestrator:
         try:
             result = transition_fn()
             if asyncio.iscoroutine(result):
+                # Create and store task - let it run but don't swallow exceptions
                 task = asyncio.create_task(result)
-                task.add_done_callback(lambda t: t.exception())
+                # Store reference to prevent garbage collection
+                if not hasattr(self, '_background_tasks'):
+                    self._background_tasks = []
+                self._background_tasks.append(task)
+                task.add_done_callback(
+                    lambda t: self.logger.error(f"Transition {transition} failed: {t.exception()}") if t.exception() else None
+                )
         except Exception as exc:  # pragma: no cover - defensive logging
             self.logger.debug("State transition %s skipped: %s", transition, exc)

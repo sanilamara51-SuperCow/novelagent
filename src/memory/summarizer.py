@@ -35,13 +35,14 @@ class Summarizer:
         """
         prompt = self._build_summary_prompt(chapter_content, chapter_outline)
         
-        response = await self.llm_client.generate(
-            prompt=prompt,
+        response = await self.llm_client.acompletion(
+            messages=[{"role": "user", "content": prompt}],
             model=self.model,
-            temperature=0.3
+            temperature=0.3,
+            max_tokens=2000,
         )
 
-        return self._parse_summary_response(response, chapter_outline.chapter_id)
+        return self._parse_summary_response(response.content, chapter_outline.chapter_id)
 
     async def summarize_world(
         self, 
@@ -73,14 +74,14 @@ class Summarizer:
 
 请输出压缩后的世界观摘要："""
 
-        summary = await self.llm_client.generate(
-            prompt=prompt,
+        response = await self.llm_client.acompletion(
+            messages=[{"role": "user", "content": prompt}],
             model=self.model,
             max_tokens=max_tokens,
-            temperature=0.3
+            temperature=0.3,
         )
-        
-        return summary.strip()
+
+        return response.content.strip()
 
     def _build_summary_prompt(
         self, 

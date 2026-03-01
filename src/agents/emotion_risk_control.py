@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from typing import TYPE_CHECKING
 
-from src.agents.base_agent import BaseAgent
+from src.agents.base_agent import BaseAgent, AgentInput, AgentOutput
 from src.models.data_models import ChapterOutline, RiskIssue, RiskReport
 
 if TYPE_CHECKING:
@@ -54,6 +54,15 @@ class EmotionRiskControlAgent(BaseAgent):
 
         # Get model from config
         self.model = config.emotion_risk_control.model
+
+    async def process(self, input_data: AgentInput) -> AgentOutput:
+        """Process入口（不推荐，请使用assess）。"""
+        return AgentOutput(
+            agent_name=self.name,
+            success=False,
+            content="",
+            error="EmotionRiskControlAgent does not support process(); use assess().",
+        )
 
     async def assess(
         self,
@@ -210,12 +219,7 @@ Chapter content:
 {chapter_content[:5000]}
 
 JSON response format:
-{{{{
-    "tension_score": 7.5,
-    "villain_iq": 6.0,
-    "protagonist_difficulty": 8.0,
-    "arc_match": 7.5
-}}}}
+{{"tension_score": 7.5, "villain_iq": 6.0, "protagonist_difficulty": 8.0, "arc_match": 7.5}}
 """
 
         messages = self._build_messages([

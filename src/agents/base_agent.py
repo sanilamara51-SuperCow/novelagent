@@ -19,9 +19,9 @@ if TYPE_CHECKING:
 class AgentInput(BaseModel):
     """Input data for an agent."""
 
-    task_type: str
-    context: str
-    instruction: str
+    task_type: str = ""
+    context: str = ""
+    instruction: str = ""
 
     model_config = ConfigDict(from_attributes=True)
 

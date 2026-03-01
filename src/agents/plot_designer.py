@@ -58,10 +58,19 @@ class PlotDesignerAgent(BaseAgent):
                 agent_id=self.name,
             )
 
-            # Parse response as JSON
+            # Parse response as JSON - handle markdown code fences
             content = response.content if hasattr(response, "content") else str(response)
+            content_stripped = content.strip()
+            if content_stripped.startswith("```json"):
+                content_stripped = content_stripped[7:]
+            elif content_stripped.startswith("```"):
+                content_stripped = content_stripped[3:]
+            if content_stripped.endswith("```"):
+                content_stripped = content_stripped[:-3]
+            content_stripped = content_stripped.strip()
+
             try:
-                parsed_data = json.loads(content)
+                parsed_data = json.loads(content_stripped)
             except json.JSONDecodeError as e:
                 self.logger.error(f"Failed to parse LLM response as JSON: {e}")
                 return AgentOutput(

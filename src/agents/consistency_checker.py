@@ -31,6 +31,15 @@ class ConsistencyCheckerAgent(BaseAgent):
         self.model = config.consistency_checker.model
         self.max_tokens = config.consistency_checker.max_tokens
 
+    async def process(self, input_data: AgentInput) -> AgentOutput:
+        """Process入口（不推荐，请使用check_chapter）。"""
+        return AgentOutput(
+            agent_name=self.name,
+            success=False,
+            content="",
+            error="ConsistencyCheckerAgent does not support process(); use check_chapter().",
+        )
+
     async def check_chapter(
         self,
         chapter_content: str,
@@ -76,6 +85,10 @@ class ConsistencyCheckerAgent(BaseAgent):
         # 构建完整提示
         context_str = "\n".join(context_parts)
 
+        force_json_hint = ""
+        if context.get("force_json"):
+            force_json_hint = "\n\n重要：请务必输出有效的JSON格式，不要包含任何其他文本。只返回JSON对象。"
+
         prompt = f"""{context_str}
 
 === 章节大纲 ===
@@ -84,7 +97,7 @@ class ConsistencyCheckerAgent(BaseAgent):
 === 待检查章节内容 ===
 {chapter_content}
 
-请检查上述章节内容的一致性，包括时间线、角色行为、地理位置和历史事件。返回JSON格式的ConsistencyReport。"""
+请检查上述章节内容的一致性，包括时间线、角色行为、地理位置和历史事件。返回JSON格式的ConsistencyReport。{force_json_hint}"""
 
         # 构建消息
         messages = self._build_messages([
@@ -105,7 +118,17 @@ class ConsistencyCheckerAgent(BaseAgent):
         if hasattr(response, "parsed_content") and response.parsed_content:
             data = response.parsed_content
         else:
-            data = json.loads(response.content)
+            try:
+                data = json.loads(response.content)
+            except json.JSONDecodeError:
+                # 最后尝试：提取最外层 { ... }
+                text = response.content
+                start = text.find("{")
+                end = text.rfind("}")
+                if start != -1 and end != -1 and end > start:
+                    data = json.loads(text[start : end + 1])
+                else:
+                    raise
 
         # 构建一致性报告
         report = ConsistencyReport(

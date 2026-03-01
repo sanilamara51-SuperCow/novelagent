@@ -103,6 +103,8 @@ class WorldSetting(BaseModel):
     key_events: List[HistoricalEvent] = Field(default_factory=list)
     factions: List[Faction] = Field(default_factory=list)
     notable_figures: List[Figure] = Field(default_factory=list)
+    protagonist: Dict[str, Any] = Field(default_factory=dict)
+    main_plot: Dict[str, Any] = Field(default_factory=dict)
 
 
 # =============================================================================
@@ -178,10 +180,12 @@ class Outline(BaseModel):
 
     model_config = ConfigDict(from_attributes=True)
 
-    volumes: List[Volume] = Field(default_factory=list)
+    title: str = ""
     total_chapters: int = 0
+    main_storyline: str = ""
     core_conflict: str = ""
     protagonist_arc: str = ""
+    volumes: List[Volume] = Field(default_factory=list)
 
 
 class Decision(BaseModel):

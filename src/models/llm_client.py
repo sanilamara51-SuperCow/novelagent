@@ -148,6 +148,16 @@ class ModelRegistry:
         # Estimate cost (simplified)
         cost = self._estimate_cost(cfg.model, inp, out)
 
+        # Validate response has choices
+        if not response.choices:
+            return LLMResponse(
+                content="",
+                model=cfg.model,
+                input_tokens=inp,
+                output_tokens=out,
+                cost=cost,
+            )
+
         return LLMResponse(
             content=response.choices[0].message.content or "",
             model=cfg.model,

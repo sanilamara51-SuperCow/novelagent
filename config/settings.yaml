@@ -45,9 +45,16 @@ llm:
       temperature: 0.7
 
     kimi:
-      model: "openai/kimi-k2-thinking-251104"
-      api_key: "${ARK_API_KEY}"
-      api_base: "https://ark.cn-beijing.volces.com/api/v3"
+      model: "openai/moonshotai/Kimi-K2-Thinking"
+      api_key: "sk-mavaigvxdiakmxpdxejgtesbkyzzkldhvfnqtggtpzpjjgiy"
+      api_base: "https://api.siliconflow.cn/v1"
+      max_tokens: 4096
+      temperature: 0.7
+
+    kimi-k2:
+      model: "moonshotai/Kimi-K2-Thinking"
+      api_key: "sk-mavaigvxdiakmxpdxejgtesbkyzzkldhvfnqtggtpzpjjgiy"
+      api_base: "https://api.siliconflow.cn/v1"
       max_tokens: 4096
       temperature: 0.7
 

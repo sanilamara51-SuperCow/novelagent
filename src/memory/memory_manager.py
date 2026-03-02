@@ -56,12 +56,15 @@ class MemoryManager:
         4. Adds summary to short-term memory
         5. Saves summary file via storage
         6. Optionally indexes to RAG if retriever provided
+        7. Records foreshadowing planted/paid off
+        8. Records tension score for rhythm tracking
 
         Args:
             chapter_content: The full text content of the chapter.
             chapter_outline: The outline for this chapter.
         """
         chapter_id = chapter_outline.chapter_id
+        chapter_num = chapter_outline.chapter_number
 
         # 1. Summarize chapter
         summary = await self.summarizer.summarize(chapter_content, chapter_outline)
@@ -131,6 +134,31 @@ class MemoryManager:
             except Exception:
                 # RAG indexing is optional, don't fail if it errors
                 pass
+
+        # 7. Record foreshadowing (REQUIREMENTS.md 8.1)
+        for fb_planted in summary.foreshadowing_planted:
+            foreshadow_id = f"ch{chapter_num}_{len(self.long_term.get_foreshadowing_status()) + 1}"
+            self.long_term.add_foreshadow(
+                foreshadow_id=foreshadow_id,
+                description=fb_planted,
+                planted_chapter=chapter_num,
+            )
+
+        for fb_paid in summary.foreshadowing_paid_off:
+            # Find matching foreshadowing by description
+            for fb in self.long_term.get_foreshadowing_status():
+                if fb_paid in fb["description"]:
+                    self.long_term.mark_foreshadow_paid_off(fb["foreshadow_id"], chapter_num)
+
+        # 8. Record tension score (REQUIREMENTS.md 8.3)
+        # Extract from summary metadata if available
+        tension_score = getattr(summary, "tension_score", 5)
+        self.long_term.record_tension(chapter_num, tension_score)
+
+        # 9. Update story thread progress (REQUIREMENTS.md 8.4)
+        active_thread = getattr(chapter_outline, "active_thread", "")
+        if active_thread:
+            self.long_term.update_thread_progress(active_thread, chapter_num)
 
     def get_writer_context(self, chapter_outline: ChapterOutline) -> dict:
         """Assemble context dictionary for the writer agent.
@@ -268,3 +296,103 @@ class MemoryManager:
                 lines.append(f"  - {event}")
 
         return "\n".join(lines)
+
+    # ========================================================================
+    # Director 专用接口
+    # ========================================================================
+
+    def get_foreshadowing_directive(self, current_chapter: int) -> dict:
+        """Get foreshadowing directives for Director.
+
+        Args:
+            current_chapter: Current chapter number
+
+        Returns:
+            Dictionary with plant and payoff lists
+        """
+        due = self.long_term.get_due_foreshadowing(current_chapter)
+
+        plant_list = []
+        payoff_list = []
+
+        for fb in due:
+            if fb["is_overdue"]:
+                payoff_list.append(f"[到期] {fb['description']}")
+            else:
+                payoff_list.append(fb["description"])
+
+        return {
+            "plant": plant_list,
+            "payoff": payoff_list,
+            "overdue": [fb for fb in due if fb["is_overdue"]],
+        }
+
+    def get_rhythm_directive(self, current_chapter: int) -> dict:
+        """Get rhythm directive for Director.
+
+        Args:
+            current_chapter: Current chapter number
+
+        Returns:
+            Dictionary with target_tension and suggestion
+        """
+        analysis = self.long_term.get_rhythm_analysis()
+
+        # Determine target tension based on rhythm
+        if analysis["trend"] == "insufficient_data":
+            target_tension = 5
+            suggestion = "前几章，正常展开"
+        elif analysis["trend"] == "rising" and analysis["recent_tensions"][-1] >= 8:
+            target_tension = 4
+            suggestion = "连续高潮后需要回落"
+        elif analysis["trend"] == "falling" and analysis["recent_tensions"][-1] <= 3:
+            target_tension = 7
+            suggestion = "节奏持续走低，需要制造冲突"
+        elif analysis["trend"] == "flat":
+            avg = sum(analysis["recent_tensions"]) / len(analysis["recent_tensions"])
+            if avg < 4:
+                target_tension = 7
+                suggestion = "连续平淡，需要增加张力"
+            else:
+                target_tension = 5
+                suggestion = "保持当前节奏"
+        else:
+            target_tension = 5
+            suggestion = "正常展开"
+
+        return {
+            "target_tension": target_tension,
+            "suggestion": suggestion,
+            "analysis": analysis,
+        }
+
+    def get_thread_directive(self) -> dict:
+        """Get story thread directive for Director.
+
+        Returns:
+            Dictionary with thread status and warnings
+        """
+        threads = self.long_term.get_story_threads()
+        warnings = self.long_term.get_thread_gap_warning()
+
+        return {
+            "threads": threads,
+            "warnings": warnings,
+        }
+
+    def get_director_context(self, current_chapter: int) -> dict:
+        """Get full context for Director's war analysis.
+
+        Args:
+            current_chapter: Current chapter number
+
+        Returns:
+            Dictionary with all context needed for Director planning
+        """
+        return {
+            "foreshadowing": self.get_foreshadowing_directive(current_chapter),
+            "rhythm": self.get_rhythm_directive(current_chapter),
+            "threads": self.get_thread_directive(),
+            "characters": self.long_term.list_characters(),
+            "timeline": self.long_term.get_timeline(),
+        }

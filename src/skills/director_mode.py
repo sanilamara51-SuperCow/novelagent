@@ -428,6 +428,95 @@ class DirectorMode:
 
         return candidates[0] if candidates else 'action'
 
+    async def generate_batch_outline(
+        self,
+        start_chapter: int,
+        end_chapter: int,
+    ) -> list[dict]:
+        """
+        批量生成章节大纲（重塑大纲核心方法）
+
+        每章大纲包含：
+        - 核心事件
+        - 多视角结构
+        - 伏笔埋设/回收
+        - 节奏目标
+        - 世界线展开
+        - 角色弧线进展
+        """
+        outlines = []
+
+        for ch_num in range(start_chapter, end_chapter + 1):
+            # 根据章节位置决定视角分配
+            pov_plan = self._generate_pov_structure(ch_num, {})
+
+            # 根据章节位置决定世界线
+            world_context = self._get_world_context(ch_num)
+
+            # 节奏规划
+            target_tension = self._calculate_target_tension(ch_num)
+
+            # 伏笔规划
+            foreshadowing_plan = self._generate_foreshadowing_plan(ch_num)
+
+            outlines.append({
+                "chapter_number": ch_num,
+                "pov_structure": pov_plan,
+                "world_context": world_context,
+                "target_tension": target_tension,
+                "foreshadowing": foreshadowing_plan,
+            })
+
+        return outlines
+
+    def _calculate_target_tension(self, chapter_num: int) -> int:
+        """
+        计算目标紧张度（1-10）
+
+        节奏曲线设计：
+        - 每 3 章一个小起伏
+        - 每 10 章一个大高潮
+        - 高潮后必有回落
+        """
+        # 基础节奏：3 章周期
+        base_rhythm = [5, 6, 7, 5, 6, 8, 5, 6, 7, 4]
+        cycle_pos = (chapter_num - 1) % 10
+
+        # 特殊章节调整（高潮章）
+        if chapter_num % 10 == 0:
+            return 9
+        elif chapter_num % 5 == 0:
+            return 8
+
+        return base_rhythm[cycle_pos]
+
+    def _generate_foreshadowing_plan(self, chapter_num: int) -> dict:
+        """
+        生成伏笔规划
+
+        伏笔类型：
+        - 物品伏笔：火药、军牌、信物等
+        - 人物伏笔：身世、关系、秘密等
+        - 事件伏笔：未来的战争、政变等
+        - 对话伏笔：随口说的话日后应验
+        """
+        # 根据章节位置生成伏笔
+        foreshadowing_plant = []
+        foreshadowing_payoff = []
+
+        # 示例：每 5 章埋一个新伏笔
+        if chapter_num % 5 == 1:
+            foreshadowing_plant.append(f"ch{chapter_num}_item_{len(foreshadowing_plant)+1}")
+
+        # 示例：伏笔在 3-5 章后回收
+        if chapter_num > 5:
+            foreshadowing_payoff.append(f"ch{chapter_num-4}_item_1")
+
+        return {
+            "plant": foreshadowing_plant,
+            "payoff": foreshadowing_payoff,
+        }
+
     def _generate_paragraph_plan(
         self,
         chapter_num: int,

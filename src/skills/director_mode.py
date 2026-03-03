@@ -45,6 +45,8 @@ class WritingBrief:
     information_asymmetry: list[str] = field(default_factory=list)  # 信息不对称
     opening_style: str = ""  # 开头方式：dialogue/action/flashback/atmosphere/mystery
     paragraph_plan: list[dict] = field(default_factory=list)  # 段落级规划 [{purpose, focus, length}]
+    pov_structure: list[dict] = field(default_factory=list)  # 多视角结构 [{pov, purpose, reveal}]
+    world_context: str = ""  # 世界线背景（天下大势）
 
 
 @dataclass
@@ -299,6 +301,12 @@ class DirectorMode:
         # 段落级规划
         paragraph_plan = self._generate_paragraph_plan(chapter_num, outline, opening_style)
 
+        # 多视角结构 - 避免单一视角
+        pov_structure = self._generate_pov_structure(chapter_num, outline)
+
+        # 世界线展开 - 根据章节位置加入大势信息
+        world_context = self._get_world_context(chapter_num)
+
         return WritingBrief(
             chapter_outline=outline.get("summary", ""),
             opening_hook=f"上章结尾：{prev_ending}",
@@ -315,7 +323,41 @@ class DirectorMode:
             information_asymmetry=information_asymmetry,
             opening_style=opening_style,
             paragraph_plan=paragraph_plan,
+            pov_structure=pov_structure,
+            world_context=world_context,
         )
+
+    def _get_world_context(self, chapter_num: int) -> str:
+        """
+        生成世界线背景（天下大势）
+
+        北魏末年（528-532 年）历史背景：
+        - 胡太后专权，与孝明帝母子不和
+        - 尔朱荣崛起于晋阳，图谋天下
+        - 六镇起义此起彼伏
+        - 南梁萧衍伺机北伐
+        - 未来枭雄：高欢、宇文泰、贺拔岳等尚在尔朱荣麾下
+
+        根据章节位置，逐步展开各条世界线
+        """
+        # 每 10 章展开一条新的世界线
+        world_lines = [
+            "洛阳宫廷：胡太后与孝明帝权力斗争白热化",
+            "晋阳：尔朱荣练兵蓄锐，图谋不轨",
+            "六镇：起义军蜂起，边镇失控",
+            "建康：南梁萧衍整顿军备，伺机北伐",
+            "河北：葛荣聚众数十万，称帝建国",
+        ]
+
+        # 计算当前应展开的世界线
+        active_lines = world_lines[:min(len(world_lines), (chapter_num - 1) // 10 + 1)]
+
+        # 根据章节位置，突出某条线
+        highlight_idx = (chapter_num - 1) % len(world_lines)
+        if highlight_idx < len(active_lines):
+            active_lines[highlight_idx] = "**" + active_lines[highlight_idx] + "**"
+
+        return " | ".join(active_lines)
 
     def _generate_information_asymmetry(self, outline: dict, characters: list[dict]) -> list[str]:
         """生成信息不对称表（REQUIREMENTS.md 8.5）"""
@@ -433,6 +475,57 @@ class DirectorMode:
         })
 
         return paragraph_plan
+
+    def _generate_pov_structure(self, chapter_num: int, outline: dict) -> list[dict]:
+        """
+        生成多视角结构（避免单一视角）
+
+        POV 类型：
+        - protagonist: 主角视角（李曜）
+        - antagonist: 反派视角（尔朱荣/追兵）
+        - observer: 旁观者视角（元玉奴/路人）
+        - omniscient: 上帝视角（大势信息）
+
+        每 3-4 章切换一次主视角，保持悬念
+        """
+        pov_structure = []
+
+        # 根据章节位置决定视角切换
+        # 奇数章：主角视角为主
+        # 偶数章：加入反派/旁观者视角
+
+        if chapter_num % 3 == 0:
+            # 每 3 章加入一次反派视角
+            pov_structure.append({
+                "pov": "antagonist",
+                "purpose": "展示敌方行动/盘算",
+                "reveal": "读者知道但主角不知道的信息",
+            })
+        elif chapter_num % 5 == 0:
+            # 每 5 章加入一次大势视角
+            pov_structure.append({
+                "pov": "omniscient",
+                "purpose": "展示天下大势",
+                "reveal": "历史背景/多方势力动向",
+            })
+
+        # 默认加入主角视角
+        pov_structure.append({
+            "pov": "protagonist",
+            "purpose": "主角行动/决策",
+            "reveal": "主角的已知信息和计划",
+        })
+
+        # 有女性角色出场时，加入女性视角
+        characters = outline.get("involved_characters", [])
+        if any(name in characters for name in ["元玉奴", " Princess"]):
+            pov_structure.append({
+                "pov": "observer",
+                "purpose": "女性角色的内心感受",
+                "reveal": "主角看不到的情感细节",
+            })
+
+        return pov_structure
 
     async def write_chapter(
         self,

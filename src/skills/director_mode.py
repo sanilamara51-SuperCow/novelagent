@@ -43,6 +43,8 @@ class WritingBrief:
     target_tension: int = 5  # 目标紧张度 1-10
     sensory_focus: str = ""  # 感官描写重点
     information_asymmetry: list[str] = field(default_factory=list)  # 信息不对称
+    opening_style: str = ""  # 开头方式：dialogue/action/flashback/atmosphere/mystery
+    paragraph_plan: list[dict] = field(default_factory=list)  # 段落级规划 [{purpose, focus, length}]
 
 
 @dataclass
@@ -291,6 +293,12 @@ class DirectorMode:
         # 信息不对称（REQUIREMENTS.md 8.5）
         information_asymmetry = self._generate_information_asymmetry(outline, characters)
 
+        # 开头多样性检查 - 避免套路化
+        opening_style = self._analyze_opening_pattern(chapter_num)
+
+        # 段落级规划
+        paragraph_plan = self._generate_paragraph_plan(chapter_num, outline, opening_style)
+
         return WritingBrief(
             chapter_outline=outline.get("summary", ""),
             opening_hook=f"上章结尾：{prev_ending}",
@@ -305,6 +313,8 @@ class DirectorMode:
             target_tension=target_tension,
             sensory_focus=self._get_sensory_focus(chapter_num),
             information_asymmetry=information_asymmetry,
+            opening_style=opening_style,
+            paragraph_plan=paragraph_plan,
         )
 
     def _generate_information_asymmetry(self, outline: dict, characters: list[dict]) -> list[str]:
@@ -325,6 +335,104 @@ class DirectorMode:
         """获取感官描写重点"""
         # 简化版，实际应该从近章摘要读取
         return "视觉、听觉、触觉"
+
+    def _analyze_opening_pattern(self, chapter_num: int) -> str:
+        """
+        分析开头模式，避免套路化
+
+        开头方式分类：
+        - dialogue: 对话开场
+        - action: 动作/事件开场
+        - flashback: 回忆/倒叙开场
+        - atmosphere: 氛围/环境开场
+        - mystery: 悬念/问题开场
+        - introspection: 内心独白开场
+
+        检查近 3 章的开头方式，避免连续使用相同模式
+        """
+        OPENING_STYLES = ['dialogue', 'action', 'flashback', 'atmosphere', 'mystery', 'introspection']
+
+        # 检查近 3 章的开头
+        recent_openings = []
+        for i in range(max(1, chapter_num - 3), chapter_num):
+            content = self._load_chapter(i)
+            if content:
+                # 提取前 200 字分析
+                opening_text = content[:300].lower()
+
+                # 简单启发式分类
+                if any(c in opening_text for c in ['"', '"', ''', ''', ':', ':']):
+                    recent_openings.append('dialogue')
+                elif any(w in opening_text for w in ['突然', '猛地', '瞬间', '轰', '炸', '跑', '冲']):
+                    recent_openings.append('action')
+                elif any(w in opening_text for w in ['想起', '回忆', '曾经', '那时', '当年']):
+                    recent_openings.append('flashback')
+                elif any(w in opening_text for w in ['夜', '暮', '晨', '日', '风', '雨', '山', '天']):
+                    recent_openings.append('atmosphere')
+                elif any(w in opening_text for w in ['为什么', '如何', '难道', '?', '？']):
+                    recent_openings.append('mystery')
+                else:
+                    recent_openings.append('introspection')
+
+        # 选择最少使用的开头方式
+        style_counts = {style: recent_openings.count(style) for style in OPENING_STYLES}
+        min_count = min(style_counts.values())
+        candidates = [s for s, c in style_counts.items() if c == min_count]
+
+        # 优先选择与最近一章不同的方式
+        if recent_openings:
+            last_opening = recent_openings[-1]
+            candidates = [c for c in candidates if c != last_opening] or candidates
+
+        return candidates[0] if candidates else 'action'
+
+    def _generate_paragraph_plan(
+        self,
+        chapter_num: int,
+        outline: dict,
+        opening_style: str,
+    ) -> list[dict]:
+        """
+        生成段落级规划
+
+        将章节拆分为 6-8 个段落，每段有明确的目的和重点
+        """
+        summary = outline.get("summary", "")
+        scenes = outline.get("key_scenes", [])
+
+        # 根据大纲场景生成段落规划
+        paragraph_plan = []
+
+        # 第一段：开头（根据 opening_style 决定写法）
+        paragraph_plan.append({
+            "paragraph": 1,
+            "purpose": f"开场 - 使用{opening_style}方式",
+            "focus": "吸引读者，建立场景",
+            "length": "150-200 字",
+            "tip": "避免风景描写套路，直接进入情境",
+        })
+
+        # 中间段落：场景推进
+        for i, scene in enumerate(scenes[:4], start=2):
+            scene_desc = scene.get("description", "")[:50] if isinstance(scene, dict) else str(scene)[:50]
+            paragraph_plan.append({
+                "paragraph": i,
+                "purpose": f"场景{i-1} 推进",
+                "focus": scene_desc,
+                "length": "200-300 字",
+                "tip": "保持节奏，避免冗长说明",
+            })
+
+        # 最后一段：结尾悬念
+        paragraph_plan.append({
+            "paragraph": len(paragraph_plan) + 1,
+            "purpose": "结尾悬念",
+            "focus": outline.get("emotional_arc", {}).get("end", "留下钩子"),
+            "length": "100-150 字",
+            "tip": "让读者迫不及待想看下一章",
+        })
+
+        return paragraph_plan
 
     async def write_chapter(
         self,

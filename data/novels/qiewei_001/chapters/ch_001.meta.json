@@ -1,0 +1,18 @@
+{
+  "word_count": 82,
+  "scenes": [
+    "秀容惊雷"
+  ],
+  "characters": [],
+  "consistency_revision": true,
+  "issues_fixed": 4,
+  "issue_types": [
+    "timeline",
+    "history",
+    "character",
+    "geography"
+  ],
+  "original_word_count": 82,
+  "polished_word_count": 82,
+  "word_count_delta": 0
+}

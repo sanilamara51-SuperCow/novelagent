@@ -1,0 +1,352 @@
+{
+  "title": "窃魏",
+  "total_chapters": 500,
+  "total_volumes": 7,
+  "main_theme": "现代军械工程师穿越北魏末年，以火药为起点，在乱世中窃取魏室江山",
+  "protagonist": {
+    "name": "李曜",
+    "modern_identity": "军械工程师，专攻火药与推进剂",
+    "ancient_identity": "秀容川猎户（魂穿）",
+    "core_ability": "火药配方与改良、军械设计、现代战术思维",
+    "character_arc": "猎户→军师→军阀→开国皇帝"
+  },
+  "volumes": [
+    {
+      "volume_number": 1,
+      "title": "卷一：猎户惊龙",
+      "chapter_range": [1, 80],
+      "core_event": "救公主、火药首秀、入尔朱荣幕府",
+      "timeline": "523-528 年（正光四年至河阴之变）",
+      "summary": "李曜穿越成秀容川猎户，救下逃亡的平城公主元玉奴，以火药震慑马匪。为寻庇护，护送公主途中被尔朱荣部将发现，入幕府为客卿。河阴之变爆发，李曜目睹尔朱荣屠戮朝臣，暗中布局自保。",
+      "key_events": [
+        "Ch1-5: 穿越、救公主、火药首秀",
+        "Ch6-15: 护送公主往邺城，遭多方追杀",
+        "Ch16-30: 入尔朱荣幕府，献火器小试牛刀",
+        "Ch31-50: 六镇起义爆发，随军平叛",
+        "Ch51-70: 河阴之变前夜，暗中转移资源",
+        "Ch71-80: 河阴之变爆发，李曜择机脱身"
+      ],
+      "foreshadowing": [
+        {
+          "id": "FS001",
+          "description": "公主腰间玉佩藏有密文",
+          "plant_chapter": 3,
+          "payoff_chapter": 45,
+          "payoff_description": "玉佩密文指向洛阳宫中秘藏，内藏前朝兵书与火药配方残卷"
+        },
+        {
+          "id": "FS002",
+          "description": "李曜发现猎户家中硝石纯度异常",
+          "plant_chapter": 1,
+          "payoff_chapter": 62,
+          "payoff_description": "秀容川地下有天然硝石矿，原猎户父亲曾是矿工"
+        },
+        {
+          "id": "FS003",
+          "description": "追杀公主的神秘幕后人物",
+          "plant_chapter": 2,
+          "payoff_chapter": 78,
+          "payoff_description": "揭露为灵太后心腹，意图斩草除根"
+        }
+      ],
+      "hidden_thread": [
+        {
+          "id": "HT001",
+          "name": "公主身世之谜",
+          "description": "元玉奴非孝庄帝亲生，而是前朝遗孤",
+          "reveal_volume": 3
+        },
+        {
+          "id": "HT002",
+          "name": "火药配方来源",
+          "description": "原猎户父亲接触过西域商人，得知火药配方",
+          "reveal_volume": 2
+        }
+      ]
+    },
+    {
+      "volume_number": 2,
+      "title": "卷二：晋阳风云",
+      "chapter_range": [81, 160],
+      "core_event": "尔朱荣败亡、高欢崛起、李曜建火器营",
+      "timeline": "528-531 年",
+      "summary": "李曜脱身至晋阳，以火药献于高欢。高欢识其才，命其建火器营。李曜改良火药、设计霹雳车，助高欢在韩陵之战大破尔朱氏。然功高震主，遭高欢猜忌。",
+      "key_events": [
+        "Ch81-95: 晋阳潜伏，结识高欢帐下谋士",
+        "Ch96-110: 献火器于高欢，建火器营",
+        "Ch111-130: 韩陵之战，火器首显神威",
+        "Ch131-150: 功高震主，遭高欢猜忌",
+        "Ch151-160: 暗中被刺杀，发现高欢下手令"
+      ],
+      "foreshadowing": [
+        {
+          "id": "FS004",
+          "description": "高欢赐婚，欲将庶女嫁与李曜",
+          "plant_chapter": 120,
+          "payoff_chapter": 210,
+          "payoff_description": "联姻是试探，庶女实为高欢眼线"
+        },
+        {
+          "id": "FS005",
+          "description": "火器营中混入西域工匠",
+          "plant_chapter": 105,
+          "payoff_chapter": 180,
+          "payoff_description": "西域工匠偷学火药配方，欲献于柔然"
+        }
+      ],
+      "hidden_thread": [
+        {
+          "id": "HT003",
+          "name": "高欢的猜忌",
+          "description": "高欢视李曜为潜在威胁，暗中布局剪除",
+          "reveal_volume": 3
+        }
+      ]
+    },
+    {
+      "volume_number": 3,
+      "title": "卷三：关陇策",
+      "chapter_range": [161, 240],
+      "core_event": "叛逃宇文泰、火药西传、北魏分裂",
+      "timeline": "531-534 年",
+      "summary": "李曜察觉高欢杀意，设计脱身，西奔长安投宇文泰。宇文泰重用之，火药技术西传。北魏分裂为东魏、西魏，李曜成为宇文泰首席军械师。",
+      "key_events": [
+        "Ch161-175: 假死脱身，西奔长安",
+        "Ch176-190: 献火器于宇文泰，受重用",
+        "Ch191-210: 改良弩机、设计连发霹雳车",
+        "Ch211-230: 东魏西魏交战，火器对决",
+        "Ch231-240: 北魏正式分裂，李曜封侯"
+      ],
+      "foreshadowing": [
+        {
+          "id": "FS006",
+          "description": "宇文泰赐姓'宇文'",
+          "plant_chapter": 200,
+          "payoff_chapter": 350,
+          "payoff_description": "赐姓是拉拢，亦为控制——宇文氏宗亲不得擅离关中"
+        },
+        {
+          "id": "FS007",
+          "description": "公主元玉奴在邺城成婚",
+          "plant_chapter": 180,
+          "payoff_chapter": 280,
+          "payoff_description": "公主被迫嫁高欢之子，心中仍念李曜"
+        }
+      ],
+      "hidden_thread": [
+        {
+          "id": "HT004",
+          "name": "公主的复仇",
+          "description": "元玉奴假意顺从，暗中联络李曜，欲借西魏复国",
+          "reveal_volume": 4
+        },
+        {
+          "id": "HT005",
+          "name": "实验室爆炸真相",
+          "description": "现代线：李曜被同事谋杀，穿越非偶然",
+          "reveal_volume": 5
+        }
+      ]
+    },
+    {
+      "volume_number": 4,
+      "title": "卷四：邺城变",
+      "chapter_range": [241, 320],
+      "core_event": "东魏内乱、公主求援、李曜两线作战",
+      "timeline": "534-546 年",
+      "summary": "高欢死，高澄继位，东魏内乱。元玉奴密信求援，李曜冒险东返。两线作战：对外抗东魏，对内防宇文泰猜忌。火药技术扩散，各方势力皆有其影。",
+      "key_events": [
+        "Ch241-260: 收到公主密信，冒险东返",
+        "Ch261-280: 邺城救出公主，暴露身份",
+        "Ch281-300: 宇文泰震怒，李曜被削权",
+        "Ch301-315: 火药配方泄露，柔然、南梁皆得其术",
+        "Ch316-320: 李曜被软禁，开始著《火器要略》"
+      ],
+      "foreshadowing": [
+        {
+          "id": "FS008",
+          "description": "《火器要略》藏有假配方",
+          "plant_chapter": 310,
+          "payoff_chapter": 420,
+          "payoff_description": "假配方导致柔然火器爆炸，反噬其主"
+        },
+        {
+          "id": "FS009",
+          "description": "公主怀孕，生父成谜",
+          "plant_chapter": 275,
+          "payoff_chapter": 380,
+          "payoff_description": "孩子实为李曜骨肉，公主以高欢之孙名义抚养"
+        }
+      ],
+      "hidden_thread": [
+        {
+          "id": "HT006",
+          "name": "火药技术的诅咒",
+          "description": "火药扩散导致乱世更乱，李曜开始反思",
+          "reveal_volume": 5
+        }
+      ]
+    },
+    {
+      "volume_number": 5,
+      "title": "卷五：关中王",
+      "chapter_range": [321, 400],
+      "core_event": "宇文泰死、宇文护专权、李曜夺权",
+      "timeline": "546-557 年",
+      "summary": "宇文泰死，宇文护专权。李曜被启用，掌军械大权。暗中布局，培植亲信。西魏大权渐移，李曜成实际掌权者之一。现代线揭露：实验室爆炸是商业间谍所为。",
+      "key_events": [
+        "Ch321-340: 宇文泰死，宇文护掌权",
+        "Ch341-360: 李曜被启用，掌军械监",
+        "Ch361-380: 培植亲信，暗控禁军",
+        "Ch381-395: 现代线揭露：谋杀真相",
+        "Ch396-400: 李曜决心称帝"
+      ],
+      "foreshadowing": [
+        {
+          "id": "FS010",
+          "description": "禁军中下层将领多受李曜恩惠",
+          "plant_chapter": 350,
+          "payoff_chapter": 450,
+          "payoff_description": "黄袍加身时，禁军皆倒向李曜"
+        }
+      ],
+      "hidden_thread": [
+        {
+          "id": "HT007",
+          "name": "现代线的回响",
+          "description": "李曜发现穿越与古代火药研究有神秘联系",
+          "reveal_volume": 6
+        }
+      ]
+    },
+    {
+      "volume_number": 6,
+      "title": "卷六：窃魏",
+      "chapter_range": [401, 460],
+      "core_event": "废魏自立、建国号'魏'、统一北方",
+      "timeline": "557-560 年",
+      "summary": "李曜废西魏恭帝，自立为帝，建国号'魏'（史称'后魏'或'李魏'）。以火器平定北方割据势力，与南朝梁、陈对峙。公主元玉奴立为皇后。",
+      "key_events": [
+        "Ch401-420: 废帝自立，建国号魏",
+        "Ch421-440: 平定关中、河东叛乱",
+        "Ch441-455: 与北齐（高氏）决战",
+        "Ch456-460: 统一北方，定都长安"
+      ],
+      "foreshadowing": [
+        {
+          "id": "FS011",
+          "description": "皇后的儿子非李曜亲生",
+          "plant_chapter": 430,
+          "payoff_chapter": 490,
+          "payoff_description": "皇子身世揭露，引发继承危机"
+        }
+      ],
+      "hidden_thread": [
+        {
+          "id": "HT008",
+          "name": "继承人的秘密",
+          "description": "皇后之子实为高氏血脉，李曜知情但隐忍",
+          "reveal_volume": 7
+        }
+      ]
+    },
+    {
+      "volume_number": 7,
+      "title": "卷七：天可汗",
+      "chapter_range": [461, 500],
+      "core_event": "南征、传位、落幕",
+      "timeline": "560-565 年",
+      "summary": "李曜南征梁、陈，欲统一天下。然年老体衰，火药反噬身体。传位于养子（实为公主与高氏之子），含憾而终。临终遗言：'火药可兴国，亦可亡国'。",
+      "key_events": [
+        "Ch461-480: 南征陈朝，初期大胜",
+        "Ch481-490: 继承危机，皇子身世揭露",
+        "Ch491-498: 李曜病重，交代后事",
+        "Ch499-500: 大结局：火药与人性"
+      ],
+      "ending": {
+        "type": "悲剧英雄",
+        "description": "李曜一生以火药起家，最终因火药反噬而死。他建立的王朝延续百年，但火药技术被他刻意封印于皇陵。临终前，他梦见现代实验室的爆炸，明白自己一生不过是历史循环中的一环。"
+      }
+    }
+  ],
+  "story_threads": {
+    "main_thread": {
+      "name": "李曜崛起线",
+      "description": "猎户→军师→军阀→皇帝",
+      "key_milestones": [
+        "Ch5: 火药首秀",
+        "Ch30: 入尔朱荣幕府",
+        "Ch120: 建火器营",
+        "Ch200: 封侯",
+        "Ch400: 称帝"
+      ]
+    },
+    "romance_thread": {
+      "name": "李曜×元玉奴感情线",
+      "stages": [
+        "Ch2-5: 救命之恩，互相利用",
+        "Ch80: 失散，各自飘零",
+        "Ch260: 重逢，情愫暗生",
+        "Ch380: 身世揭露，感情危机",
+        "Ch450: 立后，终成眷属"
+      ]
+    },
+    "technology_thread": {
+      "name": "火药技术扩散线",
+      "stages": [
+        "Ch4: 首次使用",
+        "Ch120: 规模化生产",
+        "Ch310: 配方泄露",
+        "Ch420: 假配方反噬",
+        "Ch500: 技术封印"
+      ]
+    },
+    "mystery_thread": {
+      "name": "现代线谜团",
+      "stages": [
+        "Ch1: 实验室爆炸",
+        "Ch150: 梦中闪回",
+        "Ch380: 穿越真相揭露",
+        "Ch490: 古今联系暗示"
+      ]
+    }
+  },
+  "historical_anchor_points": [
+    {
+      "event": "六镇起义",
+      "year": 524,
+      "chapter": 40,
+      "fictional_integration": "李曜随尔朱荣平叛，首次见识大规模战争"
+    },
+    {
+      "event": "河阴之变",
+      "year": 528,
+      "chapter": 75,
+      "fictional_integration": "李曜目睹屠杀，暗中救下少数朝臣"
+    },
+    {
+      "event": "韩陵之战",
+      "year": 532,
+      "chapter": 130,
+      "fictional_integration": "火器首显神威，决定战役走向"
+    },
+    {
+      "event": "北魏分裂",
+      "year": 534,
+      "chapter": 235,
+      "fictional_integration": "李曜已西奔，成为宇文泰客卿"
+    },
+    {
+      "event": "高欢死",
+      "year": 547,
+      "chapter": 250,
+      "fictional_integration": "李曜收到公主密信，东返邺城"
+    },
+    {
+      "event": "宇文泰死",
+      "year": 556,
+      "chapter": 325,
+      "fictional_integration": "李曜开始布局夺权"
+    }
+  ]
+}

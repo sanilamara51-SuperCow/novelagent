@@ -1,0 +1,24 @@
+{
+  "title": "窃魏",
+  "total_chapters": 30,
+  "volumes": [
+    {
+      "volume_number": 1,
+      "title": "第一幕：秀容崛起",
+      "summary": "现代特种兵魏铭穿越北魏末年，凭借火药与战术知识在秀容川崭露头角，获得尔朱荣赏识，开始建立自己的势力。",
+      "chapters": [
+        {
+          "chapter_id": "ch_001",
+          "chapter_number": 1,
+          "title": "秀容惊雷",
+          "summary": "魏铭穿越至北魏末年秀容川，偶遇尔朱兆被围，以土制火药救之，得以进入尔朱荣视线。",
+          "key_scene": "荒野遭遇战，魏铭首次使用火药",
+          "emotional_arc": "迷茫→紧张→爆发→自信",
+          "historical_event": "六镇起义余波",
+          "recruited_characters": ["尔朱兆"],
+          "thrill_point": "火药初显威，绝境反杀"
+        }
+      ]
+    }
+  ]
+}

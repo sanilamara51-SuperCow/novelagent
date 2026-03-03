@@ -8,7 +8,8 @@ __pycache__/
 data/knowledge_base/chroma_db/
 data/knowledge_base/raw/twenty_four_histories/
 data/knowledge_base/raw/zizhitongjian_repo/
-data/novels/
+data/novels/*.sqlite
+data/novels/*/memory.sqlite
 .venv/
 *.egg-info/
 dist/

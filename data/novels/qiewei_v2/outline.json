@@ -334,26 +334,28 @@
         {
           "chapter_id": "v1_ch07",
           "chapter_number": 7,
-          "title": "山中遇匪",
-          "summary": "改道邺城途中，李曜与元玉奴在太行山中遭遇一股小股土匪。土匪头领见元玉奴貌美，欲强占。李曜以火药震慑，炸毁山石，吓退土匪。但元玉奴腿部被流石划伤，行动不便。",
+          "title": "崔庄惊变",
+          "summary": "崔家庄内，李曜与元玉奴暂得安身。李曜在庄中打柴，元玉奴在偏院洗衣。深夜，庄主崔孝芬秘密召见李曜，揭示自己已收到洛阳密令——凡收留元氏公主者，株连九族。崔孝芬陷入两难：一方面念及旧日受元玉奴生父元怿之恩，另一方面畏惧尔朱氏权势。最终，崔孝芬选择放走两人，并赠予盘缠与路引，叮嘱他们速往晋阳投奔尔朱荣，因为’最危险的地方最安全’。",
           "key_scenes": [
-            "土匪埋伏，李曜察觉异常",
-            "土匪头领调戏元玉奴",
-            "李曜点燃小型火药包，引发山石崩塌",
-            "元玉奴受伤，李曜背她前行"
+            "崔家庄日常：李曜打柴，元玉奴洗衣，流民们议论时局",
+            "深夜密召：崔孝芬在后厅单独召见李曜，展示洛阳密令",
+            "崔孝芬的抉择：讲述与元怿旧交，决定冒险放人",
+            "临别赠言：崔孝芬赠盘缠路引，指点晋阳路线，警告不可久留"
           ],
           "involved_characters": [
             "李曜",
             "元玉奴",
-            "土匪头领"
+            "崔孝芬（庄主，博陵崔氏旁支）",
+            "流民群像"
           ],
           "historical_events": [
-            "北魏末年民变四起，太行山匪患严重"
+            "北魏末年士族自保，在尔朱氏与元氏间摇摆",
+            "博陵崔氏等山东士族的生存之道"
           ],
           "emotional_arc": {
-            "start": "山中戒备",
-            "peak": "火药震慑土匪的紧张",
-            "end": "元玉奴受伤后李曜的担忧"
+            "start": "暂得安身的松弛",
+            "peak": "密令揭露的危机与崔孝芬的艰难抉择",
+            "end": "踏上新的未知旅程的凝重"
           },
           "requires_debate": false,
           "debate_config": null
@@ -361,23 +363,25 @@
         {
           "chapter_id": "v1_ch08",
           "chapter_number": 8,
-          "title": "破庙疗伤",
-          "summary": "李曜背元玉奴到一处破庙歇脚，为她清洗伤口、上药。两人独处，元玉奴吐露心声：从小被当作政治工具，从未有人真心待她。李曜沉默，只说‘乱世中，活着最重要’。深夜，庙外传来马蹄声。",
+          "title": "寒夜荒村",
+          "summary": "离开崔家庄后，李曜与元玉奴昼伏夜出，避开官道，在太行山东麓的荒村中艰难穿行。天降大雪，两人又冷又饿，元玉奴的脚伤恶化，每走一步都钻心疼痛。李曜背着她前行，在风雪中寻找避寒处。最终，他们找到一处废弃的猎户小屋，生火取暖。元玉奴在高烧中呓语，讲述童年在元怿王府的温馨回忆，李曜守夜到天明。",
           "key_scenes": [
-            "破庙中，李曜为元玉奴处理伤口",
-            "元玉奴讲述童年：被养在深宫，母亲早逝",
-            "‘你为何对我这么好？’‘因为你是人，不是棋子’",
-            "深夜马蹄声逼近，李曜吹灭火堆"
+            "雪夜赶路：北风呼啸，大雪封山，两人跌跌撞撞前行",
+            "元玉奴脚伤恶化：血水浸透鞋袜，李曜发现后心疼不已",
+            "李曜背负公主：在齐膝深雪中艰难跋涉，气息粗重",
+            "猎户小屋避寒：生火、喂雪水、撕衣包扎，元玉奴高烧呓语"
           ],
           "involved_characters": [
             "李曜",
             "元玉奴"
           ],
-          "historical_events": [],
+          "historical_events": [
+            "北魏正光五年冬，并州、肆州大雪，流民冻死无数"
+          ],
           "emotional_arc": {
-            "start": "疗伤的温柔",
-            "peak": "元玉奴吐露心声的脆弱",
-            "end": "马蹄声带来的紧张"
+            "start": "逃亡的艰辛与绝望",
+            "peak": "元玉奴伤重病危，李曜几近崩溃",
+            "end": "相濡以沫的温情与坚守"
           },
           "requires_debate": false,
           "debate_config": null
@@ -385,26 +389,27 @@
         {
           "chapter_id": "v1_ch09",
           "chapter_number": 9,
-          "title": "尔朱斥候",
-          "summary": "庙外是尔朱荣的斥候小队，正在搜寻公主踪迹。李曜本欲躲避，但斥候发现了破庙外的脚印，准备进庙搜查。李曜决定先下手为强，用仅剩的火药制作简易地雷，炸死斥候队长，其余人溃逃。",
+          "title": "斥候踪现",
+          "summary": "天明后，李曜外出寻药觅食，在林中撞见一队骑兵斥候正在搜寻踪迹。他躲在一旁偷听，得知这是尔朱荣派出的’访贤使’，并非追杀公主的官军。斥候队长展示画像——‘洛阳李公子，献火器之术’，原来崔孝芬已将李曜之事密报尔朱荣。李曜意识到这是机会，决定冒险现身，却被斥候当作细作拿下。危急关头，李曜喊出’我能造霹雳雷火’，斥候队长神色大变。",
           "key_scenes": [
-            "斥候发现脚印，决定进庙搜查",
-            "李曜用碗片、火药制作简易地雷",
-            "爆炸炸死队长，其余斥候惊恐逃窜",
-            "李曜从斥候身上搜出密令：‘格杀勿论’"
+            "李曜清晨出猎：想为元玉奴寻些草药和野味",
+            "林中偶遇斥候：骑兵小队驻扎，谈论’洛阳李公子’和火器",
+            "偷听机密：得知尔朱荣正在招揽天下奇人异士，准备’清君侧’",
+            "冒险现身：李曜主动站出来，却被当作奸细捆绑，千钧一发之际喊出火器之秘"
           ],
           "involved_characters": [
             "李曜",
-            "元玉奴",
-            "尔朱斥候"
+            "元玉奴（在破屋中等候）",
+            "尔朱荣斥候队长（姓刘，名雄）",
+            "斥候小队"
           ],
           "historical_events": [
-            "尔朱荣掌控朝政，大肆搜捕元氏宗室"
+            "尔朱荣起兵前夕，广派使者招揽人才"
           ],
           "emotional_arc": {
-            "start": "被发现倒计时的紧张",
-            "peak": "火药爆炸的瞬间",
-            "end": "发现密令后的凝重"
+            "start": "寻药的焦急与希望",
+            "peak": "被发现并捆绑的生死危机",
+            "end": "喊出火器秘密后的反转与未知"
           },
           "requires_debate": false,
           "debate_config": null
@@ -412,26 +417,28 @@
         {
           "chapter_id": "v1_ch10",
           "chapter_number": 10,
-          "title": "投尔朱荣",
-          "summary": "从斥候口中得知，尔朱荣正在招揽各方人才，准备起兵‘清君侧’。李曜做出大胆决定：主动投奔尔朱荣，以火药为投名状，换取庇护。元玉奴震惊，但李曜说：‘最危险的地方，往往最安全’。两人转向晋阳，尔朱荣大营。",
+          "title": "晋阳之路",
+          "summary": "斥候队长刘雄确认李曜身份后，态度大变，恭敬以待。他告知李曜，尔朱荣早已听闻火器传闻，特命他寻访。李曜提出条件：必须同时保护元玉奴安全。刘雄答应，派人先将元玉奴送往晋阳城外一处别院安置。临行前，李曜从斥候口中得知天下大势——葛荣在河北称帝，胡太后与孝明帝母子反目，尔朱荣即将起兵’清君侧’。李曜意识到自己已站在历史转折点上，必须做出选择。",
           "key_scenes": [
-            "李曜审讯俘虏斥候，得知尔朱荣招贤",
-            "元玉奴反对：‘尔朱荣是仇人！’",
-            "李曜分析：只有借助大军阀，才能对抗幕后黑手",
-            "两人改道晋阳，远处尔朱大营的炊烟可见"
+            "刘雄确认身份：李曜演示简易火药，斥候们惊叹",
+            "谈判条件：李曜坚持要元玉奴同行或妥善安置，否则不献火器",
+            "天下大势：刘雄讲述洛阳、河北局势，尔朱荣的野心",
+            "分头行动：元玉奴先行晋阳，李曜随斥候队前往尔朱荣大营"
           ],
           "involved_characters": [
             "李曜",
             "元玉奴",
-            "俘虏斥候"
+            "刘雄（尔朱荣斥候队长）",
+            "尔朱荣（提及）"
           ],
           "historical_events": [
-            "尔朱荣起兵前夕，招揽人才"
+            "葛荣在河北称帝，建号齐",
+            "尔朱荣蓄势待发，图谋洛阳"
           ],
           "emotional_arc": {
-            "start": "俘虏带来的情报冲击",
-            "peak": "元玉奴的震惊与反对",
-            "end": "决定投奔尔朱荣的决断"
+            "start": "身份被确认的释然",
+            "peak": "为元玉奴安危据理力争的紧张",
+            "end": "看清天下大势后的决断与使命感"
           },
           "requires_debate": false,
           "debate_config": null
@@ -1123,6 +1130,1269 @@
             "payoff": []
           },
           "opening_style": "dialogue",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch21",
+          "chapter_number": 21,
+          "title": "滏口大捷",
+          "summary": "滏口之战主力决战爆发，尔朱荣亲率七千精锐骑兵从侧翼突袭葛荣大营。李曜火器营在隘口预设'雷火阵'，以三十枚火雷炸溃葛荣先锋五万人。葛荣轻敌之下未及变阵，全军溃散。尔朱荣趁势掩杀，葛荣被擒，三十万大军一朝覆灭。此战之后，李曜火器之名震动天下。",
+          "key_scenes": [
+            {
+              "scene_id": "s21_1",
+              "description": "黎明时分，葛荣主力抵达滏口，见先锋溃败大怒，亲率中军压上"
+            },
+            {
+              "scene_id": "s21_2",
+              "description": "李曜启动'雷火阵'，三十枚火雷同时爆炸，葛荣先锋阵脚大乱"
+            },
+            {
+              "scene_id": "s21_3",
+              "description": "尔朱荣率七千骑兵从西侧山谷杀出，直插葛荣中军"
+            },
+            {
+              "scene_id": "s21_4",
+              "description": "葛荣被擒，临死前方知火器厉害，感叹'非战之罪'"
+            },
+            {
+              "scene_id": "s21_5",
+              "description": "战场清扫，尔朱荣当众嘉奖李曜，封为'火雷将军'"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "尔朱荣",
+            "葛荣",
+            "尔朱兆",
+            "元天穆"
+          ],
+          "historical_events": [
+            "滏口之战，尔朱荣大破葛荣三十万大军"
+          ],
+          "emotional_arc": {
+            "start": "临战前的极致紧张",
+            "peak": "火器爆发、战场碾压的震撼",
+            "end": "胜利后的复杂心绪（李曜意识到自己已成为天下瞩目的'妖人'）"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜指挥火器营",
+              "reveal": "首次大规模战场屠杀的心理冲击"
+            },
+            {
+              "pov": "antagonist",
+              "purpose": "葛荣从轻视到惊恐",
+              "reveal": "轻敌的代价"
+            },
+            {
+              "pov": "omniscient",
+              "purpose": "战场全局",
+              "reveal": "七千破三十万的军事奇迹"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 21 章 | **河北：葛荣势力覆灭，尔朱荣威震天下**",
+          "target_tension": 10,
+          "foreshadowing": {
+            "plant": [
+              "李曜屠杀后的心理阴影——为日后对火器的反思埋线",
+              "尔朱荣当众封赏——为日后功高震主埋线"
+            ],
+            "payoff": [
+              "第 20 章滏口遭遇战——本章主力决战收尾"
+            ]
+          },
+          "opening_style": "action",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch22",
+          "chapter_number": 22,
+          "title": "洛阳暗流",
+          "summary": "滏口大捷的消息传至洛阳，胡太后震恐。她深知尔朱荣此战之后威望更盛，随时可能南下'清君侧'。郑俨献计，以皇帝名义下诏嘉奖尔朱荣，同时密令关陇诸王牵制。元玉奴在晋阳收到洛阳密报，得知自己的'死讯'已被朝廷公布，陷入身份危机。",
+          "key_scenes": [
+            {
+              "scene_id": "s22_1",
+              "description": "洛阳瑶光寺，胡太后召集群臣商议应对尔朱荣之策"
+            },
+            {
+              "scene_id": "s22_2",
+              "description": "郑俨献'明升暗降'之计，胡太后采纳"
+            },
+            {
+              "scene_id": "s22_3",
+              "description": "晋阳城内，元玉奴从侍女小翠处得知自己的'死讯'"
+            },
+            {
+              "scene_id": "s22_4",
+              "description": "元玉奴深夜修书，准备向尔朱荣坦白身份"
+            }
+          ],
+          "involved_characters": [
+            "胡太后",
+            "郑俨",
+            "元玉奴",
+            "小翠",
+            "尔朱荣（侧面）"
+          ],
+          "historical_events": [
+            "胡太后与尔朱荣矛盾激化"
+          ],
+          "emotional_arc": {
+            "start": "洛阳宫廷的恐慌与算计",
+            "peak": "元玉奴得知'死讯'的震惊",
+            "end": "决定坦白身份的决绝"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "omniscient",
+              "purpose": "洛阳宫廷应对",
+              "reveal": "胡太后的恐慌"
+            },
+            {
+              "pov": "observer",
+              "purpose": "元玉奴身份危机",
+              "reveal": "她的决断"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 22 章 | **洛阳宫廷：胡太后恐慌，密谋制衡尔朱荣**",
+          "target_tension": 7,
+          "foreshadowing": {
+            "plant": [
+              "元玉奴准备坦白身份——为第 24 章身份暴露埋线",
+              "胡太后的制衡计策——为河阴之变埋线"
+            ],
+            "payoff": [
+              "第 16 章洛阳线——本章回收胡太后反应"
+            ]
+          },
+          "opening_style": "mystery",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch23",
+          "chapter_number": 23,
+          "title": "论功行赏",
+          "summary": "尔朱荣班师回朝，在晋阳大营举行庆功宴。席间论功行赏，李曜因火器之功被任命为'车骑大将军'，秩比二千石，赐爵'晋阳侯'。然而封赏之后，尔朱荣单独召见李曜，暗示'功高震主，宜自敛锋芒'。李曜意识到自己已成为各方瞩目的焦点。",
+          "key_scenes": [
+            {
+              "scene_id": "s23_1",
+              "description": "晋阳大营庆功宴，诸将齐聚"
+            },
+            {
+              "scene_id": "s23_2",
+              "description": "尔朱荣当众封赏李曜，诸将神色复杂"
+            },
+            {
+              "scene_id": "s23_3",
+              "description": "尔朱荣私下召见李曜，警告'自敛锋芒'"
+            },
+            {
+              "scene_id": "s23_4",
+              "description": "李曜回营后与元玉奴商议，决定低调行事"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "尔朱荣",
+            "元玉奴",
+            "尔朱兆",
+            "元天穆"
+          ],
+          "historical_events": [
+            "滏口之战后论功行赏"
+          ],
+          "emotional_arc": {
+            "start": "庆功宴的荣耀",
+            "peak": "尔朱荣警告后的警醒",
+            "end": "决定低调的隐忍"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜受封与警醒",
+              "reveal": "功高震主的危险"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 23 章",
+          "target_tension": 6,
+          "foreshadowing": {
+            "plant": [
+              "尔朱兆等将领的嫉妒——为日后排挤埋线",
+              "李曜决定低调——为日后'假意归隐'埋线"
+            ],
+            "payoff": [
+              "第 19 章尔朱荣的猜忌——本章正式警告"
+            ]
+          },
+          "opening_style": "atmosphere",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch24",
+          "chapter_number": 24,
+          "title": "玉奴现身",
+          "summary": "元玉奴正式向尔朱荣坦白身份，亮出平城公主令牌。尔朱荣震惊之余，意识到这是挟持宗室以令诸侯的良机。他表面上尊元玉奴为'义妹'，实则将她软禁于府中。李曜得知后大怒，直闯尔朱荣府邸要人，却被元玉奴以'大局为重'劝止。",
+          "key_scenes": [
+            {
+              "scene_id": "s24_1",
+              "description": "元玉奴着公主礼服，求见尔朱荣"
+            },
+            {
+              "scene_id": "s24_2",
+              "description": "尔朱荣震惊，确认身份后心生利用之念"
+            },
+            {
+              "scene_id": "s24_3",
+              "description": "李曜得知元玉奴被'软禁'，直闯尔朱荣府邸"
+            },
+            {
+              "scene_id": "s24_4",
+              "description": "元玉奴以大局为重，劝李曜退让"
+            },
+            {
+              "scene_id": "s24_5",
+              "description": "李曜无奈退去，心中埋下与尔朱荣决裂的种子"
+            }
+          ],
+          "involved_characters": [
+            "元玉奴",
+            "尔朱荣",
+            "李曜",
+            "元天穆"
+          ],
+          "historical_events": [
+            "元氏宗室被尔朱荣控制"
+          ],
+          "emotional_arc": {
+            "start": "元玉奴坦然的决绝",
+            "peak": "李曜大怒闯府的激烈冲突",
+            "end": "无奈退让的憋屈与隐忍"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "observer",
+              "purpose": "元玉奴身份暴露",
+              "reveal": "她的大局观"
+            },
+            {
+              "pov": "protagonist",
+              "purpose": "李曜的愤怒与无奈",
+              "reveal": "对尔朱荣信任的彻底破裂"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 24 章",
+          "target_tension": 8,
+          "foreshadowing": {
+            "plant": [
+              "李曜与尔朱荣决裂的种子——为日后独立埋线",
+              "元玉奴被软禁——为河阴之变时的人质危机埋线"
+            ],
+            "payoff": [
+              "第 22 章元玉奴准备坦白——本章正式暴露"
+            ]
+          },
+          "opening_style": "dialogue",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch25",
+          "chapter_number": 25,
+          "title": "河阴前夜",
+          "summary": "武泰元年四月，尔朱荣以'清君侧'为名，率军南下洛阳。李曜随军同行，心中却暗藏忧虑。行前，元玉奴密信李曜，提醒他'河阴之地，古来多凶'。李曜想起历史上著名的'河阴之变'，意识到自己正站在历史转折点上。",
+          "key_scenes": [
+            {
+              "scene_id": "s25_1",
+              "description": "尔朱荣在晋阳誓师，宣布南下'清君侧'"
+            },
+            {
+              "scene_id": "s25_2",
+              "description": "李曜收到元玉奴密信，提及'河阴多凶'"
+            },
+            {
+              "scene_id": "s25_3",
+              "description": "李曜回忆历史上的河阴之变，陷入沉思"
+            },
+            {
+              "scene_id": "s25_4",
+              "description": "大军开拔，李曜回望晋阳，心中五味杂陈"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "尔朱荣",
+            "元玉奴（侧面）",
+            "元天穆"
+          ],
+          "historical_events": [
+            "尔朱荣南下'清君侧'，河阴之变前夕"
+          ],
+          "emotional_arc": {
+            "start": "大军南下的肃杀",
+            "peak": "李曜预知历史的沉重",
+            "end": "站在历史转折点的迷茫"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜预知历史",
+              "reveal": "穿越者的历史负担"
+            },
+            {
+              "pov": "omniscient",
+              "purpose": "天下大势",
+              "reveal": "河阴之变即将到来的山雨欲来"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 25 章 | **洛阳宫廷：河阴之变前夕，胡太后 panic**",
+          "target_tension": 7,
+          "foreshadowing": {
+            "plant": [
+              "李曜对河阴之变的预知——为第 26 章干预历史埋线",
+              "元玉奴密信——为两人情感深化埋线"
+            ],
+            "payoff": [
+              "第 16 章河阴之变伏笔——本章正式提及"
+            ]
+          },
+          "opening_style": "introspection",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch26",
+          "chapter_number": 26,
+          "title": "河阴血色",
+          "summary": "尔朱荣大军抵达河阴，以'祭天'为名，将洛阳朝臣两千余人诱至河阴屠杀。李曜目睹惨状，试图劝阻却被尔朱荣喝退。血腥之中，李曜意识到自己无法改变历史洪流，只能尽力保护少数无辜。高欢首次登场，暗中观察李曜，对其'火器之术'产生浓厚兴趣。",
+          "key_scenes": [
+            {
+              "scene_id": "s26_1",
+              "description": "尔朱荣以'祭天'为名，诱骗朝臣至河阴"
+            },
+            {
+              "scene_id": "s26_2",
+              "description": "屠杀开始，血流成河，李曜震惊"
+            },
+            {
+              "scene_id": "s26_3",
+              "description": "李曜试图劝阻，被尔朱荣喝退"
+            },
+            {
+              "scene_id": "s26_4",
+              "description": "李曜暗中保护数名朝臣逃离"
+            },
+            {
+              "scene_id": "s26_5",
+              "description": "高欢首次登场，观察李曜"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "尔朱荣",
+            "高欢（首次登场）",
+            "朝臣（群像）"
+          ],
+          "historical_events": [
+            "河阴之变，尔朱荣屠杀朝臣两千人"
+          ],
+          "emotional_arc": {
+            "start": "屠杀前的压抑",
+            "peak": "血腥场面的震撼与李曜的无力感",
+            "end": "暗中救人的决绝与对尔朱荣的彻底失望"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜目睹屠杀",
+              "reveal": "穿越者无法改变历史的无力"
+            },
+            {
+              "pov": "observer",
+              "purpose": "高欢观察李曜",
+              "reveal": "未来枭雄对火器的兴趣"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 26 章",
+          "target_tension": 10,
+          "foreshadowing": {
+            "plant": [
+              "高欢对火器的兴趣——为日后争夺李曜埋线",
+              "李曜暗中救人——为日后朝中人情埋线"
+            ],
+            "payoff": [
+              "第 25 章河阴之变预知——本章正式爆发"
+            ]
+          },
+          "opening_style": "action",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch27",
+          "chapter_number": 27,
+          "title": "新君旧臣",
+          "summary": "河阴之变后，尔朱荣立元子攸为帝（孝庄帝）。李曜因火器之功被任命为'卫将军'，但被排除在核心决策圈之外。朝堂之上，李曜目睹尔朱荣的专横，心中越发不安。下朝后，一名神秘宦官悄悄接近李曜，称有'要事相告'。",
+          "key_scenes": [
+            {
+              "scene_id": "s27_1",
+              "description": "尔朱荣立元子攸为帝，朝臣噤若寒蝉"
+            },
+            {
+              "scene_id": "s27_2",
+              "description": "李曜被封'卫将军'，实则被架空"
+            },
+            {
+              "scene_id": "s27_3",
+              "description": "朝堂之上，李曜目睹尔朱荣专横"
+            },
+            {
+              "scene_id": "s27_4",
+              "description": "神秘宦官接近，称有要事"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "尔朱荣",
+            "孝庄帝元子攸",
+            "神秘宦官"
+          ],
+          "historical_events": [
+            "孝庄帝即位，尔朱荣专权"
+          ],
+          "emotional_arc": {
+            "start": "新君即位的压抑",
+            "peak": "李曜被架空的憋屈",
+            "end": "神秘宦官带来的悬念"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜被架空",
+              "reveal": "功高不赏的困境"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 27 章",
+          "target_tension": 6,
+          "foreshadowing": {
+            "plant": [
+              "神秘宦官身份——为第 28 章元玉奴求救埋线",
+              "李曜被架空——为日后离开洛阳埋线"
+            ],
+            "payoff": [
+              "第 26 章河阴之变——本章新君即位收尾"
+            ]
+          },
+          "opening_style": "atmosphere",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch28",
+          "chapter_number": 28,
+          "title": "玉奴求救",
+          "summary": "神秘宦官带来元玉奴密信，称她被尔朱荣'义妹'名义软禁于洛阳别院，请求李曜营救。李曜深夜潜入别院，与元玉奴密会。元玉奴告知：尔朱荣打算以她为筹码，逼迫孝庄帝赐婚，将她嫁给尔朱兆。两人商议对策，决定假意顺从，暗中谋划逃离。",
+          "key_scenes": [
+            {
+              "scene_id": "s28_1",
+              "description": "宦官带来元玉奴密信"
+            },
+            {
+              "scene_id": "s28_2",
+              "description": "李曜深夜潜入别院"
+            },
+            {
+              "scene_id": "s28_3",
+              "description": "与元玉奴密会，得知被逼婚"
+            },
+            {
+              "scene_id": "s28_4",
+              "description": "两人商议对策，决定假意顺从"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "元玉奴",
+            "神秘宦官",
+            "尔朱荣（侧面）"
+          ],
+          "historical_events": [],
+          "emotional_arc": {
+            "start": "收到密信的焦急",
+            "peak": "得知被逼婚的愤怒",
+            "end": "商议对策的冷静与隐忍"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜营救元玉奴",
+              "reveal": "两人情感深化"
+            },
+            {
+              "pov": "observer",
+              "purpose": "元玉奴的困境",
+              "reveal": "她的牺牲精神"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 28 章",
+          "target_tension": 7,
+          "foreshadowing": {
+            "plant": [
+              "假意顺从计划——为第 30 章逃婚埋线",
+              "尔朱兆逼婚——为日后尔朱荣与尔朱兆矛盾埋线"
+            ],
+            "payoff": [
+              "第 24 章元玉奴被软禁——本章危机爆发"
+            ]
+          },
+          "opening_style": "mystery",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch29",
+          "chapter_number": 29,
+          "title": "高欢来投",
+          "summary": "高欢正式来投，向尔朱荣献上'分化六镇、拉拢流民'之策，深得尔朱荣赏识。李曜与高欢首次正面交锋，两人对'火器之用'展开激烈辩论。高欢主张'火器当慎用'，李曜主张'火器当量产'。尔朱荣旁观两人争论，心中另有盘算。",
+          "key_scenes": [
+            {
+              "scene_id": "s29_1",
+              "description": "高欢求见尔朱荣，献上战略"
+            },
+            {
+              "scene_id": "s29_2",
+              "description": "李曜与高欢首次正面交锋"
+            },
+            {
+              "scene_id": "s29_3",
+              "description": "两人对火器之用展开辩论"
+            },
+            {
+              "scene_id": "s29_4",
+              "description": "尔朱荣旁观，心中盘算制衡之策"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "高欢",
+            "尔朱荣"
+          ],
+          "historical_events": [
+            "高欢投奔尔朱荣"
+          ],
+          "emotional_arc": {
+            "start": "高欢来投的平静",
+            "peak": "李曜与高欢辩论的激烈",
+            "end": "尔朱荣制衡算计的阴冷"
+          },
+          "requires_debate": true,
+          "debate_config": {
+            "topic": "火器应当慎用还是量产",
+            "rounds": 3,
+            "characters": ["李曜", "高欢"]
+          },
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜与高欢辩论",
+              "reveal": "两位战略家的理念冲突"
+            },
+            {
+              "pov": "antagonist",
+              "purpose": "尔朱荣的制衡术",
+              "reveal": "枭雄的驭下之道"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 29 章",
+          "target_tension": 6,
+          "foreshadowing": {
+            "plant": [
+              "高欢与李曜的理念冲突——为日后敌对埋线",
+              "尔朱荣的制衡术——为日后高欢独立埋线"
+            ],
+            "payoff": [
+              "第 26 章高欢首次登场——本章正式来投"
+            ]
+          },
+          "opening_style": "dialogue",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch30",
+          "chapter_number": 30,
+          "title": "假死脱身",
+          "summary": "元玉奴'病逝'的消息传遍洛阳，实则李曜用假死之计将她偷运出城。尔朱荣信以为真，厚葬'平城公主'。然而，孝庄帝得知元玉奴未死，暗中派人联络，愿助她复国。第一卷·中期以元玉奴'死而复生'的悬念收尾。",
+          "key_scenes": [
+            {
+              "scene_id": "s30_1",
+              "description": "李曜策划假死之计，买通太医"
+            },
+            {
+              "scene_id": "s30_2",
+              "description": "元玉奴'病逝'，尔朱荣厚葬"
+            },
+            {
+              "scene_id": "s30_3",
+              "description": "李曜深夜偷运元玉奴出城"
+            },
+            {
+              "scene_id": "s30_4",
+              "description": "孝庄帝暗使联络，愿助复国"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "元玉奴",
+            "尔朱荣（侧面）",
+            "孝庄帝暗使"
+          ],
+          "historical_events": [],
+          "emotional_arc": {
+            "start": "策划假死的紧张",
+            "peak": "偷运出城的惊险",
+            "end": "孝庄帝介入的意外与新的希望"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜策划假死",
+              "reveal": "他的智谋"
+            },
+            {
+              "pov": "observer",
+              "purpose": "元玉奴'死而复生'",
+              "reveal": "新的身份与使命"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 30 章 | **第一卷·中期完**",
+          "target_tension": 8,
+          "foreshadowing": {
+            "plant": [
+              "孝庄帝介入——为第一卷·后期复国线埋线",
+              "元玉奴新身份——为日后女主线埋线"
+            ],
+            "payoff": [
+              "第 28 章被逼婚——本章假死脱身解决"
+            ]
+          },
+          "opening_style": "action",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch31",
+          "chapter_number": 31,
+          "title": "晋阳暗涌",
+          "summary": "李曜护送元玉奴至晋阳秘密据点。尔朱荣得知'平城公主'死讯有疑，命尔朱兆彻查。晋阳城内暗流涌动，李曜的火器营被尔朱兆带兵包围，要求'查验军械'。李曜以'军机要物，非大将军命令不得擅动'为由拒绝，双方剑拔弩张。",
+          "key_scenes": [
+            {
+              "scene_id": "s31_1",
+              "description": "李曜与元玉奴抵达晋阳秘密据点"
+            },
+            {
+              "scene_id": "s31_2",
+              "description": "尔朱荣命尔朱兆彻查公主'死讯'"
+            },
+            {
+              "scene_id": "s31_3",
+              "description": "尔朱兆带兵包围火器营，要求查验"
+            },
+            {
+              "scene_id": "s31_4",
+              "description": "李曜强硬拒绝，双方对峙"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "元玉奴",
+            "尔朱兆",
+            "尔朱荣（侧面）"
+          ],
+          "historical_events": [],
+          "emotional_arc": {
+            "start": "转移据点的紧张",
+            "peak": "火器营被包围的对峙",
+            "end": "暂时击退尔朱兆的喘息"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜保护火器营",
+              "reveal": "与尔朱氏矛盾公开化"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 31 章",
+          "target_tension": 7,
+          "foreshadowing": {
+            "plant": [
+              "尔朱兆与李曜正面冲突——为日后决裂埋线"
+            ],
+            "payoff": [
+              "第 30 章假死脱身——本章后续追查"
+            ]
+          },
+          "opening_style": "atmosphere",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch32",
+          "chapter_number": 32,
+          "title": "宇文泰",
+          "summary": "宇文泰奉尔朱荣之命前来调解李曜与尔朱兆的冲突。这是李曜与这位未来北周奠基人的首次会面。宇文泰对李曜的'火器之术'表现出不寻常的兴趣，私下提出'愿以五百金购配方'。李曜婉拒，两人心中各有盘算。",
+          "key_scenes": [
+            {
+              "scene_id": "s32_1",
+              "description": "宇文泰登场，奉命调解"
+            },
+            {
+              "scene_id": "s32_2",
+              "description": "李曜与宇文泰首次会面"
+            },
+            {
+              "scene_id": "s32_3",
+              "description": "宇文泰私下提出购买火药配方"
+            },
+            {
+              "scene_id": "s32_4",
+              "description": "李曜婉拒，两人各怀心思"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "宇文泰（首次登场）",
+            "尔朱兆（侧面）"
+          ],
+          "historical_events": [
+            "宇文泰在尔朱荣麾下"
+          ],
+          "emotional_arc": {
+            "start": "宇文泰调解的平静",
+            "peak": "购买配方的试探",
+            "end": "两人各怀心思的暗流"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜与宇文泰交锋",
+              "reveal": "未来两大枭雄的初次碰撞"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 32 章 | **关陇：宇文泰登场，未来北周奠基人**",
+          "target_tension": 6,
+          "foreshadowing": {
+            "plant": [
+              "宇文泰对火药的兴趣——为日后争夺埋线"
+            ],
+            "payoff": [
+              "第 31 章火器营危机——本章第三方介入"
+            ]
+          },
+          "opening_style": "dialogue",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch33",
+          "chapter_number": 33,
+          "title": "南梁使节",
+          "summary": "南梁使节秘密抵达洛阳，向孝庄帝提出'联魏抗尔'之策。孝庄帝心动，却顾虑重重。使节辗转找到李曜，转交萧衍亲笔信，信中提及'若愿归顺，当以万户侯相待'。李曜烧毁书信，心中却掀起波澜。",
+          "key_scenes": [
+            {
+              "scene_id": "s33_1",
+              "description": "南梁使节秘密抵达洛阳"
+            },
+            {
+              "scene_id": "s33_2",
+              "description": "使节向孝庄帝献'联魏抗尔'之策"
+            },
+            {
+              "scene_id": "s33_3",
+              "description": "使节辗转找到李曜，转交萧衍亲笔信"
+            },
+            {
+              "scene_id": "s33_4",
+              "description": "李曜烧毁书信，内心波澜"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "孝庄帝",
+            "南梁使节",
+            "萧衍（侧面）"
+          ],
+          "historical_events": [
+            "南梁与北魏的外交接触"
+          ],
+          "emotional_arc": {
+            "start": "使节到来的神秘",
+            "peak": "收到萧衍招揽的震动",
+            "end": "烧毁书信的决绝与迷茫"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜面临抉择",
+              "reveal": "忠诚与生存的冲突"
+            },
+            {
+              "pov": "omniscient",
+              "purpose": "南梁的外交图谋",
+              "reveal": "南北对峙的复杂局势"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 33 章 | **建康：南梁萧衍觊觎中原**",
+          "target_tension": 6,
+          "foreshadowing": {
+            "plant": [
+              "萧衍的招揽——为日后南逃线埋线"
+            ],
+            "payoff": [
+              "第 17 章南梁线——本章正式接触"
+            ]
+          },
+          "opening_style": "mystery",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch34",
+          "chapter_number": 34,
+          "title": "火器危机",
+          "summary": "尔朱荣下令将火器营收归'中军直辖'，李曜的军司马职务被明升暗降为'车骑将军'，实则剥夺兵权。李曜表面顺从，暗中却将火药配方拆分成三份，分别交由三名心腹保管。高欢得知后，向尔朱荣进言'李曜非池中之物'。",
+          "key_scenes": [
+            {
+              "scene_id": "s34_1",
+              "description": "尔朱荣下令收归火器营"
+            },
+            {
+              "scene_id": "s34_2",
+              "description": "李曜明升暗降，失去兵权"
+            },
+            {
+              "scene_id": "s34_3",
+              "description": "李曜拆分配方，交由心腹保管"
+            },
+            {
+              "scene_id": "s34_4",
+              "description": "高欢进言'李曜非池中之物'"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "尔朱荣",
+            "高欢"
+          ],
+          "historical_events": [],
+          "emotional_arc": {
+            "start": "被夺兵权的愤怒",
+            "peak": "拆分配方的隐忍",
+            "end": "高欢进言后的危机感"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜失去兵权",
+              "reveal": "隐忍待发的准备"
+            },
+            {
+              "pov": "antagonist",
+              "purpose": "高欢的算计",
+              "reveal": "未来枭雄的洞察力"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 34 章",
+          "target_tension": 7,
+          "foreshadowing": {
+            "plant": [
+              "配方拆分——为日后复国埋线",
+              "高欢的进言——为尔朱荣杀心埋线"
+            ],
+            "payoff": [
+              "第 23 章功高震主——本章正式夺权"
+            ]
+          },
+          "opening_style": "introspection",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch35",
+          "chapter_number": 35,
+          "title": "元天穆之死",
+          "summary": "元天穆因与尔朱荣政见不合，被尔朱荣猜忌，以'通敌'罪名处死。李曜闻讯震惊，深知'兔死狗烹'的道理。元天穆临死前派人送来密信，告知'大将军已对你起杀心，宜早图之'。李曜决定逃离洛阳。",
+          "key_scenes": [
+            {
+              "scene_id": "s35_1",
+              "description": "元天穆被处死，朝野震动"
+            },
+            {
+              "scene_id": "s35_2",
+              "description": "李曜闻讯震惊"
+            },
+            {
+              "scene_id": "s35_3",
+              "description": "元天穆临死前送来密信"
+            },
+            {
+              "scene_id": "s35_4",
+              "description": "李曜决定逃离洛阳"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "元天穆（死）",
+            "尔朱荣"
+          ],
+          "historical_events": [
+            "元天穆被尔朱荣处死"
+          ],
+          "emotional_arc": {
+            "start": "元天穆之死的震惊",
+            "peak": "收到密信的警醒",
+            "end": "决定逃离的决绝"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜面临生死抉择",
+              "reveal": "兔死狗烹的恐惧"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 35 章",
+          "target_tension": 8,
+          "foreshadowing": {
+            "plant": [
+              "逃离洛阳——为独立发展埋线"
+            ],
+            "payoff": [
+              "第 23 章尔朱荣警告——本章杀心已现"
+            ]
+          },
+          "opening_style": "action",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch36",
+          "chapter_number": 36,
+          "title": "夜遁",
+          "summary": "李曜深夜携元玉奴逃离洛阳，火器营旧部十余人追随。尔朱荣得知大怒，派尔朱兆率骑兵追击。李曜在途中设下'地雷阵'，炸死追兵百余人，暂时甩掉追兵。但从此，李曜成为尔朱荣的'钦犯'。",
+          "key_scenes": [
+            {
+              "scene_id": "s36_1",
+              "description": "李曜深夜携元玉奴出逃"
+            },
+            {
+              "scene_id": "s36_2",
+              "description": "火器营旧部十余人追随"
+            },
+            {
+              "scene_id": "s36_3",
+              "description": "尔朱兆率骑兵追击"
+            },
+            {
+              "scene_id": "s36_4",
+              "description": "李曜设'地雷阵'，炸死追兵"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "元玉奴",
+            "尔朱兆"
+          ],
+          "historical_events": [],
+          "emotional_arc": {
+            "start": "逃离的紧张",
+            "peak": "地雷阵爆发的血腥",
+            "end": "暂时脱险的喘息与成为钦犯的压力"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜逃亡",
+              "reveal": "从军官到钦犯的身份转变"
+            },
+            {
+              "pov": "antagonist",
+              "purpose": "尔朱兆追击",
+              "reveal": "追杀的决心"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 36 章",
+          "target_tension": 9,
+          "foreshadowing": {
+            "plant": [
+              "钦犯身份——为日后通缉令埋线",
+              "旧部追随——为日后班底埋线"
+            ],
+            "payoff": [
+              "第 35 章决定逃离——本章正式出逃"
+            ]
+          },
+          "opening_style": "action",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch37",
+          "chapter_number": 37,
+          "title": "秀容旧地",
+          "summary": "李曜逃回秀容川猎户小屋，这是他的穿越之地。元玉奴第一次来到李曜的'家'，感慨万千。李曜在屋内发现原主留下的一本笔记，记载着'硝石采集地'和'神秘方士'的信息。这为火药来源提供了新线索。",
+          "key_scenes": [
+            {
+              "scene_id": "s37_1",
+              "description": "李曜逃回秀容川猎户小屋"
+            },
+            {
+              "scene_id": "s37_2",
+              "description": "元玉奴第一次来到李曜的'家'"
+            },
+            {
+              "scene_id": "s37_3",
+              "description": "发现原主笔记"
+            },
+            {
+              "scene_id": "s37_4",
+              "description": "笔记记载硝石采集地和神秘方士"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "元玉奴"
+          ],
+          "historical_events": [],
+          "emotional_arc": {
+            "start": "回到穿越之地的感慨",
+            "peak": "发现笔记的惊喜",
+            "end": "对新线索的期待"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜回到原点",
+              "reveal": "穿越宿命的轮回感"
+            },
+            {
+              "pov": "observer",
+              "purpose": "元玉奴了解李曜的过去",
+              "reveal": "两人情感深化"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 37 章",
+          "target_tension": 5,
+          "foreshadowing": {
+            "plant": [
+              "神秘方士——为火药来源真相埋线",
+              "硝石采集地——为日后资源基地埋线"
+            ],
+            "payoff": [
+              "第 1 章穿越小屋——本章重回故地"
+            ]
+          },
+          "opening_style": "atmosphere",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch38",
+          "chapter_number": 38,
+          "title": "六镇余烬",
+          "summary": "李曜在秀容川结识六镇流民首领破六韩拔陵余部。这些六镇旧部对尔朱荣怀有深仇大恨，愿意归附李曜。李曜以'为六镇报仇'为号召，迅速聚集千余人。他的势力初具规模。",
+          "key_scenes": [
+            {
+              "scene_id": "s38_1",
+              "description": "结识六镇流民首领"
+            },
+            {
+              "scene_id": "s38_2",
+              "description": "六镇旧部对尔朱荣的仇恨"
+            },
+            {
+              "scene_id": "s38_3",
+              "description": "李曜以'为六镇报仇'为号召"
+            },
+            {
+              "scene_id": "s38_4",
+              "description": "聚集千余人，势力初具"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "破六韩拔陵余部（六镇首领）",
+            "元玉奴"
+          ],
+          "historical_events": [
+            "六镇起义余部活动"
+          ],
+          "emotional_arc": {
+            "start": "结识新盟友的希望",
+            "peak": "六镇仇恨的震撼",
+            "end": "势力初具的成就感"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜建立势力",
+              "reveal": "从个人生存到集团领袖的转变"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 38 章 | **六镇：余烬复燃**",
+          "target_tension": 6,
+          "foreshadowing": {
+            "plant": [
+              "六镇势力——为日后独立王国埋线"
+            ],
+            "payoff": [
+              "第 15 章六镇流民——本章正式收编"
+            ]
+          },
+          "opening_style": "dialogue",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch39",
+          "chapter_number": 39,
+          "title": "尔朱暴怒",
+          "summary": "尔朱荣得知李曜在秀容川聚众，勃然大怒，下令'格杀勿论'，悬赏'得李曜首级者，赏万金，封千户侯'。天下震动，各方势力蠢蠢欲动。高欢私下求见尔朱荣，提出'不如招安，为己所用'。尔朱荣不允。",
+          "key_scenes": [
+            {
+              "scene_id": "s39_1",
+              "description": "尔朱荣得知李曜聚众，勃然大怒"
+            },
+            {
+              "scene_id": "s39_2",
+              "description": "下令格杀勿论，悬赏万金"
+            },
+            {
+              "scene_id": "s39_3",
+              "description": "天下震动，各方势力关注"
+            },
+            {
+              "scene_id": "s39_4",
+              "description": "高欢提出招安，尔朱荣不允"
+            }
+          ],
+          "involved_characters": [
+            "尔朱荣",
+            "高欢",
+            "李曜（侧面）"
+          ],
+          "historical_events": [],
+          "emotional_arc": {
+            "start": "尔朱荣的暴怒",
+            "peak": "悬赏令引发的震动",
+            "end": "高欢招安失败的遗憾"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "antagonist",
+              "purpose": "尔朱荣的追杀令",
+              "reveal": "枭雄的怒火"
+            },
+            {
+              "pov": "observer",
+              "purpose": "高欢的算计",
+              "reveal": "未来枭雄的远见"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 39 章",
+          "target_tension": 7,
+          "foreshadowing": {
+            "plant": [
+              "悬赏令——为日后追杀戏码埋线",
+              "高欢招安提议——为日后高欢招揽埋线"
+            ],
+            "payoff": [
+              "第 36 章夜遁——本章正式通缉"
+            ]
+          },
+          "opening_style": "action",
+          "paragraph_plan": []
+        },
+        {
+          "chapter_id": "v1_ch40",
+          "chapter_number": 40,
+          "title": "第一卷终",
+          "summary": "李曜在秀容川正式建立'火雷军'，自号'镇北将军'。元玉奴以'军师'身份辅佐，制定'深沟高垒、积蓄粮草、训练新军'的三步战略。第一卷以李曜站在秀容川山巅，眺望远方烽火的画面收尾，预示着更大的乱世即将到来。",
+          "key_scenes": [
+            {
+              "scene_id": "s40_1",
+              "description": "李曜正式建立'火雷军'"
+            },
+            {
+              "scene_id": "s40_2",
+              "description": "自号'镇北将军'"
+            },
+            {
+              "scene_id": "s40_3",
+              "description": "元玉奴制定三步战略"
+            },
+            {
+              "scene_id": "s40_4",
+              "description": "李曜站在山巅，眺望远方烽火"
+            }
+          ],
+          "involved_characters": [
+            "李曜",
+            "元玉奴",
+            "六镇首领"
+          ],
+          "historical_events": [],
+          "emotional_arc": {
+            "start": "建立军队的庄重",
+            "peak": "制定战略的冷静",
+            "end": "眺望远方的使命感与对未来的期许"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "pov_structure": [
+            {
+              "pov": "protagonist",
+              "purpose": "李曜建立势力",
+              "reveal": "第一卷的成长总结"
+            },
+            {
+              "pov": "observer",
+              "purpose": "元玉奴的辅佐",
+              "reveal": "两人关系的升华"
+            }
+          ],
+          "world_context": "卷一：猎户惊龙 | 第 40 章 | **第一卷完结**",
+          "target_tension": 7,
+          "foreshadowing": {
+            "plant": [
+              "火雷军建立——为第二卷争霸埋线",
+              "三步战略——为日后发展埋线"
+            ],
+            "payoff": [
+              "第 38 章六镇势力——本章正式建军"
+            ]
+          },
+          "opening_style": "atmosphere",
           "paragraph_plan": []
         }
       ]

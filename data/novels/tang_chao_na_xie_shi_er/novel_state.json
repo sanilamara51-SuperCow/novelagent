@@ -1,0 +1,20 @@
+{
+  "novel_id": "tang_chao_na_xie_shi_er",
+  "title": "唐朝那些事儿",
+  "status": "idle",
+  "phase": "world_building_complete",
+  "current_chapter": 1,
+  "completed_chapters": [],
+  "style_guide": {
+    "tone": "幽默但不轻浮，厚重但不沉闷",
+    "narrative_voice": "现代视角解读历史，类似当年明月风格",
+    "language": "白话文为主，适度嵌入现代用语（如 KPI、职场斗争）",
+    "character_portrayal": "立体人物：好人有缺点，坏人有逻辑",
+    "historical_accuracy": "重大事件遵循正史，人物性格可引用野史，文学演绎需标注为'民间传说'"
+  },
+  "source_integration": {
+    "primary": "旧唐书、新唐书、资治通鉴",
+    "secondary": "酉阳杂俎、太平广记、大唐新语、隋唐嘉话",
+    "fiction_reference": "隋唐演义、说唐全传（作为谈资对比，不可混淆正史）"
+  }
+}

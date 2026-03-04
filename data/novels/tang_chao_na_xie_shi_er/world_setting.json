@@ -1,0 +1,260 @@
+{
+  "era": "武德年间",
+  "year_range": [617, 626],
+  "political_system": "三省六部制初步建立：尚书省（执行）、中书省（起草诏令）、门下省（审议）。六部为吏、户、礼、兵、刑、工。地方实行州县二级制，设总管（后改都督）统辖诸州。军事上沿用府兵制，设十二卫大将军。科举制度开始推行，但门阀士族仍垄断高官。",
+  "social_structure": {
+    "top": "皇族（李氏）与关陇门阀（独孤氏、长孙氏、窦氏等）",
+    "middle": "山东士族（五姓七望：崔、卢、李、郑、王）、寒门地主",
+    "lower": "自耕农、均田农民、工商业者",
+    "bottom": "奴婢、部曲（依附民）"
+  },
+  "geography": {
+    "capital": "长安（大兴城）",
+    "secondary_capital": "洛阳（东都）",
+    "key_locations": [
+      "晋阳（太原，李渊起家之地）",
+      "玄武门（长安宫城北门，政变要地）",
+      "潼关（长安东大门）",
+      "河东（今山西，军事重镇）",
+      "江都（扬州，隋炀帝被杀地）",
+      "洛阳（王世充割据地）"
+    ]
+  },
+  "key_events": [
+    {
+      "year": 617,
+      "event": "晋阳起兵",
+      "description": "李渊任太原留守，在李世民、刘文静等劝说下，以讨伐隋炀帝为名起兵。李渊承诺若成功则立李世民为太子，但后来食言。",
+      "changeable": false,
+      "drama_level": "high",
+      "historical_source": "旧唐书·高祖本纪",
+      "fiction_version": "隋唐演义中增加了李元霸、宇文成都等虚构人物"
+    },
+    {
+      "year": 617,
+      "event": "攻克长安",
+      "description": "李渊率军攻占长安，立隋炀帝之孙杨侑为帝（隋恭帝），遥尊隋炀帝为太上皇。",
+      "changeable": false,
+      "drama_level": "medium",
+      "historical_source": "资治通鉴卷 184"
+    },
+    {
+      "year": 618,
+      "event": "唐朝建立",
+      "description": "隋炀帝在江都被杀，李渊逼恭帝禅让，建立唐朝，改元武德，定都长安。",
+      "changeable": false,
+      "drama_level": "high",
+      "historical_source": "旧唐书·高祖本纪"
+    },
+    {
+      "year": 618,
+      "event": "浅水原之战",
+      "description": "李世民大破薛举之子薛仁杲，平定陇西。",
+      "changeable": false,
+      "drama_level": "medium",
+      "historical_source": "资治通鉴卷 185"
+    },
+    {
+      "year": 620,
+      "event": "虎牢之战",
+      "description": "李世民在虎牢关大破窦建德，迫降王世充，一举平定中原。此战奠定了唐朝统一的基础。",
+      "changeable": false,
+      "drama_level": "high",
+      "historical_source": "资治通鉴卷 188"
+    },
+    {
+      "year": 626,
+      "event": "玄武门之变",
+      "description": "李世民率尉迟恭、长孙无忌等九人，在玄武门杀太子李建成、齐王李元吉，逼父退位。",
+      "changeable": false,
+      "drama_level": "high",
+      "historical_source": "资治通鉴卷 190",
+      "fiction_version": "隋唐演义中描写更加戏剧化，增加了李元霸参与等虚构情节"
+    }
+  ],
+  "factions": [
+    {
+      "name": "李渊集团",
+      "leader": "李渊",
+      "stance": "建立唐朝，统一天下",
+      "strength": "占据关中，兵强马壮",
+      "description": "核心成员包括李世民、李建成、裴寂、刘文静等。内部存在太子党与秦王党的分歧。"
+    },
+    {
+      "name": "太子党（李建成）",
+      "leader": "李建成",
+      "stance": "维护嫡长子继承制，打压李世民势力",
+      "strength": "有齐王李元吉支持，控制部分禁军",
+      "description": "核心成员有魏征（早期）、王硅、韦挺等。主张先平定山东再议储位。"
+    },
+    {
+      "name": "秦王党（李世民）",
+      "leader": "李世民",
+      "stance": "凭借军功争夺储位",
+      "strength": "掌握天策府十八学士，有尉迟恭、秦琼等猛将",
+      "description": "核心成员有房玄龄、杜如晦、长孙无忌、尉迟恭、秦琼等。主张以军功定储位。"
+    },
+    {
+      "name": "隋朝残余势力",
+      "leader": "王世充、窦建德等",
+      "stance": "割据一方，争夺天下",
+      "strength": "王世充据洛阳，窦建德据河北",
+      "description": "隋末群雄割据，王世充废隋皇泰主自立，国号郑；窦建德建夏国，据河北。"
+    }
+  ],
+  "notable_figures": [
+    {
+      "name": "李渊",
+      "identity": "唐高祖，唐朝开国皇帝",
+      "personality": "优柔寡断但善用人，重亲情但难断家务事",
+      "current_position": "唐高祖皇帝",
+      "historical_status": "positive",
+      "historical_record": "出身关陇贵族，袭封唐国公。隋末任太原留守，晋阳起兵建立唐朝。武德年间平定群雄，但未能处理好太子与秦王的矛盾。",
+      "fiction_portrayal": "隋唐演义中形象较为正面，但突出了其优柔寡断的一面",
+      "wild_history": "唐语林记载李渊好酒，曾与裴寂微服私访长安市井"
+    },
+    {
+      "name": "李世民",
+      "identity": "唐太宗，秦王（武德年间）",
+      "personality": "雄才大略、善用人才、果断狠辣",
+      "current_position": "秦王、天策上将、尚书令",
+      "historical_status": "positive",
+      "historical_record": "率军平定薛举、王世充、窦建德等割据势力，战功赫赫。武德九年发动玄武门之变，杀兄逼父，后继位为帝，开创贞观之治。",
+      "fiction_portrayal": "隋唐演义中是仁义之君，但弱化了杀兄逼父的残酷",
+      "wild_history": "次柳氏旧闻记载李世民善骑射，曾一箭射穿两人"
+    },
+    {
+      "name": "李建成",
+      "identity": "唐高祖长子，皇太子",
+      "personality": "稳重保守、有政治才能但军事不如李世民",
+      "current_position": "皇太子",
+      "historical_status": "controversial",
+      "historical_record": "嫡长子，被立为太子。多次率军平叛，但功绩不如李世民。与李世民争夺储位，玄武门之变中被杀。",
+      "wild_history": "资治通鉴记载李建成曾试图毒杀李世民，但未成功"
+    },
+    {
+      "name": "魏征",
+      "identity": "太子洗马（武德年间），后为谏臣",
+      "personality": "刚直不阿、敢于直谏",
+      "current_position": "太子洗马",
+      "historical_status": "positive",
+      "historical_record": "原为李建成幕僚，建议及早除掉李世民。玄武门之变后归顺李世民，成为著名谏臣，'以铜为镜可以正衣冠，以人为镜可以明得失'即出自李世民对魏征的评价。",
+      "fiction_portrayal": "隋唐演义中是足智多谋的军师形象",
+      "wild_history": "大唐新语记载魏征谏言时言辞激烈，李世民曾愤怒地说'早晚要杀了这个乡巴佬'"
+    },
+    {
+      "name": "房玄龄",
+      "identity": "秦王府记室参军，天策府十八学士之首",
+      "personality": "足智多谋、谨慎低调",
+      "current_position": "秦王府记室参军",
+      "historical_status": "positive",
+      "historical_record": "李世民首席谋士，参与玄武门之变策划。后任宰相十八年，与杜如晦并称'房谋杜断'。",
+      "wild_history": "隋唐嘉话记载房玄龄惧内，曾为夫人吃醋之事被唐太宗调侃"
+    },
+    {
+      "name": "杜如晦",
+      "identity": "秦王府兵曹参军，天策府十八学士",
+      "personality": "果断明快、善决断",
+      "current_position": "秦王府兵曹参军",
+      "historical_status": "positive",
+      "historical_record": "李世民重要谋士，参与玄武门之变。贞观初年任宰相，与房玄龄配合默契，史称'房谋杜断'。贞观四年卒。",
+      "wild_history": ""
+    },
+    {
+      "name": "尉迟恭",
+      "identity": "秦王府右一府统军，门神原型",
+      "personality": "勇猛忠诚、性格暴躁",
+      "current_position": "秦王府统军",
+      "historical_status": "positive",
+      "historical_record": "原为刘武周部将，降唐后追随李世民。玄武门之变中亲手射杀李元吉，救李世民于危难。后封鄂国公，与秦琼同为门神原型。",
+      "fiction_portrayal": "隋唐演义中'日抢三关，夜夺八寨'，武艺超群",
+      "wild_history": "酉阳杂俎记载尉迟恭善使铁鞭，曾单骑救主"
+    },
+    {
+      "name": "秦琼",
+      "identity": "秦王府左三统军，凌烟阁功臣",
+      "personality": "忠义两全、勇冠三军",
+      "current_position": "秦王府统军",
+      "historical_status": "positive",
+      "historical_record": "原为瓦岗军将领，后归唐。追随李世民南征北战，每战必先，封翼国公。玄武门之变后称病不出。凌烟阁二十四功臣之一，门神原型。",
+      "fiction_portrayal": "隋唐演义中'当锏卖马''贾家楼结义'，义气千秋",
+      "wild_history": "隋唐嘉话记载秦琼曾言：'我一生杀人无数，从未见鬼来索命，何惧之有？'"
+    },
+    {
+      "name": "裴寂",
+      "identity": "尚书右仆射，开国宰相",
+      "personality": "老成持重、善于钻营",
+      "current_position": "尚书右仆射",
+      "historical_status": "neutral",
+      "historical_record": "李渊心腹，晋阳起兵主要策划者。武德年间任宰相，支持李建成。李世民即位后被贬。",
+      "wild_history": "大唐新语记载裴寂与隋炀帝宫女有染，李渊以此要挟其参与起兵"
+    },
+    {
+      "name": "刘文静",
+      "identity": "开国功臣，后被杀",
+      "personality": "才华横溢但恃才傲物",
+      "current_position": "隋晋阳令（起兵前）",
+      "historical_status": "controversial",
+      "historical_record": "晋阳起兵主要策划者，与裴寂不和。武德二年被李渊所杀，原因不明，可能与卷入太子之争有关。",
+      "wild_history": "资治通鉴记载刘文静死前叹曰：'鸟尽弓藏，非虚言也'"
+    }
+  ],
+  "wild_history_anecdotes": [
+    {
+      "title": "红拂夜奔",
+      "source": "太平广记·虬髯客传",
+      "content": "杨素府歌妓红拂女，识李靖于微时，夜奔相就。后李靖建功立业，红拂女又识虬髯客于途中，三人结为兄妹。虬髯客见李世民有天子气，遂放弃逐鹿中原，远走海外。",
+      "related_characters": ["李靖", "红拂女", "虬髯客", "李世民"],
+      "type": "legend",
+      "drama_potential": "high"
+    },
+    {
+      "title": "秦琼当锏卖马",
+      "source": "隋唐演义",
+      "content": "秦琼落魄时，在长安街头当锏卖马，得单雄信相助。此段演绎凸显秦琼英雄落魄的悲情，也展现单雄信仗义疏财的豪侠形象。",
+      "related_characters": ["秦琼", "单雄信"],
+      "type": "fiction",
+      "drama_potential": "medium"
+    },
+    {
+      "title": "李元霸力大无穷",
+      "source": "隋唐演义/说唐",
+      "content": "李元霸被描述为天下第一好汉，使八百斤大锤，一人击败十八路反王。但此为虚构人物，正史中李玄霸（李渊第三子）早夭，无子嗣。",
+      "related_characters": ["李元霸", "李渊"],
+      "type": "fiction",
+      "drama_potential": "low"
+    },
+    {
+      "title": "尉迟恭日抢三关",
+      "source": "隋唐演义",
+      "content": "尉迟恭归唐前，曾一日连抢唐军三关，展现其勇猛。后李世民爱其才，收为己用。",
+      "related_characters": ["尉迟恭", "李世民"],
+      "type": "fiction",
+      "drama_potential": "medium"
+    },
+    {
+      "title": "裴寂与宫女私通",
+      "source": "大唐新语",
+      "content": "裴寂与隋炀帝晋阳宫宫女私通，李渊得知后以此要挟裴寂参与晋阳起兵。此事虽不见正史，但可看出晋阳起兵的复杂性。",
+      "related_characters": ["裴寂", "李渊"],
+      "type": "wild_history",
+      "drama_potential": "high"
+    },
+    {
+      "title": "李世民善射",
+      "source": "次柳氏旧闻",
+      "content": "李世民善骑射，曾一箭射穿两人。此虽夸张，但可见其武艺之高强。",
+      "related_characters": ["李世民"],
+      "type": "wild_history",
+      "drama_potential": "low"
+    },
+    {
+      "title": "房玄龄惧内",
+      "source": "隋唐嘉话",
+      "content": "房玄龄夫人卢氏善妒，唐太宗曾赐美人给房玄龄，卢氏宁喝'毒酒'也不允。太宗笑曰：'朕尚畏卢夫人，何况玄龄。'",
+      "related_characters": ["房玄龄", "李世民"],
+      "type": "wild_history",
+      "drama_potential": "medium"
+    }
+  ]
+}

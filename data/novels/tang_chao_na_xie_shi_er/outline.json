@@ -1,0 +1,262 @@
+{
+  "volumes": [
+    {
+      "volume_number": 1,
+      "title": "卷一：晋阳起兵",
+      "summary": "隋朝末年，天下大乱。李渊任太原留守，在李世民、刘文静等人劝说下，以讨伐隋炀帝为名起兵。本卷讲述晋阳起兵的策划过程、攻克长安的经过，以及李渊如何一步步走向帝王之路。",
+      "emotional_theme": "英雄崛起",
+      "chapter_range": [1, 25],
+      "chapters": [
+        {
+          "chapter_id": "ch_001",
+          "chapter_number": 1,
+          "title": "隋朝的最后一缕烟",
+          "summary": "大业十三年（617 年），隋炀帝远在江都，中原大乱。李渊任太原留守，负责剿抚河北义军。一日，李渊在晋阳宫与裴寂饮酒，谈及天下大势，裴寂暗示：'天命有归，公当顺天应人。'李渊默然不语，心中已有打算。",
+          "key_scenes": [
+            {
+              "scene_id": "s1",
+              "description": "晋阳宫夜宴，裴寂试探李渊",
+              "location": "晋阳宫",
+              "characters": ["李渊", "裴寂"],
+              "mood": "暗流涌动"
+            },
+            {
+              "scene_id": "s2",
+              "description": "李渊独坐书房，审视天下地图",
+              "location": "留守府书房",
+              "characters": ["李渊"],
+              "mood": "沉思"
+            }
+          ],
+          "involved_characters": ["李渊", "裴寂"],
+          "historical_events": ["隋末民变"],
+          "emotional_arc": {
+            "start": "压抑",
+            "peak": "试探",
+            "end": "决意",
+            "description": "从天下大乱的压抑，到裴寂试探的紧张，最后李渊下定决心"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "foreshadowing": ["裴寂提及'天命'，为后续李渊称帝埋下伏笔"]
+        },
+        {
+          "chapter_id": "ch_002",
+          "chapter_number": 2,
+          "title": "李世民的算盘",
+          "summary": "李世民年十八岁，素有匡扶天下之志。一日拜访好友刘文静，刘文静因与李密有亲，被囚禁于晋阳县狱。李世民前往探视，两人密谈天下大势。刘文静提出：'乘虚入关，号令天下，不过三年，帝业可成。'",
+          "key_scenes": [
+            {
+              "scene_id": "s1",
+              "description": "李世民探访县狱，与刘文静密谈",
+              "location": "晋阳县狱",
+              "characters": ["李世民", "刘文静"],
+              "mood": "密室谋划"
+            },
+            {
+              "scene_id": "s2",
+              "description": "李世民回府，回忆战场厮杀",
+              "location": "秦王府",
+              "characters": ["李世民"],
+              "mood": "雄心勃勃"
+            }
+          ],
+          "involved_characters": ["李世民", "刘文静"],
+          "historical_events": [],
+          "emotional_arc": {
+            "start": "苦闷",
+            "peak": "豁然开朗",
+            "end": "雄心勃勃",
+            "description": "从怀才不遇的苦闷，到刘文静提出策略的豁然开朗"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "foreshadowing": ["刘文静提出'乘虚入关'策略，为后续唐军西进长安埋下伏笔"]
+        },
+        {
+          "chapter_id": "ch_003",
+          "chapter_number": 3,
+          "title": "晋阳宫的秘密",
+          "summary": "刘文静出狱后，与李世民、裴寂结成密谋集团。三人商议：李渊性格谨慎，需要设计让他'被起兵'。裴寂提议：'晋阳宫有宫女多人，可让刘文静安排两名宫女侍奉唐公，若事发，唐公不得不反。'此计虽险，但有效。",
+          "key_scenes": [
+            {
+              "scene_id": "s1",
+              "description": "三人密室密谋",
+              "location": "裴寂府中",
+              "characters": ["李世民", "刘文静", "裴寂"],
+              "mood": "阴谋酝酿"
+            },
+            {
+              "scene_id": "s2",
+              "description": "李渊醉酒，宫女侍奉",
+              "location": "留守府",
+              "characters": ["李渊"],
+              "mood": "迷乱"
+            }
+          ],
+          "involved_characters": ["李世民", "刘文静", "裴寂", "李渊"],
+          "historical_events": [],
+          "emotional_arc": {
+            "start": "紧张",
+            "peak": "阴谋得逞",
+            "end": "等待爆发",
+            "description": "从密谋的紧张，到计策实施的忐忑"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "foreshadowing": ["宫女事件为后续李渊被迫起兵埋下伏笔"]
+        },
+        {
+          "chapter_id": "ch_004",
+          "chapter_number": 4,
+          "title": "图穷匕见",
+          "summary": "次日，裴寂将宫女侍奉之事告知李渊，李渊大惊失色：'汝害我矣！'裴寂趁机进言：'今主上无道，百姓困穷，公若举义兵，天下响应。'李渊沉思良久，终被说服。但李渊提出：需先试探李建成、李世民意见。",
+          "key_scenes": [
+            {
+              "scene_id": "s1",
+              "description": "裴寂摊牌，李渊震惊",
+              "location": "留守府",
+              "characters": ["李渊", "裴寂"],
+              "mood": "震惊与挣扎"
+            },
+            {
+              "scene_id": "s2",
+              "description": "李渊召集二子，试探心意",
+              "location": "留守府正厅",
+              "characters": ["李渊", "李建成", "李世民"],
+              "mood": "父子试探"
+            }
+          ],
+          "involved_characters": ["李渊", "裴寂", "李建成", "李世民"],
+          "historical_events": [],
+          "emotional_arc": {
+            "start": "震惊",
+            "peak": "挣扎",
+            "end": "默许",
+            "description": "李渊从震惊到挣扎，最终默许起兵"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "foreshadowing": ["李建成与李世民的不同反应，暗示未来储位之争"]
+        },
+        {
+          "chapter_id": "ch_005",
+          "chapter_number": 5,
+          "title": "最后的犹豫",
+          "summary": "李渊虽已默许，但仍有顾虑。一夜，李渊梦见自己坠马，血流满面。醒来后心神不宁，召术士占梦。术士言：'此大吉之兆，血者，得天下也。'李渊稍安，但仍需等待时机。此时，隋炀帝派使者来太原，欲治李渊剿匪不力之罪。",
+          "key_scenes": [
+            {
+              "scene_id": "s1",
+              "description": "李渊噩梦惊醒",
+              "location": "留守府寝殿",
+              "characters": ["李渊"],
+              "mood": "恐惧"
+            },
+            {
+              "scene_id": "s2",
+              "description": "术士占梦，言'得天下'",
+              "location": "留守府",
+              "characters": ["李渊", "术士"],
+              "mood": "神秘"
+            },
+            {
+              "scene_id": "s3",
+              "description": "隋炀帝使者抵达，局势紧张",
+              "location": "太原城外",
+              "characters": ["隋使"],
+              "mood": "危机临近"
+            }
+          ],
+          "involved_characters": ["李渊"],
+          "historical_events": [],
+          "emotional_arc": {
+            "start": "恐惧",
+            "peak": "希望",
+            "end": "危机",
+            "description": "从噩梦的恐惧，到占梦的希望，再到使者带来的危机"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "foreshadowing": ["隋炀帝使者的到来，成为起兵的导火索"]
+        },
+        {
+          "chapter_id": "ch_006",
+          "chapter_number": 6,
+          "title": "箭在弦上",
+          "summary": "隋炀帝使者欲治李渊之罪，被刘文静设计扣押。李世民劝父亲：'今箭在弦上，不得不发。'李渊终于下定决心，召集心腹将领，商议起兵大事。此时，李渊派往长安的密使回报：隋朝大势已去，各地义军蜂起。",
+          "key_scenes": [
+            {
+              "scene_id": "s1",
+              "description": "刘文静扣押隋使",
+              "location": "太原城外驿站",
+              "characters": ["刘文静", "隋使"],
+              "mood": "剑拔弩张"
+            },
+            {
+              "scene_id": "s2",
+              "description": "李渊召集心腹，正式宣布起兵",
+              "location": "留守府议事厅",
+              "characters": ["李渊", "李世民", "裴寂", "刘文静"],
+              "mood": "慷慨激昂"
+            }
+          ],
+          "involved_characters": ["李渊", "李世民", "刘文静", "裴寂"],
+          "historical_events": ["晋阳起兵前夕"],
+          "emotional_arc": {
+            "start": "紧张",
+            "peak": "决断",
+            "end": "振奋",
+            "description": "从扣押使者的紧张，到李渊决断的振奋"
+          },
+          "requires_debate": true,
+          "debate_config": {
+            "topic": "是否立即起兵",
+            "participants": ["李渊", "李世民", "裴寂"],
+            "stances": {
+              "李渊": "谨慎，担心时机未成熟",
+              "李世民": "主战，认为机不可失",
+              "裴寂": "支持起兵，但建议先做铺垫"
+            }
+          },
+          "foreshadowing": ["起兵决策的艰难，暗示李渊性格中的优柔寡断"]
+        },
+        {
+          "chapter_id": "ch_007",
+          "chapter_number": 7,
+          "title": "义旗高举",
+          "summary": "大业十三年（617 年）七月，李渊在太原正式起兵，自称'大将军'，建大将军府。李世民被任命为右领军都督，李建成被任命为左领军都督。李渊发布檄文，斥责隋炀帝无道，宣称要'匡扶社稷'。太原百姓闻风而动，纷纷响应。",
+          "key_scenes": [
+            {
+              "scene_id": "s1",
+              "description": "李渊祭天誓师",
+              "location": "太原城南",
+              "characters": ["李渊", "李建成", "李世民"],
+              "mood": "庄严"
+            },
+            {
+              "scene_id": "s2",
+              "description": "百姓围观，响应义军",
+              "location": "太原城街头",
+              "characters": ["百姓", "义军将士"],
+              "mood": "热烈"
+            }
+          ],
+          "involved_characters": ["李渊", "李建成", "李世民"],
+          "historical_events": ["晋阳起兵（617 年 7 月）"],
+          "emotional_arc": {
+            "start": "庄严",
+            "peak": "振奋",
+            "end": "充满希望",
+            "description": "从誓师的庄严，到百姓响应的振奋"
+          },
+          "requires_debate": false,
+          "debate_config": null,
+          "foreshadowing": ["李建成与李世民同领兵马，暗示未来军功之争"]
+        }
+      ]
+    }
+  ],
+  "total_chapters": 300,
+  "core_conflict": "李唐集团内部储位之争 vs 外部统一战争",
+  "protagonist_arc": "李世民从十八岁热血青年，到战功赫赫的秦王，最终通过玄武门之变登上皇位，开创贞观之治"
+}

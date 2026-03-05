@@ -11,7 +11,13 @@
       "Bash(chcp 6500:*)",
       "Bash(findstr:*)",
       "Bash(PYTHONPATH=. python:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(dir C:dockernovelnovelagentsrcskills:*)",
+      "Bash(head:*)",
+      "Bash(dir C:\\\\docker\\\\novel\\\\novelagent\\\\data\\\\knowledge_base\\\\external_zizhitongjian\\\\chapters\\\\185*:*)",
+      "Bash(type:*)",
+      "Bash(git pull:*)",
+      "Bash(sed:*)"
     ]
   }
 }

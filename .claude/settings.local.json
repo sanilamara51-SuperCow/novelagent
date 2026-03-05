@@ -17,7 +17,9 @@
       "Bash(dir C:\\\\docker\\\\novel\\\\novelagent\\\\data\\\\knowledge_base\\\\external_zizhitongjian\\\\chapters\\\\185*:*)",
       "Bash(type:*)",
       "Bash(git pull:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(grep:*)",
+      "Bash(data/novels/qiewei_v2/reviews/outline_vs_actual_ch01-24.md:*)"
     ]
   }
 }

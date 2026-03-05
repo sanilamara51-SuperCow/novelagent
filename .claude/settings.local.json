@@ -22,7 +22,9 @@
       "Bash(data/novels/qiewei_v2/reviews/outline_vs_actual_ch01-24.md:*)",
       "Bash(dir C:\\\\docker\\\\novel\\\\novelagent\\\\data\\\\novels\\\\qiewei_001\\\\chapters:*)",
       "Bash(dir C:\\\\docker\\\\novel\\\\novelagent\\\\data\\\\novels\\\\qiewei_001:*)",
-      "Bash(dir C:\\\\docker\\\\novel\\\\novelagent\\\\data\\\\knowledge_base:*)"
+      "Bash(dir C:\\\\docker\\\\novel\\\\novelagent\\\\data\\\\knowledge_base:*)",
+      "Bash(cat:*)",
+      "WebSearch"
     ]
   }
 }

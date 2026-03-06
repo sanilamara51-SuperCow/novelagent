@@ -42,6 +42,7 @@ from typing import Any
 from src.agents.base_agent import AgentInput
 from src.agents.consistency_checker import ConsistencyCheckerAgent
 from src.agents.emotion_risk_control import EmotionRiskControlAgent
+from src.agents.pacing_optimizer import PacingOptimizerAgent
 from src.agents.plot_designer import PlotDesignerAgent
 from src.agents.sandbox_debater import SandboxDebaterAgent
 from src.agents.style_polisher import StylePolisherAgent
@@ -109,6 +110,7 @@ class NovelSession:
         self._polisher: StylePolisherAgent | None = None
         self._risk: EmotionRiskControlAgent | None = None
         self._debater: SandboxDebaterAgent | None = None
+        self._pacing_optimizer: PacingOptimizerAgent | None = None
 
         # cached outlines
         self._outlines: list[ChapterOutline] = []
@@ -141,6 +143,7 @@ class NovelSession:
         self._polisher = StylePolisherAgent(agents, self._llm_client)
         self._risk = EmotionRiskControlAgent(agents, self._llm_client)
         self._debater = SandboxDebaterAgent(agents, self._llm_client)
+        self._pacing_optimizer = PacingOptimizerAgent(agents, self._llm_client)
 
         # Initialize RAG if vector DB exists
         rag_retriever = None
@@ -327,16 +330,19 @@ class NovelSession:
             error=result.error,
         )
 
-    # ── chapter writing (full pipeline) ────────────────────────────────
+    # ── chapter writing (full pipeline, mode-aware) ────────────────────────────────
 
     async def write_chapter(
         self,
         chapter_number: int,
         max_consistency_retries: int = 1,
     ) -> SkillResult:
-        """Write a chapter through the full quality pipeline.
+        """Write a chapter through the full pipeline (mode-aware).
 
-        Pipeline: draft → consistency check → polish → risk assess → memory update.
+        Pipeline varies by writing mode:
+        - quality: draft → consistency_check → polish → risk_assess → memory_update
+        - volume: draft → pacing_optimize → risk_assess → memory_update
+        - hybrid: draft → consistency_check → pacing_analyze → risk_assess → memory_update
 
         Args:
             chapter_number: 1-based chapter number.
@@ -344,50 +350,83 @@ class NovelSession:
         """
         self._ensure_init()
 
-        # 1. Draft
+        # Get current writing mode
+        writing_mode = self._config.get_writing_mode()
+        mode_config = self._config.get_writing_mode_config()
+
+        # 1. Draft (always)
         draft = await self.draft_chapter(chapter_number)
         if not draft.success:
             return draft
 
-        # 2. Consistency check (with retry loop)
-        for attempt in range(max_consistency_retries + 1):
-            check = await self.check_consistency(chapter_number)
-            if check.success and check.data.get("passed", True):
-                break
-            if attempt < max_consistency_retries:
-                logger.info("Consistency failed, rewriting (attempt %d)...", attempt + 1)
-                issues = check.data.get("issues", [])
-                rewrite = await self._rewrite_for_consistency(chapter_number, issues)
-                if not rewrite.success:
-                    return rewrite
+        # 2. Mode-specific processing
+        check = None
+        pacing = None
 
-        # 3. Polish
-        polish = await self.polish_chapter(chapter_number)
-        if not polish.success:
-            logger.warning("Polish failed, continuing with unpolished draft.")
+        if writing_mode == "volume":
+            # Volume mode: pacing optimization only (skip polish/consistency_retry)
+            if self._pacing_optimizer and not mode_config.get("skip_polish", True):
+                pacing = await self._pacing_optimizer.optimize(
+                    draft.content, chapter_number, writing_mode
+                )
+                if pacing.success and pacing.content:
+                    # Save optimized content
+                    chapter_id = f"ch_{chapter_number:03d}"
+                    self._storage.save_chapter(
+                        self._novel_id, chapter_id, pacing.content, pacing.metadata or {}
+                    )
+        else:
+            # Quality/Hybrid mode: consistency check
+            for attempt in range(max_consistency_retries + 1):
+                check = await self.check_consistency(chapter_number)
+                if check.success and check.data.get("passed", True):
+                    break
+                if attempt < max_consistency_retries:
+                    logger.info("Consistency failed, rewriting (attempt %d)...", attempt + 1)
+                    issues = check.data.get("issues", [])
+                    rewrite = await self._rewrite_for_consistency(chapter_number, issues)
+                    if not rewrite.success:
+                        return rewrite
 
-        # 4. Risk assessment
+            # Hybrid mode: also analyze pacing
+            if writing_mode == "hybrid" and self._pacing_optimizer:
+                pacing = await self._pacing_optimizer.analyze(
+                    draft.content, chapter_number, writing_mode
+                )
+
+        # 3. Polish (skip in volume mode)
+        polish = None
+        if not mode_config.get("skip_polish", False):
+            polish = await self.polish_chapter(chapter_number)
+            if not polish.success:
+                logger.warning("Polish failed, continuing with unpolished draft.")
+
+        # 4. Risk assessment (always)
         risk = await self.assess_risk(chapter_number)
         if risk.data.get("rewrite_required"):
             logger.warning("Risk control flagged rewrite: %s", risk.data.get("suggestions"))
-            # Return with warning rather than auto-rewriting — let Claude (Director) decide
-            pass
 
-        # 5. Memory update
+        # 5. Memory update (always)
         await self.update_memory(chapter_number)
 
         # Load final content
         content, meta = self._storage.load_chapter(self._novel_id, f"ch_{chapter_number:03d}")
 
+        # Build result data
+        result_data = {
+            "chapter_number": chapter_number,
+            "writing_mode": writing_mode,
+            "consistency": check.data if check else {},
+            "risk": risk.data if risk else {},
+            "word_count": len(content) if content else 0,
+        }
+        if pacing:
+            result_data["pacing"] = pacing.metadata
+
         return SkillResult(
             success=True,
             content=content or "",
-            data={
-                "chapter_number": chapter_number,
-                "consistency": check.data if check else {},
-                "risk": risk.data if risk else {},
-                "word_count": len(content) if content else 0,
-            },
+            data=result_data,
         )
 
     # ── individual pipeline stages ─────────────────────────────────────
@@ -676,6 +715,130 @@ class NovelSession:
             success=True,
             content=json.dumps(ctx, ensure_ascii=False, indent=2, default=str),
             data=ctx,
+        )
+
+    # ── batch writing (mode-aware) ────────────────────────────────────────────────
+
+    async def batch_write(
+        self,
+        start_chapter: int,
+        count: int,
+    ) -> SkillResult:
+        """批量写作 - 根据当前写作模式自动调整 pipeline.
+
+        Args:
+            start_chapter: Starting chapter number.
+            count: Number of chapters to write.
+
+        Returns:
+            SkillResult with batch writing summary.
+        """
+        self._ensure_init()
+
+        writing_mode = self._config.get_writing_mode()
+        logger.info("Batch write: mode=%s, start=%d, count=%d", writing_mode, start_chapter, count)
+
+        results = []
+        failed = []
+
+        for i in range(count):
+            chapter_num = start_chapter + i
+            logger.info("Writing chapter %d/%d: chapter %d", i + 1, count, chapter_num)
+
+            result = await self.write_chapter(chapter_num)
+            if result.success:
+                results.append({
+                    "chapter_number": chapter_num,
+                    "word_count": result.data.get("word_count", 0),
+                    "writing_mode": writing_mode,
+                })
+            else:
+                failed.append({
+                    "chapter_number": chapter_num,
+                    "error": result.error,
+                })
+
+        total_words = sum(r.get("word_count", 0) for r in results)
+
+        return SkillResult(
+            success=len(results) > 0,
+            content=f"Batch write done ({writing_mode}): {len(results)} chapters written, {len(failed)} failed. Total: {total_words} words",
+            data={
+                "writing_mode": writing_mode,
+                "written_count": len(results),
+                "failed_count": len(failed),
+                "total_words": total_words,
+                "results": results,
+                "failed_chapters": failed,
+            },
+        )
+
+    async def extend_story(
+        self,
+        add_chapters: int,
+        new_arc_theme: str = "",
+    ) -> SkillResult:
+        """无限续写 - 修改全局提示词引入新地图/新反派.
+
+        Args:
+            add_chapters: Number of chapters to add to outline.
+            new_arc_theme: 新篇章主题.
+
+        Returns:
+            SkillResult with new outline chapters.
+        """
+        self._ensure_init()
+        assert self._plot_designer is not None and self._storage is not None
+
+        if not self._outlines:
+            return SkillResult(success=False, error="No existing outline. Run design_outline first.")
+
+        last_chapter = self._outlines[-1]
+        next_chapter_num = last_chapter.chapter_number + 1
+
+        extension_prompt = f"""请为小说续写大纲，增加{add_chapters}章（第{next_chapter_num}章 - 第{next_chapter_num + add_chapters - 1}章）。
+
+## 前情提要
+- 最新章节：第{last_chapter.chapter_number}章 {last_chapter.title}
+- 最新章节摘要：{last_chapter.summary[:200]}
+
+## 新篇章要求
+"""
+        if new_arc_theme:
+            extension_prompt += f"- **新篇章主题**: {new_arc_theme}\n"
+
+        extension_prompt += """- 保持与已有大纲的连贯性
+- 每章必须有明确的冲突和爽点
+"""
+
+        result = await self._plot_designer.process(
+            AgentInput(
+                task_type="outline_extension",
+                context=extension_prompt,
+                instruction="请生成新的章节大纲，JSON 格式，与已有大纲格式保持一致。",
+            )
+        )
+
+        if not result.success:
+            return SkillResult(success=False, error=result.error)
+
+        try:
+            new_outline_data = json.loads(result.content)
+            self._storage.save_outline(self._novel_id, new_outline_data)
+            novel_dir = self._storage._novel_dir(self._novel_id)
+            self._outlines = load_outlines_for_novel(novel_dir)
+        except (json.JSONDecodeError, Exception) as e:
+            logger.warning("Failed to parse new outline data: %s", e)
+            return SkillResult(success=False, error=f"Failed to parse outline JSON: {e}")
+
+        return SkillResult(
+            success=True,
+            content=f"Outline extended: added {add_chapters} chapters. Total chapters now: {len(self._outlines)}",
+            data={
+                "added_chapters": add_chapters,
+                "total_chapters": len(self._outlines),
+                "new_chapter_range": f"{next_chapter_num}-{next_chapter_num + add_chapters - 1}",
+            },
         )
 
     # ── private helpers ────────────────────────────────────────────────

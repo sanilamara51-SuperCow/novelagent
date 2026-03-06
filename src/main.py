@@ -109,6 +109,7 @@ async def _run_write(
                 f"Range: {start}-{end}\n"
                 f"Planned chapters: {len(selected)}\n"
                 f"Preview: {preview}\n"
+                f"Writing mode: {config.project.writing_mode}\n"
                 f"Stage timeout: {(config.workflow.write_range_defaults or {}).get('stage_timeout_seconds', 60)}s"
             ),
             expand=False,
@@ -186,7 +187,7 @@ async def new(title: str, novel_id: str | None):
 
 
 @cli.command()
-@click.option("--novel-id", required=True)
+@click.option("--novel-id", required=True, help="Novel ID")
 @click.option("--range", "range_expr", default=None, help="e.g. 3-5 or 3-")
 @click.option("--auto/--no-auto", default=True)
 @click.option("--overwrite", is_flag=True, default=False)
@@ -207,7 +208,7 @@ async def write(
 
 
 @cli.command()
-@click.option("--novel-id", required=True)
+@click.option("--novel-id", required=True, help="Novel ID")
 @click.option("--range", "range_expr", default=None, help="Optional explicit override")
 @click.option("--auto/--no-auto", default=True)
 @click.option("--overwrite", is_flag=True, default=False)
@@ -260,6 +261,7 @@ async def status():
     table.add_column("Title", style="magenta")
     table.add_column("Phase", style="green")
     table.add_column("Chapters", style="yellow")
+    table.add_column("Mode", style="blue")
 
     for novel_id in novels:
         state = storage.load_state(novel_id) or {}
@@ -270,7 +272,8 @@ async def status():
                 _novel_dir(config.project.data_dir, novel_id) / "chapters"
             )
         )
-        table.add_row(novel_id, title, phase, str(chapter_count))
+        mode = str(state.get("writing_mode", config.project.writing_mode))
+        table.add_row(novel_id, title, phase, str(chapter_count), mode)
 
     if not novels:
         console.print(Panel("[yellow]No novel projects found.", expand=False))
@@ -317,6 +320,127 @@ async def export(novel_id: str, export_format: str):
     out_path.write_text("\n\n".join(chunks), encoding="utf-8")
 
     console.print(Panel(f"[bold green][OK] Exported: {out_path}", expand=False))
+
+
+@cli.command()
+@click.option("--novel-id", required=True, help="Novel ID")
+@click.option("--mode", type=click.Choice(["quality", "volume", "hybrid"]), default=None, help="Writing mode")
+@click.option("--show", is_flag=True, default=False, help="Show current mode")
+@coro
+async def mode(novel_id: str, mode: str | None, show: bool):
+    """Set or show writing mode for a novel project."""
+    config = load_config()
+    storage = NovelStorage(config.project.data_dir)
+    novel_dir = _novel_dir(config.project.data_dir, novel_id)
+
+    if not novel_dir.exists():
+        raise click.ClickException(f"Novel not found: {novel_id}")
+
+    state = storage.load_state(novel_id) or {}
+
+    if show:
+        current_mode = state.get("writing_mode", config.project.writing_mode)
+        console.print(Panel(
+            f"[bold cyan]Mode for {novel_id}[/]\n\n"
+            f"Current mode: [green]{current_mode}[/]\n\n"
+            f"[dim]Modes:[/]\n"
+            f"  • quality - 历史正剧 (2500-3500 字/章)\n"
+            f"  • volume  - 商业快消 (1500-2000 字/章)\n"
+            f"  • hybrid  - 平衡模式 (2000-2800 字/章)",
+            expand=False,
+        ))
+    elif mode:
+        state["writing_mode"] = mode
+        storage.save_state(novel_id, state)
+        console.print(Panel(f"[bold green]Mode set to '{mode}' for {novel_id}", expand=False))
+    else:
+        current_mode = state.get("writing_mode", config.project.writing_mode)
+        console.print(Panel(
+            f"Current mode: [green]{current_mode}[/]\n\n"
+            f"Use --mode <quality|volume|hybrid> to change",
+            expand=False,
+        ))
+
+
+@cli.command()
+@click.option("--novel-id", required=True, help="Novel ID")
+@click.option("--add-chapters", type=int, default=10, help="Number of chapters to add")
+@click.option("--arc-theme", default="", help="New arc theme (e.g., '进京篇', '边关征战篇')")
+@coro
+async def extend(novel_id: str, add_chapters: int, arc_theme: str):
+    """Extend story outline with new chapters/arc."""
+    from src.skills import session
+
+    console.print(Panel(
+        f"[bold cyan]无限续写：{novel_id}[/]\n"
+        f"Add chapters: {add_chapters}\n"
+        f"Arc theme: {arc_theme or 'Auto-generated'}",
+        expand=False,
+    ))
+
+    await session.init(novel_id)
+
+    result = await session.extend_story(add_chapters, new_arc_theme=arc_theme)
+
+    if result.success:
+        data = result.data
+        console.print(
+            Panel(
+                f"[bold green]Success![/]\n"
+                f"Added chapters: {data.get('added_chapters', 0)}\n"
+                f"Total chapters: {data.get('total_chapters', 0)}\n"
+                f"New chapter range: {data.get('new_chapter_range', '')}",
+                expand=False,
+            )
+        )
+    else:
+        console.print(Panel(f"[bold red]Failed: {result.error}", expand=False))
+
+
+@cli.command()
+@click.option("--novel-id", required=True, help="Novel ID")
+@click.option("--count", type=int, default=10, help="Number of chapters to write")
+@click.option("--start", type=int, default=1, help="Starting chapter number")
+@coro
+async def batch(novel_id: str, count: int, start: int):
+    """批量写作 - 根据当前写作模式自动调整 pipeline."""
+    from src.skills import session
+
+    writing_mode = load_config().project.writing_mode
+    console.print(Panel(
+        f"[bold cyan]批量写作：{novel_id}[/]\n"
+        f"Mode: {writing_mode}\n"
+        f"Count: {count}, Start: {start}",
+        expand=False,
+    ))
+
+    await session.init(novel_id)
+
+    result = await session.batch_write(start, count)
+
+    if result.success:
+        data = result.data
+        table = Table(title=f"Batch Write Summary ({writing_mode}): {data.get('written_count', 0)} chapters, {data.get('total_words', 0):,} words")
+        table.add_column("Chapter", style="cyan")
+        table.add_column("Words", style="green")
+
+        for r in data.get("results", []):
+            table.add_row(
+                str(r.get("chapter_number", "")),
+                f"{r.get('word_count', 0):,}",
+            )
+
+        console.print(table)
+
+        if data.get("failed_count", 0) > 0:
+            failed_table = Table(title="Failed Chapters")
+            failed_table.add_column("Chapter", style="cyan")
+            failed_table.add_column("Error", style="red")
+            for f in data.get("failed_chapters", []):
+                failed_table.add_row(str(f.get("chapter_number", "")), str(f.get("error", "")))
+            console.print(failed_table)
+    else:
+        console.print(Panel(f"[bold red]Failed: {result.error}", expand=False))
 
 
 def main():

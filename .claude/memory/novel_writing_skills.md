@@ -216,3 +216,125 @@ print(f"下一张：{status.data['next_chapter']}")
 chapter = await session.get_chapter(1)
 print(chapter.content[:500])  # 预览前 500 字
 ```
+
+---
+
+## 写作模式配置
+
+### 三种写作模式
+
+在 `config/settings.yaml` 中设置 `project.writing_mode`:
+
+```yaml
+project:
+  writing_mode: "quality"  # quality / volume / hybrid
+```
+
+| 维度 | quality (历史正剧) | volume (商业快消) | hybrid (平衡) |
+|------|-------------------|------------------|--------------|
+| **单章字数** | 2500-3500 字 | 1500-2000 字 | 2000-2800 字 |
+| **冲突密度** | 0.5 次/千字 | 1.0 次/千字 | 0.7 次/千字 |
+| **卡点模式** | soft 悬念 | hard 强悬念 | soft 悬念 |
+| **质量检查** | 完整 pipeline | 快速模式 | 标准 pipeline |
+| **适用场景** | 《窃魏》等历史考据 | 番茄流量文 | 兼顾质量与节奏 |
+
+### 模式行为
+
+**quality 模式** (历史正剧):
+- 保留完整质量 pipeline：`draft → consistency_check → style_polish → risk_assess`
+- 一致性检查失败会自动重试
+- 注重历史准确性（官职/年龄/事件）
+- 文笔打磨更精细
+
+**volume 模式** (商业快消):
+- 跳过 `style_polish` 环节
+- 一致性检查失败不自动重试
+- 节奏更快，爽点密度更高
+- 适合批量快速生产
+
+**hybrid 模式** (平衡):
+- 保留 `style_polish` 和一致性重试
+- 节奏密度介于两者之间
+- 兼顾文学性与可读性
+
+---
+
+### CLI 命令
+
+```bash
+# 设置写作模式
+python -m src.main mode --novel-id qiewei_001 --mode quality
+python -m src.main mode --novel-id qiewei_001 --mode volume
+python -m src.main mode --novel-id qiewei_001 --mode hybrid
+
+# 查看当前模式
+python -m src.main mode --novel-id qiewei_001 --show
+
+# 批量写作（自动根据模式调整 pipeline）
+python -m src.main batch --novel-id qiewei_001 --count 10 --start 1
+
+# 续写大纲
+python -m src.main extend --novel-id qiewei_001 --add-chapters 50 --arc-theme "进京篇"
+```
+
+---
+
+### 使用示例
+
+#### 开启新模式写作
+```python
+from src.skills import session
+
+await session.init('qiewei_001')
+
+# 单一 API，根据配置自动调整行为
+result = await session.write_chapter(5)
+
+print(f"字数：{result.data.get('word_count')}")
+print(f"质量评分：{result.data.get('quality_score')}")
+```
+
+#### 批量写作
+```python
+# 自动根据写作模式调整 pipeline
+result = await session.batch_write(start=1, count=10)
+
+print(f"完成章节数：{result.data.get('written_count')}")
+print(f"总字数：{result.data.get('total_words'):,}")
+```
+
+#### 续写大纲
+```python
+# 无限续写 - 修改全局提示词引入新地图/新反派
+result = await session.extend_story(
+    add_chapters=50,
+    new_arc_theme="进京篇"  # 可选：新篇章主题
+)
+
+print(f"新增章节：{result.data.get('added_chapters')}")
+print(f"总章节数：{result.data.get('total_chapters')}")
+print(f"新章节范围：{result.data.get('new_chapter_range')}")
+```
+
+---
+
+### 节奏优化器 Agent
+
+位置：`src/agents/pacing_optimizer.py`
+
+职责：
+- 检测并调整节奏密度（根据写作模式：quality/volume/hybrid）
+- 优化章节结尾悬念（根据 cliffhanger_mode: soft/hard）
+- 识别拖沓内容并提供删减建议
+
+配置：
+```yaml
+agents:
+  pacing_optimizer:
+    model: "deepseek-chat"
+    max_tokens: 4096
+```
+
+提示词：`config/prompts/pacing_optimizer.txt`
+
+---

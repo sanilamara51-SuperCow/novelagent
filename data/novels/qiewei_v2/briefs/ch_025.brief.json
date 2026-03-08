@@ -1,0 +1,166 @@
+{
+  "chapter_number": 25,
+  "chapter_title": "火器监扩建",
+  "target_word_count": 3000,
+  "target_tension": 7,
+
+  "narrative_rhythm": {
+    "position": "escalation",
+    "recent_tensions": [
+      {"chapter": 23, "tension": 7, "event": "元子攸登基，李曜被封将军"},
+      {"chapter": 24, "tension": 8, "event": "高欢密谈，暗中合作"}
+    ],
+    "reasoning": "第 24 章紧张度达到 8，第 25 章需要稍作回落至 7，但不宜过低。火器监扩建是展示实力的机会，尔朱兆的挑衅提供冲突点，炸石演示是高潮爽点"
+  },
+
+  "opening": {
+    "style": "continuation",
+    "hook": "承接第 24 章结尾，李曜回到洛阳火器监，开始着手扩建。清晨的阳光照在衙门上，但气氛并不平静",
+    "first_sentence_hint": "从李曜回到火器监开始，直接切入扩建事务，不要过多回忆昨晚密谈"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "600-900 字",
+      "type": "conflict",
+      "description": "尔朱兆带人前来'视察'，言语刁难，要求李曜交出火器配方",
+      "intensity": 6
+    },
+    {
+      "position_hint": "1500-2000 字",
+      "type": "face_slap",
+      "description": "李曜带众人到黄河岸边演示'十斤雷'，炸碎巨石，震慑全场",
+      "intensity": 8
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "尔朱兆仗着大将军威势，当众刁难，要求交出配方，质疑李曜能力",
+    "explosion": "李曜不卑不亢，现场演示火药威力，一声巨响炸碎岸边巨石",
+    "harvest": "尔朱兆脸色铁青却找不到借口，工匠们见识到威力更信服，李曜立威成功"
+  },
+
+  "cliffhanger": {
+    "type": "threat",
+    "content": "尔朱兆离开时，阴恻恻地说：'李监正，好自为之。有些东西太锋利，会伤到自己。'",
+    "next_chapter_hook": "尔朱兆的威胁是真心警告还是恶意恐吓？他会如何报复？"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "尔朱兆、工匠们",
+      "what": "火药的真实配方和最大威力",
+      "tension_effect": "读者知道李曜还有保留，期待日后真正展示"
+    },
+    {
+      "who_knows": "读者",
+      "who_doesnt": "尔朱兆",
+      "what": "李曜已与高欢暗中合作",
+      "tension_effect": "读者担心秘密泄露"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：火器监工场的忙碌景象、黄河岸边的巨石、爆炸的火光和烟尘",
+    "secondary": "听觉：工匠敲打声、引线燃烧的嘶嘶声、爆炸的巨响、众人的惊呼",
+    "tactile": "地面的震动、热浪扑面、碎石飞溅到脸上的刺痛"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜与尔朱兆的正面交锋——一个仗势欺人，一个不卑不亢",
+    "subtext": "尔朱兆表面视察实则示威，想逼李曜低头；李曜表面配合实则立威",
+    "bystander_reactions": "工匠们从观望到震撼，尔朱兆亲兵从傲慢到忌惮"
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜视角，应对尔朱兆挑衅，主导演示", "weight": "85%"},
+    {"pov": "observer", "purpose": "工匠和亲兵的旁观反应，强化爆炸震撼", "weight": "15%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "李曜保留真正配方——为日后被夺权时留一手埋线",
+      "工匠们被威力震撼——为日后忠心追随埋线",
+      "尔朱兆的威胁——为日后冲突升级埋线"
+    ],
+    "payoff": [
+      "第 24 章高欢玉佩——李曜有退路，不惧尔朱兆",
+      "第 23 章镇东将军身份——李曜有朝廷官职，尔朱兆不能随意动他"
+    ]
+  },
+
+  "world_context": "火器监刚刚成立，需要展示价值获得资源。尔朱氏内部对李曜的态度分化——尔朱荣欣赏，尔朱兆嫉妒",
+
+  "historical_notes": "北魏时期已有火药雏形，但主要用于炼丹。李曜的火药配方超越时代，可能改变历史走向",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "火器监总管，镇东将军，刚与高欢达成合作",
+      "voice": "沉稳、理性、不卑不亢",
+      "goal": "扩建火器监，展示价值，同时保护核心秘密"
+    },
+    "尔朱兆": {
+      "current_state": "骠骑将军，尔朱荣侄子，嫉妒李曜受重用",
+      "voice": "傲慢、暴躁、仗势欺人",
+      "goal": "打压李曜，夺取火器控制权"
+    },
+    "程平": {
+      "current_state": "李曜心腹，火器监护卫队长",
+      "voice": "忠诚、果断",
+      "goal": "保护李曜，协助管理火器监"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "李曜回到火器监，开始规划扩建",
+      "length": "0-600 字",
+      "focus": "火器监现状，扩建需求"
+    },
+    {
+      "scene": 2,
+      "purpose": "尔朱兆带人前来'视察'",
+      "length": "600-1200 字",
+      "focus": "尔朱兆刁难，要求交配方"
+    },
+    {
+      "scene": 3,
+      "purpose": "李曜提议现场演示",
+      "length": "1200-1800 字",
+      "focus": "带众人到黄河岸边，准备炸石"
+    },
+    {
+      "scene": 4,
+      "purpose": "炸石演示，震慑全场",
+      "length": "1800-2400 字",
+      "focus": "爆炸过程，众人反应"
+    },
+    {
+      "scene": 5,
+      "purpose": "尔朱兆威胁离开",
+      "length": "2400-3000 字",
+      "focus": "尔朱兆放狠话，李曜的应对"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复第 24 章密谈的具体内容",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇",
+    "爆炸场景不要写成科技说明文，聚焦人物反应"
+  ],
+
+  "continuation_notes": {
+    "from_previous_chapter": "第 24 章结尾李曜拿着高欢玉佩回洛阳",
+    "character_state": "李曜有皇帝封官和高欢合作两条底牌，不惧尔朱兆",
+    "unresolved_threads": [
+      "元玉奴身份秘密",
+      "尔朱荣眼线密报后的反应",
+      "李曜何时真正为高欢造火器"
+    ]
+  }
+}

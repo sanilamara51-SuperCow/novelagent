@@ -1,0 +1,178 @@
+{
+  "chapter_number": 29,
+  "chapter_title": "尔朱荣的试探",
+  "target_word_count": 4000,
+  "target_tension": 9,
+
+  "narrative_rhythm": {
+    "position": "climax",
+    "recent_tensions": [
+      {"chapter": 27, "tension": 9, "event": "河阴屠杀，李曜暗救七人"},
+      {"chapter": 28, "tension": 9, "event": "斛斯椿夜访，毒箭警告"}
+    ],
+    "reasoning": "第 28 章紧张度 9，第 29 章需维持 9。三日后大将军府之约，是生路还是死路？尔朱荣出剑试探，将紧张感推向顶点"
+  },
+
+  "opening": {
+    "style": "continuation",
+    "hook": "承接第 28 章结尾，三日后李曜赴约大将军府。毒箭警告言犹在耳，此行凶险未卜",
+    "first_sentence_hint": "从李曜出发开始，描写途中对三日后之约的忐忑"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "800-1200 字",
+      "type": "danger",
+      "description": "尔朱荣正在练剑，见李曜到来忽然出剑相向，剑尖直指咽喉",
+      "intensity": 9
+    },
+    {
+      "position_hint": "2000-2600 字",
+      "type": "reveal",
+      "description": "尔朱荣揭露有人告密李曜要背叛，李曜从容应对反将一军",
+      "intensity": 8
+    },
+    {
+      "position_hint": "3200-3600 字",
+      "type": "mystery",
+      "description": "尔朱荣收剑大笑表示信任，但李曜离开后听见他对元天穆说'留不得'",
+      "intensity": 8
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "李曜孤身赴约，尔朱荣出剑试探，生死一线",
+    "explosion": "李曜不闪不避，以'若不信问也无用'反将一军，尔朱荣收剑",
+    "harvest": "暂时过关，但尔朱荣杀心已起，李曜需尽快布局后路"
+  },
+
+  "cliffhanger": {
+    "type": "danger",
+    "content": "李曜离开后，尔朱荣对元天穆说：'此人胆子太大，留不得。但火器……还得用。'远处，李曜背影坚定，似已知晓命运。",
+    "next_chapter_hook": "尔朱荣杀心已起，李曜如何金蝉脱壳？"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "尔朱荣",
+      "who_doesnt": "李曜",
+      "what": "他已决定暂时留用李曜，但日后必除",
+      "tension_effect": "读者知道尔朱荣的真实想法，担心李曜安危"
+    },
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "尔朱荣",
+      "what": "他已从斛斯椿处得知清剿名单，早有准备",
+      "tension_effect": "读者期待李曜如何反制"
+    },
+    {
+      "who_knows": "元天穆",
+      "who_doesnt": "李曜",
+      "what": "他暗中传递消息给李曜，立场复杂",
+      "tension_effect": "读者好奇元天穆最终会站队哪方"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：剑光闪烁、尔朱荣的冷笑、李曜平静的眼神、血迹干涸的地面",
+    "secondary": "听觉：剑锋破空声、脚步声、尔朱荣的笑声、远处的更鼓声",
+    "tactile": "剑柄的冰凉、地面的震动、汗湿的后背、刀柄的温润"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "尔朱荣与李曜——剑拔弩张的生死对话",
+    "subtext": "尔朱荣试探李曜是否忠心，李曜试探尔朱荣是否已下定决心杀他",
+    "bystander_reactions": "元天穆的复杂眼神、侍卫的紧张姿态"
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜视角，赴约过程中的心理活动", "weight": "50%"},
+    {"pov": "observer", "purpose": "尔朱荣视角，练剑与试探", "weight": "30%"},
+    {"pov": "omniscient", "purpose": "大将军府内的权力博弈", "weight": "20%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "尔朱荣的'留不得'——为日后李曜逃亡埋线",
+      "火器还得用——李曜可借此拖延时间",
+      "元天穆的沉默——他可能在未来关键时刻站队"
+    ],
+    "payoff": [
+      "第 28 章毒箭警告——本章三日后之约兑现",
+      "第 28 章清剿名单——本章尔朱荣证实杀心"
+    ]
+  },
+
+  "world_context": "永安二年（529 年），尔朱荣掌控朝政后猜忌日重，对可用之才既用且疑",
+  "historical_notes": "历史上尔朱荣确实对部下猜忌甚重，最终因此被孝庄帝设计诛杀",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "已被尔朱荣列入清剿名单，此次赴约是生死考验",
+      "voice": "冷静从容，在生死边缘保持镇定",
+      "goal": "过关的同时试探尔朱荣的真实态度"
+    },
+    "尔朱荣": {
+      "current_state": "权倾朝野，但猜忌日重",
+      "voice": "威严中带着杀意，让人捉摸不透",
+      "goal": "试探李曜，决定是杀是留"
+    },
+    "元天穆": {
+      "current_state": "尔朱荣首席谋士，暗中帮助李曜",
+      "voice": "沉默寡言，但眼神复杂",
+      "goal": "在尔朱荣与李曜之间保持平衡"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "李曜出发赴约，途中回忆毒箭警告",
+      "length": "0-800 字",
+      "focus": "生死未卜的忐忑"
+    },
+    {
+      "scene": 2,
+      "purpose": "抵达大将军府，尔朱荣正在练剑",
+      "length": "800-1600 字",
+      "focus": "剑拔弩张的气氛"
+    },
+    {
+      "scene": 3,
+      "purpose": "尔朱荣出剑试探，直指李曜咽喉",
+      "length": "1600-2400 字",
+      "focus": "生死一线的对话"
+    },
+    {
+      "scene": 4,
+      "purpose": "李曜从容应对，尔朱荣收剑",
+      "length": "2400-3200 字",
+      "focus": "暂时过关"
+    },
+    {
+      "scene": 5,
+      "purpose": "李曜离开，尔朱荣与元天穆密谈",
+      "length": "3200-4000 字",
+      "focus": "杀心已起"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇",
+    "对话要符合身份，尔朱荣的威严、李曜的从容"
+  ],
+
+  "continuation_notes": {
+    "from_previous_chapter": "第 28 章结尾毒箭警告，三日后大将军要见",
+    "character_state": "李曜已从斛斯椿处得知清剿名单，早有准备",
+    "unresolved_threads": [
+      "元玉奴的下落",
+      "七名朝臣是否安全",
+      "斛斯椿的立场",
+      "李曜如何布局后路"
+    ]
+  }
+}

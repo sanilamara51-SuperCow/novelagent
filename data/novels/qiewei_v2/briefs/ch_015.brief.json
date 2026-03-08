@@ -1,0 +1,172 @@
+{
+  "chapter_number": 15,
+  "chapter_title": "军营立威",
+  "target_word_count": 3000,
+  "target_tension": 6,
+
+  "narrative_rhythm": {
+    "position": "rising_action",
+    "recent_tensions": [8, 7, 6],
+    "reasoning": "第 13 章紧张度 8（身份危机），第 14 章紧张度 7（尔朱兆找茬）。本章紧张度回落至 6，作为河阴之变前的蓄力章节，展示李曜的技术实力"
+  },
+
+  "opening": {
+    "style": "action",
+    "hook": "天刚亮，尔朱荣的亲兵就来敲响了李曜的营门：'大将军有请，即刻点卯！'",
+    "first_sentence_hint": "以紧急集合开场，直接进入军营场景，不要铺垫"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "800-1000 字",
+      "type": "conflict",
+      "description": "将领们聚集校场，见李曜文弱模样，出言挑衅",
+      "intensity": 5
+    },
+    {
+      "position_hint": "1800-2000 字",
+      "type": "face_slap",
+      "description": "李曜改良弩机，射程增加三十步，全场震惊",
+      "intensity": 8
+    },
+    {
+      "position_hint": "2800-3000 字",
+      "type": "power_up",
+      "description": "尔朱荣大笑封官：'军器监总管，你当之无愧'",
+      "intensity": 7
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "将领们当众嘲讽——'这细皮嫩肉的书生，能造什么兵器？'甚至有人要和李曜比武",
+    "explosion": "李曜不回应，只拿出改良弩机，三箭皆中靶心，射程远超众人认知",
+    "harvest": "尔朱荣当场封官，将领们哑口无言，但尔朱兆的杀意更浓"
+  },
+
+  "cliffhanger": {
+    "type": "danger",
+    "content": "深夜，一个士兵悄悄塞给李曜一张纸条：'河阴之事，小心。有人要杀你。'落款是一个模糊的'高'字。",
+    "next_chapter_hook": "第 16 章：河阴之变开始，李曜如何应对刺杀"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "将领们",
+      "what": "弩机改良原理——调整扳机杠杆比和弓臂曲率",
+      "tension_effect": "读者期待打脸时刻"
+    },
+    {
+      "who_knows": "高欢",
+      "who_doesnt": "李曜",
+      "what": "高欢已安排亲兵暗中保护，并提前警告",
+      "tension_effect": "读者知道有人保护李曜"
+    },
+    {
+      "who_knows": "读者",
+      "who_doesnt": "尔朱荣",
+      "what": "尔朱兆的杀意已定，尔朱荣尚不知情",
+      "tension_effect": "期待内部冲突爆发"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：校场沙土、弩机金属光泽、靶心红点、将领们的不屑表情",
+    "secondary": "听觉：弓弦嗡鸣、箭矢破空声、众人惊呼、尔朱荣大笑",
+    "tactile": "弩机冰凉金属、弓弦震动、手心渗汗"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜 vs 众将领——技术文官 vs 武力军阀的价值观冲突",
+    "subtext": "将领：'书生也配谈兵器？' 李曜：'那就用兵器说话。'",
+    "bystander_reactions": [
+      "尔朱荣冷眼旁观，评估李曜的价值",
+      "尔朱兆嘴角冷笑，等着看笑话",
+      "高欢站在角落，眼神深邃",
+      "士兵们窃窃私语，从质疑到震惊"
+    ]
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜的视角：冷静分析局势，设计打脸方案", "weight": "60%"},
+    {"pov": "observer", "purpose": "高欢的视角：评估这场较量的政治影响", "weight": "25%"},
+    {"pov": "villain", "purpose": "某个挑衅将领的视角：从轻视到震惊", "weight": "15%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "神秘纸条——高欢的保护信号",
+      "河阴之事——第 16 章河阴之变",
+      "尔朱兆的杀意——后续他会再次动手"
+    ],
+    "payoff": [
+      "第 14 章李曜获得精铁——本章用于制作弩机零件"
+    ]
+  },
+
+  "world_context": "北魏武泰元年（528 年）四月，尔朱荣即将发动河阴之变，清洗洛阳朝堂。军中将领多为六镇武人，轻视文弱书生。",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "刚获得资源，正在研发火器和改良兵器",
+      "voice": "冷静、理性，用行动证明",
+      "goal": "在校场立威，让将领们闭嘴"
+    },
+    "尔朱荣": {
+      "current_state": "观察李曜的真实价值，决定是否重用",
+      "voice": "威严、直接，欣赏有真本事的人",
+      "goal": "确认李曜是否值得投资"
+    },
+    "尔朱兆": {
+      "current_state": "嫉妒李曜受重视，想找机会除掉他",
+      "voice": "粗鲁、挑衅，崇尚武力",
+      "goal": "当众羞辱李曜，让他出丑"
+    },
+    "高欢": {
+      "current_state": "暗中保护李曜，同时观察局势",
+      "voice": "话少、精准，关键时刻点破",
+      "goal": "确保李曜活着完成河阴之变的布局"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "清晨紧急集合，李曜被带到校场",
+      "length": "0-500 字",
+      "focus": "紧张氛围，将领聚集"
+    },
+    {
+      "scene": 2,
+      "purpose": "将领们嘲讽李曜，要求比武",
+      "length": "500-1000 字",
+      "focus": "冲突建立，压抑氛围"
+    },
+    {
+      "scene": 3,
+      "purpose": "李曜拿出改良弩机，要求试射",
+      "length": "1000-1500 字",
+      "focus": "准备工作，细节描写"
+    },
+    {
+      "scene": 4,
+      "purpose": "三箭三中，射程震惊全场",
+      "length": "1500-2200 字",
+      "focus": "打脸高潮，众人反应"
+    },
+    {
+      "scene": 5,
+      "purpose": "尔朱荣封官，深夜收到神秘纸条",
+      "length": "2200-3000 字",
+      "focus": "收获 + 新悬念"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复前文信息",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇"
+  ]
+}

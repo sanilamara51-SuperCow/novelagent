@@ -1,0 +1,172 @@
+{
+  "chapter_number": 20,
+  "chapter_title": "血染河阴",
+  "target_word_count": 3500,
+  "target_tension": 10,
+
+  "narrative_rhythm": {
+    "position": "climax",
+    "recent_tensions": [8, 9, 10],
+    "reasoning": "第 18 章紧张度 8（河阴对峙），第 19 章紧张度 9（第一声雷）。本章是河阴之变的大屠杀高潮，紧张度达到 10，是前 20 章的最强音"
+  },
+
+  "opening": {
+    "style": "atmosphere",
+    "hook": "三日后，河阴堤坝。晨雾弥漫，两千余名洛阳官员聚集于此，议论纷纷。",
+    "first_sentence_hint": "以河阴堤坝的晨雾开场，营造压抑氛围"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "800-1000 字",
+      "type": "danger",
+      "description": "尔朱兆率军包围，官员们惊慌失措",
+      "intensity": 8
+    },
+    {
+      "position_hint": "1800-2000 字",
+      "type": "reveal",
+      "description": "尔朱荣宣布太后罪状，开始大屠杀",
+      "intensity": 9
+    },
+    {
+      "position_hint": "2800-3200 字",
+      "type": "horror",
+      "description": "血流成河，人间地狱",
+      "intensity": 10
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "官员们被包围，有人跪地求饶，有人怒骂尔朱荣，场面混乱",
+    "explosion": "尔朱荣挥刀，屠杀开始，血流成河",
+    "harvest": "屠杀结束，尔朱荣掌控朝政，但李曜内心受到巨大冲击"
+  },
+
+  "cliffhanger": {
+    "type": "horror",
+    "content": "尔朱荣看向李曜：'李先生，你的火药，该派上用场了——把尸体处理掉，一个不留。'李曜：'大将军，这……'尔朱荣眼神冰冷：'怎么？你也要抗命？'",
+    "next_chapter_hook": "第 21 章：李曜如何应对尔朱荣的命令，火器是否用于处理尸体"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "官员们",
+      "what": "火药可用于处理尸体，但李曜不愿",
+      "tension_effect": "读者担心李曜被卷入屠杀"
+    },
+    {
+      "who_knows": "高欢",
+      "who_doesnt": "尔朱荣",
+      "what": "高欢已开始布局脱离尔朱荣",
+      "tension_effect": "读者期待高欢的行动"
+    },
+    {
+      "who_knows": "读者",
+      "who_doesnt": "剧中人",
+      "what": "河阴之变的历史结局——两千门阀被屠，北魏格局彻底改变",
+      "tension_effect": "期待剧中人如何走向既定历史"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：晨雾、人头攒动、刀光剑影、鲜血染红河水、尸体堆积",
+    "secondary": "听觉：议论声、惊呼声、惨叫声、求饶声、黄河涛声",
+    "tactile": "晨雾湿冷、血腥味扑鼻、地面湿滑"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "尔朱荣 vs 官员们——屠杀者与被害者的绝望对峙",
+    "subtext": "尔朱荣：'凡与太后同谋者，皆斩。' 官员们：'大将军饶命！'",
+    "bystander_reactions": [
+      "李曜站在一旁，心中五味杂陈",
+      "高欢走到李曜身边：'这就是乱世'",
+      "尔朱兆兴奋挥舞大刀，享受杀戮"
+    ]
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜的视角：目睹屠杀，内心挣扎", "weight": "60%"},
+    {"pov": "observer", "purpose": "尔朱荣的视角：执行清洗，毫不手软", "weight": "25%"},
+    {"pov": "villain", "purpose": "官员们的视角：从疑惑到惊恐到绝望", "weight": "15%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "李曜的犹豫——后续他可能拒绝执行命令",
+      "高欢的话——后续他会保护李曜",
+      "尔朱荣的残暴——后续他会杀害更多无辜"
+    ],
+    "payoff": [
+      "第 19 章尔朱荣下令召集反对者——本章开始屠杀",
+      "第 18 章撕碎懿旨——本章彻底决裂"
+    ]
+  },
+
+  "world_context": "河阴之变：北魏武泰元年（528 年）四月，尔朱荣在河阴屠杀两千余名洛阳官员，彻底掌控北魏朝政，改变了北魏历史走向。",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "目睹大屠杀，内心受到巨大冲击",
+      "voice": "沉默、震惊，开始质疑自己创造的火器",
+      "goal": "生存，但开始思考如何避免更多杀戮"
+    },
+    "尔朱荣": {
+      "current_state": "执行清洗，毫不手软",
+      "voice": "冷酷、威严，视人命如草芥",
+      "goal": "彻底清除太后党羽，掌控朝政"
+    },
+    "高欢": {
+      "current_state": "旁观，内心已有打算",
+      "voice": "低沉、意味深长",
+      "goal": "评估局势，准备脱离尔朱荣"
+    },
+    "尔朱兆": {
+      "current_state": "享受杀戮，兴奋异常",
+      "voice": "粗鲁、狂热",
+      "goal": "多杀人，获取快感"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "官员们聚集河阴堤坝，议论纷纷",
+      "length": "0-600 字",
+      "focus": "氛围营造，压抑感"
+    },
+    {
+      "scene": 2,
+      "purpose": "尔朱兆率军包围，官员们惊慌",
+      "length": "600-1200 字",
+      "focus": "紧张感升级"
+    },
+    {
+      "scene": 3,
+      "purpose": "尔朱荣宣布太后罪状",
+      "length": "1200-2000 字",
+      "focus": "屠杀前的最后通牒"
+    },
+    {
+      "scene": 4,
+      "purpose": "屠杀开始，血流成河",
+      "length": "2000-2800 字",
+      "focus": "高潮场面，人间地狱"
+    },
+    {
+      "scene": 5,
+      "purpose": "尔朱荣命令李曜处理尸体",
+      "length": "2800-3500 字",
+      "focus": "悬念收尾，李曜的抉择"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复前文信息",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇"
+  ]
+}

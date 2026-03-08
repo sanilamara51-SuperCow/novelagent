@@ -1,0 +1,164 @@
+{
+  "chapter_number": 9,
+  "chapter_title": "初见尔朱荣",
+  "target_word_count": 3500,
+  "target_tension": 6,
+
+  "narrative_rhythm": {
+    "position": "transition",
+    "recent_tensions": [7, 8],
+    "reasoning": "第 6-8 章紧张度持续爬升（7→8），第 8 章结尾尔朱荣军队出现达到高点。第 9 章需要短暂回落，转为对话和试探，为后续冲突蓄力"
+  },
+
+  "opening": {
+    "style": "continuation",
+    "hook": "承接第 8 章结尾，费穆说'大将军等你多时了'，李曜和元玉奴被带入晋阳大将军府",
+    "first_sentence_hint": "直接从大将军府的外部描写开始，快速进入内部场景"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "600-1000 字",
+      "type": "reveal",
+      "description": "李曜第一次见到尔朱荣——乱世枭雄的气场压迫",
+      "intensity": 7
+    },
+    {
+      "position_hint": "1500-2000 字",
+      "type": "face_slap",
+      "description": "尔朱荣试探李曜，李曜不卑不亢应对，没有被威压吓倒",
+      "intensity": 7
+    },
+    {
+      "position_hint": "2800-3200 字",
+      "type": "power_up",
+      "description": "尔朱荣要给李曜官职，李曜却提出自己的条件",
+      "intensity": 8
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "大将军府森严，尔朱荣威压十足，帐中刀斧手环伺",
+    "explosion": "李曜不卑不亢，甚至反将一军，提出自己的条件",
+    "harvest": "尔朱荣欣赏李曜，给予优待，但暗中埋下猜忌"
+  },
+
+  "cliffhanger": {
+    "type": "mirror",
+    "content": "元玉奴在门外等他，脸色苍白：'你不该跟他谈条件。尔朱荣不是能讨价还价的人。'李曜回头看了一眼大将军府的 direction，笑了：'所以他才需要我。'",
+    "next_chapter_hook": "第 10 章：尔朱荣的猜忌，新的杀机"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "尔朱荣、元玉奴",
+      "what": "历史上尔朱荣会被孝庄帝杀死，河阴之变会屠杀两千人",
+      "tension_effect": "读者知道李曜在刀尖上跳舞，替他捏汗"
+    },
+    {
+      "who_knows": "尔朱荣",
+      "who_doesnt": "李曜",
+      "what": "元玉奴携带密诏的真正内容",
+      "tension_effect": "读者好奇尔朱荣是否知道密诏"
+    },
+    {
+      "who_knows": "元玉奴",
+      "who_doesnt": "李曜",
+      "what": "她与尔朱荣的过去（母亲与尔朱荣的恩怨）",
+      "tension_effect": "读者好奇元玉奴是否完全信任尔朱荣"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：大将军府的森严、烛火在铠甲上跳动、尔朱荣鹰隼般的眼睛",
+    "secondary": "听觉：帐外风声、铠甲碰撞声、尔朱荣低沉的声音",
+    "tactile": "酒樽的冰凉、案几的木纹、刀柄的粗糙"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜 vs 尔朱荣——互相试探，各怀心思",
+    "subtext": "尔朱荣表面礼遇，实际在评估李曜的价值和威胁；李曜表面恭顺，实际在争取主动权",
+    "bystander_reactions": ["费穆在一旁观察，眼神复杂", "帐中武将们从轻视到警惕"]
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜观察尔朱荣，分析局势，应对试探", "weight": "70%"},
+    {"pov": "antagonist", "purpose": "尔朱荣评估李曜的价值和威胁，内心盘算", "weight": "30%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "尔朱荣提到'河阴'——为后续河阴之变埋下伏笔",
+      "尔朱荣的猜忌——后续会有刺杀或试探",
+      "元玉奴的担忧——暗示她与尔朱荣之间有未解的过往"
+    ],
+    "payoff": [
+      "第 8 章元玉奴揭露密诏",
+      "第 3 章元玉奴说尔朱荣曾受母亲恩惠"
+    ]
+  },
+
+  "world_context": "晋阳：尔朱荣的大将军府，北魏末年最有权势的军阀巢穴",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "刚抵达晋阳，第一次见尔朱荣，知道历史走向但必须隐藏",
+      "voice": "冷静、理性，不卑不亢，军械工程师思维",
+      "goal": "获得尔朱荣信任，争取官方身份，保护自己和元玉奴"
+    },
+    "尔朱荣": {
+      "current_state": "手握重兵，图谋洛阳，对李曜的火药感兴趣",
+      "voice": "威严、直接、枭雄气质，说话简短有力",
+      "goal": "评估李曜的价值，决定是重用还是控制"
+    },
+    "元玉奴": {
+      "current_state": "回到尔朱荣势力范围，心情复杂",
+      "voice": "表面平静，实际担忧",
+      "goal": "确保尔朱荣履行承诺，保护李曜"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "进入大将军府，感受森严气氛",
+      "length": "0-600 字",
+      "focus": "环境描写，营造压迫感"
+    },
+    {
+      "scene": 2,
+      "purpose": "李曜第一次见到尔朱荣，互相打量",
+      "length": "600-1200 字",
+      "focus": "尔朱荣的外貌和气场，李曜的心理活动"
+    },
+    {
+      "scene": 3,
+      "purpose": "尔朱荣试探李曜的火药，李曜应对",
+      "length": "1200-2000 字",
+      "focus": "对话张力，互相试探"
+    },
+    {
+      "scene": 4,
+      "purpose": "尔朱荣要给官职，李曜提出条件",
+      "length": "2000-2800 字",
+      "focus": "爽点：李曜不卑不亢，反将一军"
+    },
+    {
+      "scene": 5,
+      "purpose": "离开大将军府，元玉奴警告",
+      "length": "2800-3500 字",
+      "focus": "卡点：新的危机预兆"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）超过 3 次",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复前文信息",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇",
+    "不要使用'仿佛'、'似乎'等模糊词超过 5 次",
+    "尔朱荣的对话要简短有力，不要啰嗦"
+  ]
+}

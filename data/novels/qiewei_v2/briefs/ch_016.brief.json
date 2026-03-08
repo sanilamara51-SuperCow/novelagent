@@ -1,0 +1,172 @@
+{
+  "chapter_number": 16,
+  "chapter_title": "河阴前夜",
+  "target_word_count": 3000,
+  "target_tension": 8,
+
+  "narrative_rhythm": {
+    "position": "turning_point",
+    "recent_tensions": [7, 6, 8],
+    "reasoning": "第 14 章紧张度 7（尔朱兆找茬），第 15 章紧张度 6（军营立威）。本章是河阴之变的前奏，紧张度爬升至 8，标志着历史大事件的开启"
+  },
+
+  "opening": {
+    "style": "atmosphere",
+    "hook": "暮色四合，大将军府内灯火通明。李曜站在院中，听着屋内传来的低沉谈话声。",
+    "first_sentence_hint": "以黄昏氛围开场，营造山雨欲来的压迫感"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "800-1000 字",
+      "type": "reveal",
+      "description": "尔朱荣宣布三日后南下河阴，清君侧",
+      "intensity": 7
+    },
+    {
+      "position_hint": "1800-2000 字",
+      "type": "conflict",
+      "description": "高欢私下试探李曜站队",
+      "intensity": 6
+    },
+    {
+      "position_hint": "2800-3000 字",
+      "type": "mystery",
+      "description": "高欢话中有话，暗示尔朱荣可能失败",
+      "intensity": 7
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "心腹会议，李曜作为外人列席，感受到尔朱荣的杀意和在场众人的紧张",
+    "explosion": "尔朱荣宣布清君侧，历史事件正式开启；高欢私下找李曜，暗示站队",
+    "harvest": "李曜回答'站在胜利者一边'，高欢意味深长地笑了"
+  },
+
+  "cliffhanger": {
+    "type": "mystery",
+    "content": "高欢压低声音：'李先生，若有一日，尔朱荣败了，你会记得今日的选择吗？'不等李曜回答，他已转身离去，消失在夜色中。",
+    "next_chapter_hook": "第 17 章：南下河阴，李曜随军同行，元玉奴女扮男装混入队伍"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "尔朱荣",
+      "who_doesnt": "李曜、部分将领",
+      "what": "完整的清君侧计划，包括清洗规模和目标",
+      "tension_effect": "读者感受到历史洪流的不可阻挡"
+    },
+    {
+      "who_knows": "高欢",
+      "who_doesnt": "尔朱荣、李曜",
+      "what": "高欢已在暗中布局，准备投靠李曜",
+      "tension_effect": "读者知道高欢在投资未来"
+    },
+    {
+      "who_knows": "读者",
+      "who_doesnt": "尔朱荣",
+      "what": "历史结局——尔朱荣将在河阴之变后不久被杀",
+      "tension_effect": "期待李曜如何利用先知"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：烛光摇曳、尔朱荣的冷峻侧脸、地图上的红色标记、众人的紧张表情",
+    "secondary": "听觉：压低的话语声、烛火爆裂声、窗外风声、脚步声",
+    "tactile": "手心冷汗、夜风微凉、案几的冰冷质感"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜 vs 高欢——站队试探，话中有话",
+    "subtext": "高欢：'你会站在哪边？' 李曜：'胜利者那边。'（潜台词：谁赢帮谁，但我也知道你会赢）",
+    "bystander_reactions": [
+      "尔朱荣扫视众人，眼神锐利如刀",
+      "尔朱兆眼中闪过兴奋——杀戮的兴奋",
+      "其他将领低头不语，不敢对视"
+    ]
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜的视角：感受会议氛围，分析局势", "weight": "60%"},
+    {"pov": "observer", "purpose": "高欢的视角：评估李曜的价值和立场", "weight": "25%"},
+    {"pov": "villain", "purpose": "尔朱荣的视角：决心清洗朝堂，建立新秩序", "weight": "15%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "高欢的'若尔朱荣败了'——暗示他知道尔朱荣的结局",
+      "河阴之地——后续大屠杀的发生地",
+      "李曜的'胜利者'回答——为后续投靠高欢铺垫"
+    ],
+    "payoff": [
+      "第 15 章神秘纸条——本章高欢正式接触",
+      "第 14 章尔朱兆的杀意——本章他支持清洗"
+    ]
+  },
+
+  "world_context": "北魏武泰元年（528 年）四月，尔朱荣决定发动河阴之变，率军南下洛阳，在河阴县屠杀朝臣两千余人，彻底掌控北魏朝政。",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "刚被封为军器监总管，列席心腹会议",
+      "voice": "冷静、理性，说话留有余地",
+      "goal": "在乱世中生存，同时保护元玉奴"
+    },
+    "尔朱荣": {
+      "current_state": "决心发动政变，清洗洛阳朝堂",
+      "voice": "威严、果断，不容置疑",
+      "goal": "清君侧，立傀儡皇帝，掌控朝政"
+    },
+    "高欢": {
+      "current_state": "尔朱荣心腹，但已开始布局未来",
+      "voice": "话少、精准，每句都有潜台词",
+      "goal": "在尔朱荣倒台前找到新的靠山（李曜）"
+    },
+    "尔朱兆": {
+      "current_state": "支持清洗，渴望杀戮",
+      "voice": "粗鲁、直接，崇尚暴力",
+      "goal": "借机铲除异己，获取权力"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "黄昏，李曜被召至大将军府",
+      "length": "0-500 字",
+      "focus": "氛围营造，紧张感铺垫"
+    },
+    {
+      "scene": 2,
+      "purpose": "心腹会议开始，尔朱荣宣布南下河阴",
+      "length": "500-1200 字",
+      "focus": "历史事件开启，众人反应"
+    },
+    {
+      "scene": 3,
+      "purpose": "会议结束，高欢私下找李曜",
+      "length": "1200-2000 字",
+      "focus": "站队试探，话中有话"
+    },
+    {
+      "scene": 4,
+      "purpose": "李曜回答，高欢意味深长地笑",
+      "length": "2000-2800 字",
+      "focus": "双关语，暗示未来"
+    },
+    {
+      "scene": 5,
+      "purpose": "深夜，李曜反思局势",
+      "length": "2800-3200 字",
+      "focus": "悬念收尾，为南下铺垫"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复前文信息",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇"
+  ]
+}

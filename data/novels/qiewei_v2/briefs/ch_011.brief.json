@@ -1,0 +1,163 @@
+{
+  "chapter_number": 11,
+  "chapter_title": "监工与工匠",
+  "target_word_count": 3500,
+  "target_tension": 6,
+
+  "narrative_rhythm": {
+    "position": "rising_action",
+    "recent_tensions": [6, 5],
+    "reasoning": "第 9 章紧张度 6（面见尔朱荣），第 10 章回落至 5（过渡章）。第 11 章需要爬升——高欢登场后，李曜如何在监视下开始工作，同时应对尔朱荣的期限压力"
+  },
+
+  "opening": {
+    "style": "continuation",
+    "hook": "承接第 10 章结尾，高欢消失在夜色中，李曜回屋后难以入眠，思考如何应付这个'副监'",
+    "first_sentence_hint": "从高欢离开后的沉默开始，李曜回到屋内，元玉奴已被惊醒"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "600-1000 字",
+      "type": "problem_solving",
+      "description": "李曜分析高欢的来意——不是简单的监工，而是尔朱荣的试探",
+      "intensity": 5
+    },
+    {
+      "position_hint": "1200-1800 字",
+      "type": "reveal",
+      "description": "次日清晨，费穆带工匠和材料到来，其中包括几名'特殊'工匠——尔朱荣安插的眼线",
+      "intensity": 6
+    },
+    {
+      "position_hint": "2500-3000 字",
+      "type": "face_slap",
+      "description": "李曜将计就计，故意在眼线面前演示'错误'的配方，真配方只有自己和元玉奴知道",
+      "intensity": 7
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "高欢是尔朱荣派来的监工，工匠中也有眼线，李曜一举一动都被监视",
+    "explosion": "李曜将计就计，准备假配方迷惑眼线，真配方只在夜间与元玉奴配制",
+    "harvest": "暂时骗过尔朱荣，争取到暗中布局的时间"
+  },
+
+  "cliffhanger": {
+    "type": "countdown",
+    "content": "傍晚，尔朱荣派人传话：'大将军问，十日之内，能否先交付三件样品？'李曜看着来人，笑了：'能。但大将军得先答应我一个条件。'",
+    "next_chapter_hook": "第 12 章：李曜提什么条件？尔朱荣如何回应？"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "高欢、尔朱荣",
+      "what": "火药真正的配方和比例，以及第五种火器的设计",
+      "tension_effect": "读者期待李曜如何用假配方瞒天过海"
+    },
+    {
+      "who_knows": "高欢",
+      "who_doesnt": "李曜",
+      "what": "高欢的真实目的——他是否也在算计尔朱荣？",
+      "tension_effect": "读者好奇高欢是否会成为李曜的盟友"
+    },
+    {
+      "who_knows": "读者",
+      "who_doesnt": "任何人",
+      "what": "历史上高欢最终会取代尔朱氏，建立北齐",
+      "tension_effect": "读者期待两人关系的走向"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：工坊内的炉火、铁砧、各种工具，工匠们忙碌的身影",
+    "secondary": "听觉：打铁声、风箱声、高欢若有若无的问话",
+    "tactile": "铁器的冰凉、火药的粗糙质感、纸张的摩擦声"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜 vs 高欢——互相试探，各怀心思",
+    "subtext": "高欢表面协助，实际在评估李曜的价值和威胁；李曜表面配合，实际在布局瞒天过海",
+    "bystander_reactions": ["工匠们对李曜的指令半信半疑", "眼线暗中观察并记录"]
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜分析局势，布局假配方", "weight": "75%"},
+    {"pov": "observer", "purpose": "高欢的视角，观察李曜的一举一动", "weight": "25%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "李曜的假配方——后续会引发'意外'事故，嫁祸给眼线",
+      "高欢的试探——他在评估是否值得与李曜合作",
+      "第五种火器的秘密——为后续剧情埋下伏笔"
+    ],
+    "payoff": [
+      "第 10 章高欢登场",
+      "第 9 章尔朱荣的一个月期限"
+    ]
+  },
+
+  "world_context": "晋阳大将军府火器监工坊——李曜的主战场，也是他的牢笼",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "被高欢监视，工匠中有眼线，需要在眼皮底下研制火器",
+      "voice": "冷静、理性，善于布局，开始展现谋略",
+      "goal": "用假配方迷惑眼线，真配方暗中配制，同时布局后路"
+    },
+    "高欢": {
+      "current_state": "尔朱荣派来的副监，表面协助李曜，实际另有目的",
+      "voice": "温和、谦逊，但每句话都有弦外之音",
+      "goal": "评估李曜的价值，判断是否值得拉拢"
+    },
+    "费穆": {
+      "current_state": "大将军府长史，负责协调火器监的物资和人员",
+      "voice": "公事公办，但对李曜有一丝同情",
+      "goal": "完成尔朱荣交代的任务，不得罪任何一方"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "高欢离开后，李曜与元玉奴分析局势",
+      "length": "0-600 字",
+      "focus": "高欢的来意，尔朱荣的真正目的"
+    },
+    {
+      "scene": 2,
+      "purpose": "次日清晨，费穆带工匠和材料到来",
+      "length": "600-1400 字",
+      "focus": "工匠中的眼线，李曜如何识别"
+    },
+    {
+      "scene": 3,
+      "purpose": "李曜开始'演示'火药配制",
+      "length": "1400-2400 字",
+      "focus": "故意展示错误配方，观察眼线反应"
+    },
+    {
+      "scene": 4,
+      "purpose": "高欢的试探，李曜的应对",
+      "length": "2400-3000 字",
+      "focus": "两人互相试探，话里有话"
+    },
+    {
+      "scene": 5,
+      "purpose": "尔朱荣传话，十日交付三件",
+      "length": "3000-3500 字",
+      "focus": "卡点：李曜提出新条件"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）超过 3 次",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复第 10 章已写的高欢登场细节",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇",
+    "高欢的对话要温和但有锋芒"
+  ]
+}

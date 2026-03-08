@@ -1,0 +1,172 @@
+{
+  "chapter_number": 17,
+  "chapter_title": "南下",
+  "target_word_count": 3000,
+  "target_tension": 6,
+
+  "narrative_rhythm": {
+    "position": "journey",
+    "recent_tensions": [6, 8, 6],
+    "reasoning": "第 15 章紧张度 6（军营立威），第 16 章紧张度 8（河阴前夜）。本章是行军章节，紧张度回落至 6，作为河阴之变前的过渡，但有元玉奴身份暴露风险和高欢拉拢两条暗线"
+  },
+
+  "opening": {
+    "style": "action",
+    "hook": "天刚蒙蒙亮，晋阳城外号角声起。五万大军集结完毕，旌旗蔽日，铠甲生辉。",
+    "first_sentence_hint": "以大军开拔的宏大场面开场，直接切入行军场景"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "800-1000 字",
+      "type": "reveal",
+      "description": "元玉奴女扮男装，以亲兵身份随行",
+      "intensity": 6
+    },
+    {
+      "position_hint": "1800-2000 字",
+      "type": "mystery",
+      "description": "高欢路上多次找李曜交谈，暗示站队",
+      "intensity": 7
+    },
+    {
+      "position_hint": "2800-3000 字",
+      "type": "danger",
+      "description": "斥候来报：洛阳方面封锁河阴",
+      "intensity": 7
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "行军途中，李曜发现有人跟踪——是元玉奴假扮的亲兵，担心她身份暴露",
+    "explosion": "高欢拉拢李曜，暗示尔朱荣必败；元玉奴主动现身，表示愿冒死相随",
+    "harvest": "李曜收下高欢的令牌，但与元玉奴约定：河阴之事，随机应变"
+  },
+
+  "cliffhanger": {
+    "type": "danger",
+    "content": "行军至滏口，前方斥候来报：'洛阳方面有异动，胡太后派兵封锁河阴！'尔朱荣冷笑：'来得正好。'",
+    "next_chapter_hook": "第 18 章：尔朱兆挑衅，李曜军营立威（下）"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "李曜、元玉奴",
+      "who_doesnt": "尔朱荣、尔朱兆",
+      "what": "元玉奴的公主身份和随行事实",
+      "tension_effect": "读者担心身份暴露"
+    },
+    {
+      "who_knows": "高欢",
+      "who_doesnt": "尔朱荣",
+      "what": "高欢已决定投资李曜，暗中布局",
+      "tension_effect": "读者知道高欢在背叛尔朱荣"
+    },
+    {
+      "who_knows": "读者",
+      "who_doesnt": "剧中人",
+      "what": "河阴之变的历史结局",
+      "tension_effect": "期待剧中人如何走向既定历史"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：行军队伍、旌旗、铠甲、尘土飞扬、元玉奴伪装的破绽",
+    "secondary": "听觉：马蹄声、铠甲碰撞声、号角声、高欢的低语",
+    "tactile": "马鞍的震动、旌旗猎猎、手心渗汗"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜 vs 高欢——拉拢与反拉拢，话中有话",
+    "subtext": "高欢：'大将军此举，恐怕……' 李曜：'高将军想说什么？'",
+    "bystander_reactions": [
+      "尔朱荣骑马在前，冷峻如铁",
+      "尔朱兆大声呵斥士兵，粗鲁暴躁",
+      "元玉奴混在亲兵中，紧张观察"
+    ]
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜的视角：观察行军，分析高欢的意图，担心元玉奴", "weight": "60%"},
+    {"pov": "observer", "purpose": "高欢的视角：评估李曜的价值，设计拉拢策略", "weight": "25%"},
+    {"pov": "supporting", "purpose": "元玉奴的视角：女扮男装的紧张，对李曜的担忧", "weight": "15%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "胡太后封锁河阴——后续尔朱荣强渡",
+      "高欢的拉拢——后续他投靠李曜",
+      "元玉奴随行——后续她可能暴露身份"
+    ],
+    "payoff": [
+      "第 16 章高欢赠令牌——本章李曜收下",
+      "第 15 章军营立威——本章士兵对李曜的态度转变"
+    ]
+  },
+
+  "world_context": "北魏武泰元年（528 年）四月，尔朱荣率军五万从晋阳南下，目标河阴。胡太后在洛阳垂帘听政，派兵封锁河阴渡口。",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "刚被封为军器监总管，随军押运火器",
+      "voice": "冷静、理性，说话留有余地",
+      "goal": "保护元玉奴，同时在乱世中生存"
+    },
+    "高欢": {
+      "current_state": "尔朱荣心腹，但已开始布局未来",
+      "voice": "话少、精准，每句都有潜台词",
+      "goal": "拉拢李曜，为尔朱荣倒台后做准备"
+    },
+    "元玉奴": {
+      "current_state": "女扮男装，以亲兵身份随行",
+      "voice": "伪装成男性，声音压低",
+      "goal": "保护李曜，同时隐藏身份"
+    },
+    "尔朱荣": {
+      "current_state": "率军南下，决心清洗朝堂",
+      "voice": "威严、果断，不容置疑",
+      "goal": "抵达河阴，发动政变"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "大军开拔，李曜随军同行",
+      "length": "0-600 字",
+      "focus": "行军场面，氛围营造"
+    },
+    {
+      "scene": 2,
+      "purpose": "李曜发现元玉奴假扮亲兵",
+      "length": "600-1200 字",
+      "focus": "担心身份暴露，紧张感"
+    },
+    {
+      "scene": 3,
+      "purpose": "高欢找李曜交谈，暗示拉拢",
+      "length": "1200-2000 字",
+      "focus": "话中有话，站队试探"
+    },
+    {
+      "scene": 4,
+      "purpose": "元玉奴主动现身，与李曜商议",
+      "length": "2000-2600 字",
+      "focus": "感情线，身份危机"
+    },
+    {
+      "scene": 5,
+      "purpose": "斥候来报：洛阳封锁河阴",
+      "length": "2600-3200 字",
+      "focus": "悬念收尾，局势升级"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复前文信息",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇"
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "chapter_number": 4,
+  "chapter_title": "同行",
+  "target_word_count": 3000,
+  "target_tension": 6,
+
+  "narrative_rhythm": {
+    "position": "falling_action",
+    "recent_tensions": [8],
+    "reasoning": "第 3 章高潮过后，第 4 章需要放缓节奏，让两人深入交流，建立信任"
+  },
+
+  "opening": {
+    "style": "continuation",
+    "hook": "天亮后，两人收拾行装，准备出发前往晋阳",
+    "first_sentence_hint": "从天亮的光线切入，展现新的开始"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "500-1000 字",
+      "type": "reveal",
+      "description": "元玉奴详细讲述洛阳宫廷局势，胡太后与孝明帝的矛盾",
+      "intensity": 6
+    },
+    {
+      "position_hint": "1500-2000 字",
+      "type": "bonding",
+      "description": "李曜讲述自己的'过往'（编造的身世），两人建立信任",
+      "intensity": 7
+    },
+    {
+      "position_hint": "2500-3000 字",
+      "type": "hook",
+      "description": "路上遇到第一批追兵，李曜用火药设伏",
+      "intensity": 8
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "两人谈论各自的过去，气氛有些凝重",
+    "explosion": "李曜展示更多'奇技'，元玉奴更加确信他是自己要找的人",
+    "harvest": "追兵出现，李曜轻松解决，两人关系更进一步"
+  },
+
+  "cliffhanger": {
+    "type": "action",
+    "content": "解决追兵后，从尸体上搜出一块令牌——来自晋阳大将军府",
+    "next_chapter_hook": "第 5 章：尔朱荣的人也在找她？"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "元玉奴",
+      "what": "他是穿越者，知道北魏历史的走向",
+      "tension_effect": "读者期待他如何利用历史知识"
+    },
+    {
+      "who_knows": "元玉奴",
+      "who_doesnt": "李曜",
+      "what": "她对尔朱荣的了解比说的更多",
+      "tension_effect": "为后续反转埋下伏笔"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：晨光、山路、两人的背影",
+    "secondary": "听觉：鸟鸣、脚步声、远处的水流声",
+    "tactile": "山风的凉意、干粮的粗糙、弓箭的质感"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "无——本章以合作和信任建立为主",
+    "subtext": "两人都在试探对方的底线和价值",
+    "bystander_reactions": []
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜思考如何利用历史知识", "weight": "50%"},
+    {"pov": "observer", "purpose": "元玉奴观察李曜，评估他的价值", "weight": "40%"},
+    {"pov": "antagonist", "purpose": "追兵的视角，展现背后的势力", "weight": "10%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "李曜知道尔朱荣会崛起——穿越者的历史知识",
+      "元玉奴对尔朱荣的复杂态度——后续可能有反转"
+    ],
+    "payoff": [
+      "第 3 章两人达成合作——本章开始同行"
+    ]
+  },
+
+  "world_context": "北魏边境：秀容川至晋阳的山路，尔朱荣的势力范围",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "接受穿越事实，决定利用历史知识在这个时代立足",
+      "voice": "冷静、理性，但不排斥合作",
+      "goal": "护送元玉奴到晋阳，同时观察局势"
+    },
+    "元玉奴": {
+      "current_state": "逃亡中，但心态已经从恐惧转为坚定",
+      "voice": "表面柔弱，内心坚韧，有主见",
+      "goal": "到晋阳见尔朱荣，借兵复仇"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "天亮后，两人收拾行装，准备出发",
+      "length": "0-600 字",
+      "focus": "新的开始，气氛缓和"
+    },
+    {
+      "scene": 2,
+      "purpose": "路上对话，元玉奴讲述洛阳局势",
+      "length": "600-1500 字",
+      "focus": "世界观展开，政治背景"
+    },
+    {
+      "scene": 3,
+      "purpose": "李曜讲述自己的'身世'",
+      "length": "1500-2200 字",
+      "focus": "编造的背景，建立信任"
+    },
+    {
+      "scene": 4,
+      "purpose": "遇到追兵，李曜用火药设伏",
+      "length": "2200-3000 字",
+      "focus": "动作场面，展示能力"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复描写火药配方细节",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇"
+  ]
+}

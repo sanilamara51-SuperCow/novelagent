@@ -1,0 +1,158 @@
+{
+  "chapter_number": 10,
+  "chapter_title": "火器监的第一夜",
+  "target_word_count": 3500,
+  "target_tension": 5,
+
+  "narrative_rhythm": {
+    "position": "transition",
+    "recent_tensions": [6, 7, 6],
+    "reasoning": "第 7-9 章紧张度波动（6→7→6），第 9 章初见尔朱荣已达成合作但埋下猜忌种子。第 10 章需要回落，聚焦李曜接手火器监后的实际困境和元玉奴的关系发展"
+  },
+
+  "opening": {
+    "style": "continuation",
+    "hook": "承接第 9 章结尾，李曜站在院中回味费穆的警告，元玉奴从屋内出来，两人讨论眼下处境",
+    "first_sentence_hint": "从院中沉默开始，元玉奴先开口打破僵局"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "600-1000 字",
+      "type": "reveal",
+      "description": "元玉奴展示她真正的价值——不是花瓶，而是有情报网络和资金支持",
+      "intensity": 6
+    },
+    {
+      "position_hint": "1500-2000 字",
+      "type": "problem_solving",
+      "description": "李曜列出火器监面临的具体难题，一一拆解，展现专业能力",
+      "intensity": 6
+    },
+    {
+      "position_hint": "2800-3200 字",
+      "type": "intimacy",
+      "description": "深夜对话，两人关系从'交易盟友'向'真正伙伴'微妙转变",
+      "intensity": 5
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "费穆警告后，李曜意识到自己身处险境——尔朱荣的猜忌、一个月的期限、十件火器的压力",
+    "explosion": "元玉奴展示底牌：她有钱、有人脉、有情报网，不是累赘而是真正的盟友；李曜拆解难题，展现掌控力",
+    "harvest": "两人关系深化，但外部危机仍在逼近"
+  },
+
+  "cliffhanger": {
+    "type": "danger",
+    "content": "深夜，一个陌生身影翻墙而入，不是刺客——是尔朱荣派来的'监工'，名义上是助手，实则是眼线。",
+    "next_chapter_hook": "第 11 章：监工到来，李曜如何在监视下研制火器"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "元玉奴、尔朱荣",
+      "what": "历史上尔朱荣两年后会死于河阴之变，火器监是他上位的关键",
+      "tension_effect": "读者知道李曜在利用时间差建立根基"
+    },
+    {
+      "who_knows": "元玉奴",
+      "who_doesnt": "李曜",
+      "what": "她在晋阳还有哪些旧部和暗线",
+      "tension_effect": "读者好奇她的真正实力"
+    },
+    {
+      "who_knows": "尔朱荣",
+      "who_doesnt": "李曜",
+      "what": "派来的'助手'真实身份是刺客还是监工",
+      "tension_effect": "读者替主角担心身边人的忠诚"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：院内烛光、井边老槐树的影子、元玉奴在灯下的侧脸",
+    "secondary": "听觉：夜晚的虫鸣、远处的更鼓声、烛火跳动的噼啪声",
+    "tactile": "石桌的冰凉、茶杯的温度、纸张的质感"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜与元玉奴——从'交易关系'到'真正盟友'的试探与确认",
+    "subtext": "元玉奴想确认李曜是否值得 fully trust；李曜在评估元玉奴能帮到什么程度",
+    "bystander_reactions": ["院外可能有尔朱荣的眼线在监听"]
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜分析局势，规划火器监建设", "weight": "70%"},
+    {"pov": "observer", "purpose": "元玉奴的视角，观察李曜的决断力", "weight": "30%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "元玉奴的情报网——后续会提供关键信息",
+      "尔朱荣派来的'助手'——可能是刺客或双面间谍",
+      "李曜列出的材料清单中有一项'特殊物品'——为后续火器升级埋伏笔"
+    ],
+    "payoff": [
+      "第 9 章费穆的警告",
+      "第 9 章元玉奴提到母亲对尔朱荣有救命之恩"
+    ]
+  },
+
+  "world_context": "晋阳大将军府西侧独院——李曜和元玉奴的临时居所，也是火器监的起点",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "刚被任命为火器监正，面临一个月交付十件火器的死命令，身处尔朱荣监视下",
+      "voice": "冷静、理性，军械工程师思维，但在元玉奴面前会流露一丝真实情绪",
+      "goal": "在监视下建立火器监，完成期限目标，同时为自己留后路"
+    },
+    "元玉奴": {
+      "current_state": "与李曜同住大将军府，对外是'随行人员'，实则是李曜的真正盟友",
+      "voice": "表面柔弱，实则坚韧，说话有宫廷礼仪但不过分拘谨",
+      "goal": "帮助李曜站稳脚跟，同时利用尔朱荣的势力为母亲复仇"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "院中对话，承接第 9 章结尾的沉默",
+      "length": "0-800 字",
+      "focus": "两人讨论费穆警告的含义，分析尔朱荣的真实态度"
+    },
+    {
+      "scene": 2,
+      "purpose": "元玉奴展示底牌",
+      "length": "800-1500 字",
+      "focus": "她拿出一个账本/令牌，展示她在晋阳的人脉和资金"
+    },
+    {
+      "scene": 3,
+      "purpose": "李曜规划火器监",
+      "length": "1500-2400 字",
+      "focus": "列出材料清单、工匠需求、时间规划，展现专业能力"
+    },
+    {
+      "scene": 4,
+      "purpose": "深夜对话，关系深化",
+      "length": "2400-3200 字",
+      "focus": "两人谈论各自的目标和恐惧，从交易到信任"
+    },
+    {
+      "scene": 5,
+      "purpose": "监工登场",
+      "length": "3200-3500 字",
+      "focus": "卡点：尔朱荣派来的人出现，新的危机"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）超过 3 次",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复第 9 章已写的火药演示细节",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇",
+    "元玉奴的对话要有宫廷教养但不做作"
+  ]
+}

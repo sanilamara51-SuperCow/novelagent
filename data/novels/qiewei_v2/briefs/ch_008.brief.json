@@ -1,0 +1,156 @@
+{
+  "chapter_number": 8,
+  "chapter_title": "公主的秘密",
+  "target_word_count": 3500,
+  "target_tension": 7,
+
+  "narrative_rhythm": {
+    "position": "reveal",
+    "recent_tensions": [6, 7, 7],
+    "reasoning": "第 7 章结尾元玉奴暗示有秘密，第 8 章需要揭露这个悬念，同时推进前往晋阳的剧情"
+  },
+
+  "opening": {
+    "style": "continuation",
+    "hook": "马车驶出平城地界后，元玉奴开始讲述她的真正身份",
+    "first_sentence_hint": "从马车内的对话开始，直接承接第 7 章结尾"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "600-1000 字",
+      "type": "reveal",
+      "description": "元玉奴揭露她是孝明帝的亲妹妹，不是普通公主",
+      "intensity": 7
+    },
+    {
+      "position_hint": "1500-2000 字",
+      "type": "danger",
+      "description": "路上遇到追兵，李曜用火药设伏",
+      "intensity": 8
+    },
+    {
+      "position_hint": "2500-3000 字",
+      "type": "bonding",
+      "description": "两人经历生死后，关系更进一步",
+      "intensity": 6
+    },
+    {
+      "position_hint": "3200-3500 字",
+      "type": "hook",
+      "description": "抵达晋阳地界，远处出现尔朱荣的军队",
+      "intensity": 7
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "元玉奴讲述身世，胡太后毒杀她父亲的真相",
+    "explosion": "遭遇追兵，李曜用火药炸翻敌人",
+    "harvest": "两人关系加深，抵达晋阳地界"
+  },
+
+  "cliffhanger": {
+    "type": "discovery",
+    "content": "尔朱荣的军队拦住去路。为首的将领看着元玉奴：'公主，大将军等你多时了。'",
+    "next_chapter_hook": "第 9 章：尔朱荣为何知道她会来？"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "元玉奴",
+      "who_doesnt": "李曜",
+      "what": "她是孝明帝最信任的人，携带密诏",
+      "tension_effect": "读者好奇密诏内容"
+    },
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "追兵",
+      "what": "他提前布置了火药陷阱",
+      "tension_effect": "读者期待反杀"
+    },
+    {
+      "who_knows": "尔朱荣",
+      "who_doesnt": "李曜、元玉奴",
+      "what": "他一直在等他们，早就知道消息",
+      "tension_effect": "读者好奇尔朱荣的目的"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：马车内昏暗的光线、元玉奴含泪的眼睛、爆炸的火光",
+    "secondary": "听觉：马蹄声、爆炸声、元玉奴哽咽的声音",
+    "tactile": "马车的颠簸、元玉奴手的颤抖、火药的余温"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "元玉奴讲述身世，李曜倾听",
+    "subtext": "元玉奴表面平静，实际内心痛苦；李曜表面冷静，实际同情",
+    "bystander_reactions": ["车夫的惊慌", "追兵的恐惧"]
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜倾听元玉奴的讲述，观察她的反应", "weight": "50%"},
+    {"pov": "observer", "purpose": "元玉奴的内心痛苦和回忆", "weight": "40%"},
+    {"pov": "antagonist", "purpose": "追兵被炸的视角", "weight": "10%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "元玉奴携带密诏——后续可能用来调动军队",
+      "尔朱荣早就知道消息——他有情报网络"
+    ],
+    "payoff": [
+      "第 7 章元玉奴的秘密暗示"
+    ]
+  },
+
+  "world_context": "平城至晋阳的官道，北魏边境",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "前往晋阳，对元玉奴的身世产生好奇",
+      "voice": "冷静、理性，但有同情心",
+      "goal": "安全抵达晋阳，观察尔朱荣"
+    },
+    "元玉奴": {
+      "current_state": "揭露身世，放下心理防备",
+      "voice": "表面坚强，实际脆弱",
+      "goal": "见到尔朱荣，借兵复仇"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "马车驶出平城，元玉奴开始讲述",
+      "length": "0-1000 字",
+      "focus": "身世揭露，情感渲染"
+    },
+    {
+      "scene": 2,
+      "purpose": "胡太后毒杀孝明帝的真相",
+      "length": "1000-1800 字",
+      "focus": "仇恨动机，复仇理由"
+    },
+    {
+      "scene": 3,
+      "purpose": "遭遇追兵，李曜用火药反杀",
+      "length": "1800-2800 字",
+      "focus": "动作场面，展示能力"
+    },
+    {
+      "scene": 4,
+      "purpose": "抵达晋阳地界，尔朱荣的军队出现",
+      "length": "2800-3500 字",
+      "focus": "悬念，新的危机"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复前文信息",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇"
+  ]
+}

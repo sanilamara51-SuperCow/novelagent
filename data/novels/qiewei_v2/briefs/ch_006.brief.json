@@ -1,0 +1,156 @@
+{
+  "chapter_number": 6,
+  "chapter_title": "平城门第",
+  "target_word_count": 3500,
+  "target_tension": 6,
+
+  "narrative_rhythm": {
+    "position": "new_arc_start",
+    "recent_tensions": [7, 8, 7],
+    "reasoning": "第 5 章结尾两人达成交易，第 6 章开启新地图（平城），需要新的冲突和爽点"
+  },
+
+  "opening": {
+    "style": "time_skip",
+    "hook": "数日后，两人抵达平城城门",
+    "first_sentence_hint": "直接切入平城城门场景，不要冗长的旅途描写"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "600-900 字",
+      "type": "suppress",
+      "description": "守卫见李曜猎户装扮，出言羞辱，不让进城",
+      "intensity": 5
+    },
+    {
+      "position_hint": "1000-1400 字",
+      "type": "face_slap",
+      "description": "元玉奴亮出公主令牌，守卫下跪求饶",
+      "intensity": 8
+    },
+    {
+      "position_hint": "2000-2500 字",
+      "type": "mystery",
+      "description": "进入公主府，下人窃窃私语，气氛诡异",
+      "intensity": 6
+    },
+    {
+      "position_hint": "3200-3500 字",
+      "type": "danger",
+      "description": "深夜黑影潜入，有人要偷李曜的东西",
+      "intensity": 7
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "守卫羞辱李曜猎户身份，不让进城",
+    "explosion": "元玉奴亮出公主令牌，守卫吓得下跪",
+    "harvest": "两人进城，但公主府气氛诡异，深夜有人潜入"
+  },
+
+  "cliffhanger": {
+    "type": "discovery",
+    "content": "深夜，李曜听到窗外有脚步声。他起身查看，发现一个黑影正在翻他的行李。",
+    "next_chapter_hook": "第 7 章：刺客是谁？公主府内有内鬼？"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "守卫",
+      "who_doesnt": "李曜",
+      "what": "不知道李曜是公主带来的人",
+      "tension_effect": "读者期待打脸"
+    },
+    {
+      "who_knows": "公主府下人",
+      "who_doesnt": "李曜、元玉奴",
+      "what": "有人不欢迎公主回来",
+      "tension_effect": "读者好奇谁是内鬼"
+    },
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "任何人",
+      "what": "他知道历史走向，知道公主府可能不安全",
+      "tension_effect": "读者期待他如何应对"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：平城城门、守卫的表情变化、公主令牌的金光",
+    "secondary": "听觉：城门外嘈杂声、府中窃窃私语、深夜脚步声",
+    "tactile": "令牌的冰凉、城门的粗糙质感"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜 vs 守卫——身份歧视与反歧视",
+    "subtext": "守卫表面盘查，实际刁难；元玉奴表面平静，实际愤怒",
+    "bystander_reactions": ["其他进城的百姓围观", "守卫同伴的惊恐"]
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜视角感受羞辱和反击", "weight": "60%"},
+    {"pov": "observer", "purpose": "元玉奴的内心活动", "weight": "30%"},
+    {"pov": "antagonist", "purpose": "深夜黑影的视角", "weight": "10%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "公主府下人窃窃私语——有人暗中反对公主",
+      "深夜黑影潜入——府内有内鬼"
+    ],
+    "payoff": [
+      "第 5 章崔大人的监视——内鬼可能是崔大人的人"
+    ]
+  },
+
+  "world_context": "平城：北魏旧都，公主封地，各方势力交错",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "与元玉奴达成交易，前往平城",
+      "voice": "冷静、隐忍，但不懦弱",
+      "goal": "进入平城，观察公主府形势"
+    },
+    "元玉奴": {
+      "current_state": "回到封地，但发现府中气氛不对",
+      "voice": "表面柔弱，实际有威严",
+      "goal": "整顿公主府，准备前往晋阳"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "抵达平城城门，守卫刁难",
+      "length": "0-800 字",
+      "focus": "身份歧视，压抑感"
+    },
+    {
+      "scene": 2,
+      "purpose": "元玉奴亮令牌打脸",
+      "length": "800-1500 字",
+      "focus": "爽点爆发"
+    },
+    {
+      "scene": 3,
+      "purpose": "进入公主府，下人窃窃私语",
+      "length": "1500-2500 字",
+      "focus": "诡异气氛，悬念"
+    },
+    {
+      "scene": 4,
+      "purpose": "深夜黑影潜入",
+      "length": "2500-3500 字",
+      "focus": "危险，悬念"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复前文信息",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇"
+  ]
+}

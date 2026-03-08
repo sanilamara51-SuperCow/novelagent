@@ -1,0 +1,168 @@
+{
+  "chapter_number": 3,
+  "chapter_title": "一矢定危局",
+  "target_word_count": 3500,
+  "target_tension": 8,
+
+  "narrative_rhythm": {
+    "position": "climax",
+    "recent_tensions": [7],
+    "reasoning": "第 2 章结尾少女掏出图纸质问，第 3 章需要承接危机，用李曜的弓箭和火药击退马匪，完成首次高光"
+  },
+
+  "opening": {
+    "style": "continuation",
+    "hook": "山洞内，少女惊魂未定，李曜准备反击",
+    "first_sentence_hint": "从洞内视角切入，展现两人各自的心理活动"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "800-1200 字",
+      "type": "face_slap",
+      "description": "李曜第一箭射杀举火把的亲随，精准冷静",
+      "intensity": 7
+    },
+    {
+      "position_hint": "1500-2000 字",
+      "type": "face_slap",
+      "description": "第二箭射伤敌方弓箭手，双杀震慑",
+      "intensity": 8
+    },
+    {
+      "position_hint": "2500-3000 字",
+      "type": "reveal",
+      "description": "秃发乌认出李曜的弓箭和战术，不是普通猎户",
+      "intensity": 7
+    },
+    {
+      "position_hint": "3200-3500 字",
+      "type": "cliffhanger",
+      "description": "马匪退去，但秃发乌放下狠话：'我们还会回来的'",
+      "intensity": 8
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "马匪重新集结，搜山逼近山洞，形势危急",
+    "explosion": "李曜连射两箭，双杀敌方，展现超凡箭术和战术素养",
+    "harvest": "马匪退去，少女对李曜的身份更加好奇和警惕"
+  },
+
+  "cliffhanger": {
+    "type": "threat",
+    "content": "秃发乌退走前嘶吼：'秃发部不会忘记今晚！你们逃不掉的！'",
+    "next_chapter_hook": "第 4 章：少女正式揭露身份，两人决定同行"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "元玉奴、马匪",
+      "what": "现代军械工程知识，精准计算箭道和火药威力",
+      "tension_effect": "读者期待他如何利用现代知识以少胜多"
+    },
+    {
+      "who_knows": "秃发乌",
+      "who_doesnt": "李曜",
+      "what": "认出李曜的弓箭制式和战术动作不像普通人",
+      "tension_effect": "为后续追踪埋下伏笔"
+    },
+    {
+      "who_knows": "元玉奴",
+      "who_doesnt": "李曜",
+      "what": "她隐约意识到李曜可能是她需要的人",
+      "tension_effect": "推动她决定信任李曜"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：夜色中的火光、箭矢轨迹、血迹",
+    "secondary": "听觉：弓弦震动、箭矢入肉、惨叫、马嘶",
+    "tactile": "弓弦的拉力、石壁的冰冷、箭镞的寒芒"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜 vs 秃发乌——猎杀与反猎杀",
+    "subtext": "李曜要保护少女和自己，秃发乌要抓人邀功",
+    "bystander_reactions": ["元玉奴在洞内目睹李曜的箭术，震惊"]
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜计算箭道、瞄准射击", "weight": "60%"},
+    {"pov": "observer", "purpose": "元玉奴在洞内观察，心理震撼", "weight": "20%"},
+    {"pov": "antagonist", "purpose": "秃发乌的视角，展现敌方反应", "weight": "20%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "李曜自制的反曲弓——远超时代的设计",
+      "秃发乌认出李曜的战术素养——后续会有更多追兵"
+    ],
+    "payoff": [
+      "第 2 章的火药威胁——这次真正用于实战"
+    ]
+  },
+
+  "world_context": "北魏边境：草原各部混战，秃发部残众依附权贵",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "穿越后首次实战，冷静计算，展现军械工程背景",
+      "voice": "理性、果断、行动派",
+      "goal": "击退马匪，保护自己和少女"
+    },
+    "元玉奴": {
+      "current_state": "从惊恐到震惊，对李曜产生好奇和警惕",
+      "voice": "内心活动丰富，表面保持冷静",
+      "goal": "观察李曜，判断是否值得信任"
+    },
+    "秃发乌": {
+      "current_state": "从轻视到震惊，意识到遇到硬茬",
+      "voice": "凶狠、不甘、带着一丝恐惧",
+      "goal": "完成大将军的命令，抓回少女和李曜"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "洞内视角，元玉奴观察李曜，李曜准备反击",
+      "length": "0-800 字",
+      "focus": "紧张氛围，李曜的冷静"
+    },
+    {
+      "scene": 2,
+      "purpose": "马匪重新集结，搜山逼近",
+      "length": "800-1500 字",
+      "focus": "敌方的组织和威胁"
+    },
+    {
+      "scene": 3,
+      "purpose": "李曜第一箭射杀举火把的亲随",
+      "length": "1500-2200 字",
+      "focus": "精准箭术，一击毙命"
+    },
+    {
+      "scene": 4,
+      "purpose": "第二箭射伤敌方弓箭手，马匪崩溃",
+      "length": "2200-3000 字",
+      "focus": "双杀震慑，战术素养"
+    },
+    {
+      "scene": 5,
+      "purpose": "秃发乌退走，放下狠话",
+      "length": "3000-3500 字",
+      "focus": "悬念，为后续埋下伏笔"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复描写火药发现过程",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇",
+    "不要过度解释箭术原理——用动作展现"
+  ]
+}

@@ -1,5 +1,20 @@
 {
-  "word_count": 125,
-  "scenes": [],
-  "characters": []
+  "chapter_number": 10,
+  "title": "火器监的第一夜",
+  "word_count": 3568,
+  "status": "completed",
+  "target_tension": 5,
+  "key_points": [
+    "费穆离开后，李曜与元玉奴在院中分析尔朱荣的猜忌",
+    "元玉奴展示底牌——晋阳私产账册与元氏铜牌",
+    "元玉奴揭露母亲与尔朱荣的过往——救命之恩",
+    "李曜详细规划火器监：五种火器、十名工匠、容器改进",
+    "深夜高欢翻墙而入，自称尔朱荣派来的火器监副监"
+  ],
+  "cliffhanger": "高欢：'在下高欢，见过李监正。大将军命我来协助李监正研制火器。'",
+  "shuangdian_nodes": [
+    {"position": 800, "type": "reveal", "description": "元玉奴展示账册和铜牌，证实自己有独立资源", "intensity": 6},
+    {"position": 1800, "type": "mystery", "description": "元玉奴揭露母亲与尔朱荣的救命之恩", "intensity": 7},
+    {"position": 2800, "type": "danger", "description": "高欢深夜登场，成为火器监副监", "intensity": 6}
+  ]
 }

@@ -1,0 +1,188 @@
+{
+  "chapter_number": 23,
+  "chapter_title": "元子攸",
+  "target_word_count": 3000,
+  "target_tension": 7,
+
+  "narrative_rhythm": {
+    "position": "fallout_continuation",
+    "recent_tensions": [
+      {"chapter": 21, "tension": 6, "event": "火器监成立，高欢深夜来访"},
+      {"chapter": 22, "tension": 7, "event": "立帝军议，孝庄帝密信"}
+    ],
+    "reasoning": "第 22 章以孝庄帝密信收尾，紧张度达到 7。第 23 章需要承接这个悬念，展示李曜的抉择，同时推进元子攸登基的政治大戏。紧张度先降后升，在深夜高欢约见时再次拉高"
+  },
+
+  "opening": {
+    "style": "continuation",
+    "hook": "接续第 22 章结尾，密信在烛火中燃烧。李曜看着信纸化为灰烬，元玉奴的眼神在烛光中闪烁不定",
+    "first_sentence_hint": "直接从密信燃烧的场景切入，不要重新描写环境，快速进入李曜的内心挣扎和元玉奴的对话"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "600-900 字",
+      "type": "revelation",
+      "description": "元玉奴揭露母亲生前布下的暗线网络，展示她在宫中的真正根基",
+      "intensity": 6
+    },
+    {
+      "position_hint": "1500-1800 字",
+      "type": "power_up",
+      "description": "元子攸登基大典，李曜被封为镇东将军，从从五品连跳四级到正四品",
+      "intensity": 7
+    },
+    {
+      "position_hint": "2400-2700 字",
+      "type": "mystery",
+      "description": "深夜高欢密约，暗示更大的阴谋正在酝酿",
+      "intensity": 7
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "李曜面对孝庄帝密信的诱惑与危险——接受可能万劫不复，拒绝可能错失良机",
+    "explosion": "元子攸登基大典公开封赏，李曜一步登天；元玉奴揭露真正的暗线实力",
+    "harvest": "获得将军职位和皇帝信任，但同时被卷入更深的权力漩涡，高欢的密约暗示更多未知"
+  },
+
+  "cliffhanger": {
+    "type": "mystery",
+    "content": "封赏仪式结束后，高欢在人群中经过李曜身边，悄悄塞给他一张纸条：'今晚三更，老地方见。'",
+    "next_chapter_hook": "高欢深夜约见要说些什么？与孝庄帝的拉拢是否有关系？"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "元玉奴",
+      "who_doesnt": "李曜、读者",
+      "what": "她母亲留下的暗线网络的真实规模和深度",
+      "tension_effect": "神秘感，期待后续揭露"
+    },
+    {
+      "who_knows": "高欢",
+      "who_doesnt": "李曜、尔朱荣",
+      "what": "高欢真正的意图和布局",
+      "tension_effect": "为日后高欢背叛尔朱荣埋下伏笔"
+    },
+    {
+      "who_knows": "读者",
+      "who_doesnt": "尔朱荣",
+      "what": "李曜已经收到孝庄帝的密信",
+      "tension_effect": "读者为李曜捏汗，担心被发现"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：登基大典的奢华场面、朝堂上的群臣表情、烛火下元玉奴的脸",
+    "secondary": "听觉：朝堂上的宣旨声、深夜的风声、密信燃烧的嘶嘶声",
+    "tactile": "将军印信的冰冷质感、玉佩的温润、纸条的粗糙"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜与元玉奴关于是否接受孝庄帝拉拢的讨论",
+    "subtext": "元玉奴看似在传递信息，实则在试探李曜的立场；李曜看似犹豫，实则在权衡利弊",
+    "bystander_reactions": "朝堂上群臣的复杂表情——有人羡慕，有人嫉妒，有人同情"
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜的视角，经历抉择、封赏、密约", "weight": "85%"},
+    {"pov": "observer", "purpose": "朝堂群臣的旁观视角", "weight": "15%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "元玉奴母亲的暗线网络——为日后公主身份揭露和宫斗埋线",
+      "高欢的深夜密约——为日后高欢崛起埋线",
+      "李曜的将军职位——日后领兵作战的合理性"
+    ],
+    "payoff": [
+      "第 22 章孝庄帝密信——本章正式回应",
+      "第 21 章高欢'明日朝局将有大变'——本章兑现"
+    ]
+  },
+
+  "world_context": "孝庄帝元子攸即位（528 年 4 月），改元建义。尔朱荣掌控实权，但元子攸暗中积蓄力量试图夺权",
+  "historical_notes": "历史上元子攸（孝庄帝）在尔朱荣扶持下即位，后于 530 年设计诛杀尔朱荣，但最终被尔朱兆所杀",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "火器监总管，从五品，刚收到孝庄帝密信，面临抉择",
+      "voice": "谨慎、理性、权衡利弊",
+      "goal": "在多方势力博弈中生存并寻找上升机会"
+    },
+    "元玉奴": {
+      "current_state": "李曜的盟友，揭露母亲暗线",
+      "voice": "冷静、果断、有所保留",
+      "goal": "利用各方势力实现自己的复仇计划"
+    },
+    "元子攸（孝庄帝）": {
+      "current_state": "新即位的皇帝，试图摆脱傀儡身份",
+      "voice": "年轻气盛但不失稳重",
+      "goal": "夺回实权，摆脱尔朱荣控制"
+    },
+    "尔朱荣": {
+      "current_state": "掌控朝政的权臣，立傀儡皇帝",
+      "voice": "威严、多疑",
+      "goal": "巩固权力，控制皇帝"
+    },
+    "高欢": {
+      "current_state": "尔朱荣麾下大将，暗中布局",
+      "voice": "沉稳、话中有话",
+      "goal": "培植自己的势力，等待时机"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "接续第 22 章结尾，密信燃烧，李曜与元玉奴讨论抉择",
+      "length": "0-800 字",
+      "focus": "李曜的内心挣扎，元玉奴揭露母亲暗线"
+    },
+    {
+      "scene": 2,
+      "purpose": "次日，元子攸登基大典",
+      "length": "800-1600 字",
+      "focus": "朝堂盛况，李曜被封为镇东将军"
+    },
+    {
+      "scene": 3,
+      "purpose": "封赏后群臣反应，李曜的处境变化",
+      "length": "1600-2000 字",
+      "focus": "群臣的羡慕嫉妒，李曜的危机感"
+    },
+    {
+      "scene": 4,
+      "purpose": "深夜，高欢密约",
+      "length": "2000-2700 字",
+      "focus": "高欢的神秘暗示，更大的阴谋"
+    },
+    {
+      "scene": 5,
+      "purpose": "李曜的反思与 cliffhanger",
+      "length": "2700-3000 字",
+      "focus": "李曜意识到自己已卷入更深的漩涡"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复第 22 章密信的具体内容",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇",
+    "登基大典不要写成流水账，聚焦李曜的视角和感受"
+  ],
+
+  "continuation_notes": {
+    "from_previous_chapter": "第 22 章结尾元玉奴要烧掉密信，李曜说'我需要时间考虑'",
+    "character_state": "李曜处于犹豫状态，既被'共治天下'诱惑，又担心风险",
+    "unresolved_threads": [
+      "李曜最终是否接受孝庄帝的拉拢",
+      "元玉奴母亲的暗线网络详情",
+      "高欢的真实意图",
+      "尔朱荣对李曜的信任程度"
+    ]
+  }
+}

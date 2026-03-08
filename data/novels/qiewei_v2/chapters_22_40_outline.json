@@ -1,0 +1,374 @@
+{
+  "chapters": [
+    {
+      "chapter_number": 22,
+      "title": "立帝",
+      "summary": "河阴之变后第三日，尔朱荣召集心腹商议立帝之事。元天穆主张立节闵帝元恭，高欢则暗示应立长乐王元子攸。李曜在一旁沉默不语，心中却知这是尔朱荣对众臣的又一次试探。深夜，元玉奴突然造访，带来一个惊人的消息：孝庄帝已派人暗中联络她。",
+      "status": "pending",
+      "target_tension": 7,
+      "key_points": [
+        "尔朱荣召集心腹商议立帝",
+        "元天穆与高欢各自主张不同人选",
+        "李曜沉默旁观，意识到这是权力试探",
+        "元玉奴深夜造访，带来孝庄帝的密信"
+      ],
+      "cliffhanger": "元玉奴从袖中掏出一封密信：'孝庄帝说，他可以给你比尔朱荣更多的东西。'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "reveal", "description": "元天穆与高欢的站队分歧", "intensity": 6},
+        {"position": 1800, "type": "mystery", "description": "元玉奴带来孝庄帝密信", "intensity": 8}
+      ],
+      "world_context": "河阴之变后，尔朱荣掌控朝政，需要立傀儡皇帝以正名分"
+    },
+    {
+      "chapter_number": 23,
+      "title": "元子攸",
+      "summary": "李曜展开密信，信中孝庄帝以'共治天下'为诱饵，要李曜在关键时刻助他除掉尔朱荣。元玉奴坦言，这是她母亲生前布下的暗线。次日，尔朱荣宣布立长乐王元子攸为帝，改元建义。李曜被加封为镇东将军，却发现自己已被卷入更深的漩涡。",
+      "status": "pending",
+      "target_tension": 7,
+      "key_points": [
+        "李曜阅读孝庄帝密信，得知'共治天下'的诱惑",
+        "元玉奴揭露母亲生前布下的暗线",
+        "尔朱荣宣布立元子攸为帝，改元建义",
+        "李曜被加封为镇东将军"
+      ],
+      "cliffhanger": "封赏仪式结束后，高欢悄悄塞给李曜一张纸条：'今晚三更，老地方见。'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "power_up", "description": "李曜被封为镇东将军", "intensity": 7},
+        {"position": 1800, "type": "mystery", "description": "高欢深夜约见", "intensity": 6}
+      ],
+      "world_context": "孝庄帝元子攸即位，改元建义（528 年），但实权仍在尔朱荣手中"
+    },
+    {
+      "chapter_number": 24,
+      "title": "高欢的邀请",
+      "summary": "深夜，李曜如约而至。高欢在城郊一座破庙中等他，开门见山：'尔朱荣必败，李先生可愿早做打算？'李曜反问：'高将军为何信我？'高欢笑了：'因为你是唯一能造火器的人，也是唯一看清乱世的人。'两人达成秘密约定。",
+      "status": "pending",
+      "target_tension": 8,
+      "key_points": [
+        "李曜赴约破庙",
+        "高欢直言尔朱荣必败，邀请李曜早做打算",
+        "高欢点明李曜的价值：火器 + 清醒的头脑",
+        "两人达成秘密约定"
+      ],
+      "cliffhanger": "分别时，高欢忽然说：'对了，元玉奴的身份，恐怕不止是公主那么简单。'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "reveal", "description": "高欢正式拉拢李曜", "intensity": 7},
+        {"position": 1800, "type": "mystery", "description": "高欢暗示元玉奴身份不简单", "intensity": 8}
+      ],
+      "world_context": "高欢开始在尔朱荣阵营中暗中布局，为日后独立做准备"
+    },
+    {
+      "chapter_number": 25,
+      "title": "火器监扩建",
+      "summary": "回到大营，李曜开始扩建火器监。尔朱兆带人前来'视察'，言语间处处刁难，要求李曜当场演示'十斤雷'的威力。李曜不卑不亢，带众人来到黄河岸边，点燃引线——一声巨响，岸边巨石被炸得粉碎。尔朱兆脸色铁青，却找不到借口发作。",
+      "status": "pending",
+      "target_tension": 7,
+      "key_points": [
+        "李曜扩建火器监，招募工匠",
+        "尔朱兆前来视察，处处刁难",
+        "要求演示'十斤雷'威力",
+        "李曜炸碎巨石，震慑全场"
+      ],
+      "cliffhanger": "尔朱兆离开时对亲信低语：'此人不除，日后必成我尔朱氏大患。'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "conflict", "description": "尔朱兆刁难李曜", "intensity": 6},
+        {"position": 1800, "type": "face_slap", "description": "十斤雷炸碎巨石，震慑全场", "intensity": 8}
+      ],
+      "world_context": "火器监正式扩建，李曜开始批量生产火药武器"
+    },
+    {
+      "chapter_number": 26,
+      "title": "洛阳来使",
+      "summary": "孝庄帝派来使者，宣布要召李曜入朝述职。尔朱荣冷笑：'这是要挖本王墙角。'李曜陷入两难：不去，得罪皇帝；去，尔朱荣猜忌。元玉奴献计：'称病不出，我替你去。'她女扮男装，带着李曜的'奏表'进入洛阳。",
+      "status": "pending",
+      "target_tension": 8,
+      "key_points": [
+        "孝庄帝派使者召李曜入朝",
+        "尔朱荣识破这是挖墙脚的计策",
+        "李曜陷入两难困境",
+        "元玉奴女扮男装，替李曜入朝"
+      ],
+      "cliffhanger": "洛阳城内，元玉奴刚入驿馆，就被一群禁军包围：'奉旨，请公主殿下入宫。'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "danger", "description": "李曜被皇帝和尔朱荣同时盯着", "intensity": 7},
+        {"position": 1800, "type": "reveal", "description": "元玉奴身份暴露", "intensity": 9}
+      ],
+      "world_context": "孝庄帝试图拉拢李曜，削弱尔朱荣的势力"
+    },
+    {
+      "chapter_number": 27,
+      "title": "公主归来",
+      "summary": "原来孝庄帝早知元玉奴未死，故意引她入宫。宫中，孝庄帝与元玉奴对峙：'你是元氏罪人，还是尔朱荣的棋子？'元玉奴从容应对：'陛下需要的不是棋子，是盟友。'两人达成秘密协议。回到晋阳，元玉奴将一块玉佩交给李曜：'这是孝庄帝的信物。'",
+      "status": "pending",
+      "target_tension": 8,
+      "key_points": [
+        "孝庄帝识破元玉奴身份",
+        "元玉奴与孝庄帝达成秘密协议",
+        "回到晋阳，将孝庄帝的玉佩交给李曜",
+        "李曜意识到自己已被三方势力盯上"
+      ],
+      "cliffhanger": "李曜看着玉佩，忽然问：'若有一日，我与尔朱荣必有一战，你站哪边？'元玉奴沉默良久：'我站你这边。'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "reveal", "description": "元玉奴与孝庄帝的秘密协议", "intensity": 7},
+        {"position": 1800, "type": "romance", "description": "元玉奴表态站在李曜这边", "intensity": 6}
+      ],
+      "world_context": "孝庄帝与元玉奴达成秘密协议，共同对抗尔朱荣"
+    },
+    {
+      "chapter_number": 28,
+      "title": "斛斯椿",
+      "summary": "一位神秘访客深夜造访火器监，自称斛斯椿，是孝庄帝的心腹。他带来一个惊人的消息：尔朱荣准备在三月后'清剿'所有反对势力，名单上有李曜的名字。斛斯椿建议李曜'先下手为强'。李曜送走斛斯椿后，发现桌上多了一支毒箭。",
+      "status": "pending",
+      "target_tension": 9,
+      "key_points": [
+        "斛斯椿深夜造访，带来尔朱荣的'清剿'计划",
+        "李曜的名字在名单上",
+        "斛斯椿建议先下手为强",
+        "李曜发现毒箭，意识到危险逼近"
+      ],
+      "cliffhanger": "箭上绑着一张纸条：'三日后，大将军要见你。'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "danger", "description": "李曜被列入尔朱荣的清除名单", "intensity": 9},
+        {"position": 1800, "type": "mystery", "description": "尔朱荣要见李曜，鸿门宴？", "intensity": 8}
+      ],
+      "world_context": "斛斯椿登场，历史上他是尔朱荣的重要谋士，后背叛"
+    },
+    {
+      "chapter_number": 29,
+      "title": "尔朱荣的试探",
+      "summary": "三日后，李曜如约来到大将军府。尔朱荣正在练剑，见李曜到来，忽然出剑相向：'有人说你想背叛本王。'李曜不闪不避：'大将军若信，何须问？若不信，问也无用。'尔朱荣收剑大笑：'好！本王就信你这一次。'",
+      "status": "pending",
+      "target_tension": 9,
+      "key_points": [
+        "李曜来到大将军府，尔朱荣正在练剑",
+        "尔朱荣出剑试探，直指李曜咽喉",
+        "李曜不闪不避，从容应对",
+        "尔朱荣收剑，表示暂时相信李曜"
+      ],
+      "cliffhanger": "李曜离开后，尔朱荣对元天穆说：'此人胆子太大，留不得。但火器……还得用。'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "danger", "description": "尔朱荣出剑试探", "intensity": 9},
+        {"position": 1800, "type": "reveal", "description": "尔朱荣的杀心已起", "intensity": 8}
+      ],
+      "world_context": "尔朱荣对李曜的猜忌加深，但因火器而暂时隐忍"
+    },
+    {
+      "chapter_number": 30,
+      "title": "金蝉脱壳",
+      "summary": "李曜回到火器监，立即开始布置'金蝉脱壳'之计。他让一名心腹工匠假扮自己，整日闭门不出。同时，他秘密将火器制造图纸分拆，分别藏于不同地方。元玉奴联系上高欢，请他帮忙安排一条'退路'。高欢回信：'邺城已备好，随时可走。'",
+      "status": "pending",
+      "target_tension": 8,
+      "key_points": [
+        "李曜布置金蝉脱壳之计",
+        "心腹工匠假扮自己",
+        "火器图纸分拆藏匿",
+        "高欢已在邺城备好退路"
+      ],
+      "cliffhanger": "深夜，火器监忽然起火。李曜的'替身'倒在火海中，而真正的李曜已乔装出城。",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "reveal", "description": "李曜的金蝉脱壳之计", "intensity": 7},
+        {"position": 1800, "type": "action", "description": "火器监起火，替身'身亡'", "intensity": 9}
+      ],
+      "world_context": "李曜开始策划逃离晋阳，脱离尔朱荣的控制"
+    },
+    {
+      "chapter_number": 31,
+      "title": "夜奔",
+      "summary": "李曜与元玉奴乔装成商人，带着几名亲信，趁夜出城。行至滏口，被尔朱兆的追兵发现。危急时刻，高欢派人来接应，用一支疑兵计引开追兵。李曜得以脱身，但心中明白：从此以后，他成了尔朱荣的'叛徒'。",
+      "status": "pending",
+      "target_tension": 9,
+      "key_points": [
+        "李曜与元玉奴乔装出城",
+        "行至滏口被追兵发现",
+        "高欢派人用疑兵计接应",
+        "李曜成功脱身，但已成'叛徒'"
+      ],
+      "cliffhanger": "黎明时分，李曜回望晋阳方向，火光冲天。尔朱荣的骑兵正在全城搜捕：'活要见人，死要见尸。'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "action", "description": "滏口遭遇追兵", "intensity": 8},
+        {"position": 1800, "type": "reveal", "description": "高欢的接应", "intensity": 7}
+      ],
+      "world_context": "李曜正式逃离晋阳，开始独立发展之路"
+    },
+    {
+      "chapter_number": 32,
+      "title": "初见宇文泰",
+      "summary": "李曜一行抵达邺城，高欢已在城外等候。但李曜没想到的是，城中还有一位客人——宇文泰。宇文泰是尔朱荣麾下大将，此次秘密来邺城，是为采购军械。高欢引荐两人相识，宇文泰盯着李曜：'听说你会造雷火？'",
+      "status": "pending",
+      "target_tension": 7,
+      "key_points": [
+        "李曜抵达邺城，高欢迎接",
+        "意外发现宇文泰也在城中",
+        "宇文泰是为采购军械而来",
+        "宇文泰对火器产生兴趣"
+      ],
+      "cliffhanger": "宇文泰忽然说：'李先生可愿随我去长安？那里……更需要你的本事。'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "reveal", "description": "宇文泰登场", "intensity": 7},
+        {"position": 1800, "type": "mystery", "description": "宇文泰邀请李曜去长安", "intensity": 6}
+      ],
+      "world_context": "宇文泰正式登场，历史上他是西魏的实际掌权者，北周的奠基人"
+    },
+    {
+      "chapter_number": 33,
+      "title": "邺城局势",
+      "summary": "邺城表面平静，实则暗流涌动。尔朱荣的使者正在城中搜寻李曜，高欢的势力也在暗中扩张。李曜住在高欢安排的别院中，开始思考自己的未来。元玉奴建议：'我们需建立自己的势力，不能永远依附他人。'",
+      "status": "pending",
+      "target_tension": 6,
+      "key_points": [
+        "邺城暗流涌动，尔朱荣使者搜捕李曜",
+        "高欢势力暗中扩张",
+        "李曜思考未来方向",
+        "元玉奴建议建立自己的势力"
+      ],
+      "cliffhanger": "深夜，别院外传来马蹄声。一个浑身是血的士兵倒在门口：'救……救我……我是贺拔将军的人。'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "reveal", "description": "邺城的复杂局势", "intensity": 6},
+        {"position": 1800, "type": "danger", "description": "神秘士兵求援", "intensity": 7}
+      ],
+      "world_context": "李曜在邺城暂避，开始思考建立自己的势力"
+    },
+    {
+      "chapter_number": 34,
+      "title": "贺拔岳",
+      "summary": "来者是贺拔岳的亲信，被尔朱荣的人追杀。李曜出手相救，贺拔岳亲自登门道谢。贺拔岳是尔朱荣麾下大将，但与高欢关系密切。他告诉李曜：'尔朱荣已下令，谁能杀你，赏千金，封万户侯。'李曜苦笑：'看来我的脑袋很值钱。'",
+      "status": "pending",
+      "target_tension": 7,
+      "key_points": [
+        "贺拔岳亲信被追杀，李曜相救",
+        "贺拔岳登门道谢",
+        "尔朱荣悬赏千金要李曜的人头",
+        "李曜意识到自己已成天下公敌"
+      ],
+      "cliffhanger": "贺拔岳临别时说：'高将军要我来问你：尔朱荣若派大军来攻，邺城守不住，你可愿随他去信都？'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "danger", "description": "尔朱荣悬赏千金", "intensity": 8},
+        {"position": 1800, "type": "reveal", "description": "高欢邀请李曜去信都", "intensity": 6}
+      ],
+      "world_context": "贺拔岳登场，历史上他是关陇军事集团的重要人物"
+    },
+    {
+      "chapter_number": 35,
+      "title": "信都",
+      "summary": "李曜与元玉奴随高欢来到信都。信都是高欢的根据地，城防坚固，兵精粮足。高欢带李曜参观军营，将士们听说他会造'雷火'，都围过来看热闹。李曜当场演示火药威力，炸翻一座土墙，全军震动。",
+      "status": "pending",
+      "target_tension": 6,
+      "key_points": [
+        "李曜随高欢来到信都",
+        "信都是高欢的根据地",
+        "李曜参观军营",
+        "火药演示震动全军"
+      ],
+      "cliffhanger": "演示结束后，高欢单独留下李曜：'李先生，我要你帮我造一种能炸塌城墙的东西。'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "power_up", "description": "李曜在信都展示火器威力", "intensity": 7},
+        {"position": 1800, "type": "reveal", "description": "高欢要求造炸城墙的火器", "intensity": 6}
+      ],
+      "world_context": "李曜来到高欢的根据地信都，开始帮助高欢改良军械"
+    },
+    {
+      "chapter_number": 36,
+      "title": "炸药包",
+      "summary": "李曜开始研制'炸药包'，用油纸包裹火药，配上引线，可投掷可埋设。第一次试验，炸药包将一块巨石炸成粉碎。高欢大喜：'此物若用于攻城，天下还有谁挡得住我？'李曜却心中暗惊：这将成为高欢统一北方的利器。",
+      "status": "pending",
+      "target_tension": 6,
+      "key_points": [
+        "李曜研制炸药包",
+        "第一次试验成功，炸碎巨石",
+        "高欢大喜，看到统一希望",
+        "李曜心中暗惊，意识到火器的破坏力"
+      ],
+      "cliffhanger": "深夜，李曜独自坐在工坊中，看着火药配方，喃喃自语：'我到底是在救人，还是在害人？'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "power_up", "description": "炸药包研制成功", "intensity": 7},
+        {"position": 1800, "type": "conflict", "description": "李曜的道德困境", "intensity": 5}
+      ],
+      "world_context": "李曜帮助高欢研制炸药包，威力巨大"
+    },
+    {
+      "chapter_number": 37,
+      "title": "尔朱荣的反应",
+      "summary": "晋阳，尔朱荣得知李曜投奔高欢，勃然大怒：'高欢，你敢背叛本王！'元天穆献计：'可派尔朱兆率军十万，踏立信都。'尔朱荣冷笑：'不必。本王要亲自去，让高欢看看，什么叫天威。'大军开始集结。",
+      "status": "pending",
+      "target_tension": 8,
+      "key_points": [
+        "尔朱荣得知李曜投奔高欢",
+        "勃然大怒，视高欢为背叛",
+        "元天穆献计派兵攻打信都",
+        "尔朱荣决定亲征"
+      ],
+      "cliffhanger": "尔朱荣看向地图上的信都：'高欢，本王给你两个选择：交出李曜，或者——死。'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "danger", "description": "尔朱荣大怒，准备亲征", "intensity": 8},
+        {"position": 1800, "type": "reveal", "description": "尔朱荣的最后通牒", "intensity": 7}
+      ],
+      "world_context": "尔朱荣准备亲征高欢，战争一触即发"
+    },
+    {
+      "chapter_number": 38,
+      "title": "战前",
+      "summary": "信都城内，高欢召集众将商议对策。有人主张投降，有人主张死战。李曜站出来说：'尔朱荣兵多将广，但有一致命弱点。'众人齐问：'什么弱点？'李曜：'尔朱荣此人，多疑而少断，可用反间计。'",
+      "status": "pending",
+      "target_tension": 8,
+      "key_points": [
+        "高欢召集众将商议对策",
+        "军中有投降和死战两派",
+        "李曜提出尔朱荣的弱点",
+        "建议使用反间计"
+      ],
+      "cliffhanger": "高欢盯着李曜：'若此计不成，信都必破。届时……李先生可愿随我突围？'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "reveal", "description": "李曜指出尔朱荣的弱点", "intensity": 7},
+        {"position": 1800, "type": "mystery", "description": "反间计能否成功", "intensity": 6}
+      ],
+      "world_context": "尔朱荣与高欢的战争即将爆发，李曜献计"
+    },
+    {
+      "chapter_number": 39,
+      "title": "反间计",
+      "summary": "高欢派人散布谣言，说尔朱荣要借战争除掉尔朱兆。尔朱兆闻讯，果然起疑，按兵不动。尔朱荣大军失去先锋，士气大减。李曜又献计：'可趁夜袭营，用火药炸其粮草。'高欢采纳，当夜派出精锐。",
+      "status": "pending",
+      "target_tension": 9,
+      "key_points": [
+        "高欢派人散布谣言",
+        "尔朱兆起疑，按兵不动",
+        "尔朱荣大军士气大减",
+        "李曜献计夜袭粮草"
+      ],
+      "cliffhanger": "黎明时分，远处传来惊天动地的爆炸声。高欢大笑：'尔朱荣的粮草，烧了！'",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "reveal", "description": "反间计成功，尔朱兆按兵不动", "intensity": 7},
+        {"position": 1800, "type": "action", "description": "夜袭成功，炸毁粮草", "intensity": 9}
+      ],
+      "world_context": "李曜的反间计和火器战术初显神威"
+    },
+    {
+      "chapter_number": 40,
+      "title": "新的开始",
+      "summary": "尔朱荣粮草被毁，被迫退兵。高欢在信都的威望大涨，将士们都说：'高将军真乃天神下凡。'李曜却知道，这只是开始。深夜，他站在城头，望着远方：'尔朱荣不会善罢甘休，下次……会更凶险。'元玉奴走到他身边：'但我们会在一起。'",
+      "status": "pending",
+      "target_tension": 7,
+      "key_points": [
+        "尔朱荣粮草被毁，被迫退兵",
+        "高欢威望大涨",
+        "李曜意识到这只是开始",
+        "元玉奴表态与李曜共进退"
+      ],
+      "cliffhanger": "李曜握住元玉奴的手：'好。一起。'远处，第一缕阳光升起，照在信都城头。（第一卷 完）",
+      "shuangdian_nodes": [
+        {"position": 800, "type": "power_up", "description": "高欢击退尔朱荣，威望大涨", "intensity": 8},
+        {"position": 1800, "type": "romance", "description": "李曜与元玉奴的感情升华", "intensity": 6}
+      ],
+      "world_context": "第一卷结束，尔朱荣退兵，但更大的风暴还在后面",
+      "arc_summary": {
+        "arc_name": "第一卷：潜龙在渊",
+        "chapters": "1-40",
+        "core_theme": "李曜从猎户到军器监，再到独立势力的成长历程，以及尔朱荣崛起与衰落的历史进程",
+        "protagonist_goal": "利用火药技术在乱世立足，最终建立自己的势力",
+        "antagonist_force": "尔朱荣的猜忌与追杀、朝堂各方势力的博弈、历史洪流的裹挟",
+        "climax": "第 39 章 反间计成功 + 夜袭粮草，李曜帮助高欢击退尔朱荣",
+        "resolution": "尔朱荣退兵，高欢威望大涨，李曜与元玉奴决定共建未来，但更大的挑战还在后面"
+      }
+    }
+  ]
+}

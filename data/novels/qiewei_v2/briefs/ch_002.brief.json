@@ -1,0 +1,141 @@
+{
+  "chapter_number": 2,
+  "chapter_title": "公主入局",
+  "target_word_count": 3000,
+  "target_tension": 7,
+
+  "narrative_rhythm": {
+    "position": "rising_action",
+    "recent_tensions": [6],
+    "reasoning": "第 1 章结尾危机降临，第 2 章需要承接紧张感，转入对话试探"
+  },
+
+  "opening": {
+    "style": "action",
+    "hook": "追兵砸门，少女进门后反手关门，动作熟练",
+    "first_sentence_hint": "直接从砸门声开场，保持紧张感"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "500-800 字",
+      "type": "face_slap",
+      "description": "少女反客为主，不是傻白甜，动作熟练地关门、闩门、观察地形",
+      "intensity": 6
+    },
+    {
+      "position_hint": "1500-2000 字",
+      "type": "reveal",
+      "description": "少女识破李曜会火药，掏出火药配方图纸，智商在线",
+      "intensity": 7
+    },
+    {
+      "position_hint": "2800-3000 字",
+      "type": "mystery",
+      "description": "火药配方图纸出现，悬念升级——她从哪来的？",
+      "intensity": 8
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "追兵砸门，少女闯入，李曜被动应对",
+    "explosion": "少女掏出火药配方，反客为主，识破李曜底细",
+    "harvest": "李曜意识到遇到对手，两人进入互相试探状态"
+  },
+
+  "cliffhanger": {
+    "type": "reveal",
+    "content": "元玉奴从怀里掏出一张纸：'你会用火药，对吧？我在宫中见过类似的。你从哪学的？'",
+    "next_chapter_hook": "第 3 章：李曜如何应对？公主揭露身份"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "元玉奴",
+      "who_doesnt": "李曜",
+      "what": "她见过类似的火药配方，知道宫廷有人在研究",
+      "tension_effect": "读者好奇她是什么身份"
+    },
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "元玉奴",
+      "what": "他是穿越者，火药来自现代知识",
+      "tension_effect": "读者期待他如何掩饰"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：少女破损的锦绣华服、头上的凤钗、手上的茧",
+    "secondary": "听觉：外面的马蹄声、砸门声、两人的对话回声",
+    "tactile": "少女递过来的图纸质感、门闩的冰凉"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜 vs 元玉奴——互相试探底细",
+    "subtext": "李曜想隐藏火药来源，元玉奴想确认他的价值",
+    "bystander_reactions": ["追兵在门外砸门，增加紧迫感"]
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜观察少女，分析局势", "weight": "90%"},
+    {"pov": "observer", "purpose": "暗示少女不简单", "weight": "10%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "元玉奴手上的茧——常年握笔留下的",
+      "火药配方图纸——宫中有人也在研究火药"
+    ],
+    "payoff": []
+  },
+
+  "world_context": "洛阳宫廷：胡太后专权，与孝明帝母子不和",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "刚穿越，击退马匪，警惕心强",
+      "voice": "冷静、理性，不轻易信任",
+      "goal": "活下去，搞清状况"
+    },
+    "元玉奴": {
+      "current_state": "逃亡中，浑身是血，但眼神倔强",
+      "voice": "表面柔弱，内心坚韧，有主见",
+      "goal": "去晋阳见尔朱荣，借兵复仇"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "追兵砸门，少女进门，反手关门动作熟练",
+      "length": "0-600 字",
+      "focus": "紧张感，少女的异常表现"
+    },
+    {
+      "scene": 2,
+      "purpose": "李曜打量少女，发现她不简单",
+      "length": "600-1200 字",
+      "focus": "外貌细节，眼神，玉佩"
+    },
+    {
+      "scene": 3,
+      "purpose": "外面马匪搜索，两人对话试探",
+      "length": "1200-2200 字",
+      "focus": "潜台词，互相套话"
+    },
+    {
+      "scene": 4,
+      "purpose": "元玉奴掏出火药配方图纸",
+      "length": "2200-3000 字",
+      "focus": "悬念揭露，卡点"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复第 1 章已出现的火药发现过程",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "chapter_number": 21,
+  "title": "火器监",
+  "word_count": 6119,
+  "status": "completed",
+  "target_tension": 6,
+  "key_points": [
+    "李曜被迫接受尔朱荣的命令，但提出'土掩为主、部分火焚'的折中方案",
+    "高欢出手解围，建议留部分尸体示众震慑洛阳",
+    "尔朱荣同意，命令士兵处理尸体",
+    "尔朱荣正式设立火器监，封李曜为从五品军器监总管",
+    "深夜，李曜收到高欢的神秘信件，暗示河阴之事非尔朱荣本意"
+  ],
+  "cliffhanger": "高欢深夜来访，暗示尔朱荣可能立节闵帝，并说'战车有两种——一种载人，一种载鬼'",
+  "shuangdian_nodes": [
+    {"position": 800, "type": "reveal", "description": "李曜提出替代方案，智慧化解危机", "intensity": 6},
+    {"position": 1800, "type": "mystery", "description": "高欢出手解围，暗示日后拉拢", "intensity": 7},
+    {"position": 2800, "type": "power_up", "description": "火器监正式成立，李曜获封高官", "intensity": 7}
+  ]
+}

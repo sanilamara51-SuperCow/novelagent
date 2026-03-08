@@ -1,0 +1,166 @@
+{
+  "chapter_number": 14,
+  "chapter_title": "尔朱兆",
+  "target_word_count": 3000,
+  "target_tension": 7,
+
+  "narrative_rhythm": {
+    "position": "conflict",
+    "recent_tensions": [7, 8, 7],
+    "reasoning": "第 12 章紧张度 7（尔朱荣威压），第 13 章紧张度 8（身份危机）。本章尔朱兆登场找茬，紧张度维持在 7，为后续河阴之变埋下杀机"
+  },
+
+  "opening": {
+    "style": "dialogue",
+    "hook": "'哪个是李曜？'粗豪的声音在营门外响起，带着浓重的秀容口音，'滚出来！'",
+    "first_sentence_hint": "以尔朱兆的粗鲁问话开场，直接制造冲突，不要铺垫"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "800-1000 字",
+      "type": "conflict",
+      "description": "尔朱兆奉尔朱荣之命来'验收'火器，实则找茬刁难",
+      "intensity": 6
+    },
+    {
+      "position_hint": "1800-2000 字",
+      "type": "face_slap",
+      "description": "李曜改良火药配方，炸翻废弃土墙，全场震惊",
+      "intensity": 8
+    },
+    {
+      "position_hint": "2800-3000 字",
+      "type": "danger",
+      "description": "尔朱兆离开时低声对亲信说：'河阴的时候，让他消失'",
+      "intensity": 6
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "尔朱兆当众羞辱李曜——'你一个猎户，也配称将军？'并要求当场演示，否则就是欺瞒",
+    "explosion": "李曜冷静改良配方，威力倍增，炸翻土墙，尔朱兆脸色铁青",
+    "harvest": "众人震惊，高欢眼中闪过欣赏，但尔朱兆埋下杀机"
+  },
+
+  "cliffhanger": {
+    "type": "danger",
+    "content": "尔朱兆离开时，低声对亲信说：'河阴的时候，让他消失。'风把这句话吹散，但高欢听到了。",
+    "next_chapter_hook": "第 15 章：河阴之变前夕，李曜开始准备'十斤雷'，同时高欢暗中保护"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "尔朱兆",
+      "what": "火药真实威力远超展示，且已准备好更厉害的'十斤雷'",
+      "tension_effect": "读者期待李曜如何打脸"
+    },
+    {
+      "who_knows": "高欢",
+      "who_doesnt": "李曜",
+      "what": "高欢已听到尔朱兆的杀意，开始暗中布局保护",
+      "tension_effect": "读者期待高欢如何出手"
+    },
+    {
+      "who_knows": "读者",
+      "who_doesnt": "尔朱兆",
+      "what": "尔朱兆的杀意会加速他的灭亡——高欢已站队李曜",
+      "tension_effect": "期待复仇"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：尔朱兆的络腮胡、铠甲上的血污、土墙崩塌的烟尘",
+    "secondary": "听觉：尔朱兆的粗嗓门、火药爆炸声、众人惊呼",
+    "tactile": "地面的震动、飞溅的碎石、灼热的气浪"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜 vs 尔朱兆——粗鲁武将 vs 冷静技工，力量对比悬殊",
+    "subtext": "尔朱兆：'我倒要看看你有什么真本事。' 李曜：'那就让你开开眼。'",
+    "bystander_reactions": [
+      "高欢站在一旁，眼神深邃，不表态但微微点头",
+      "工匠们屏住呼吸，紧张地看着",
+      "侍卫们被爆炸声吓得后退"
+    ]
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜的视角：冷静分析尔朱兆的来意，设计打脸方案", "weight": "60%"},
+    {"pov": "observer", "purpose": "高欢的视角：评估尔朱兆的愚蠢和李曜的价值", "weight": "25%"},
+    {"pov": "villain", "purpose": "尔朱兆的视角：嫉妒李曜受重视，想当众羞辱", "weight": "15%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "尔朱兆的'河阴'——第 16 章河阴之变的伏笔",
+      "高欢听到杀意——后续他会保护李曜",
+      "改良火药——为后续'十斤雷'做铺垫"
+    ],
+    "payoff": [
+      "第 13 章李曜获得精铁和陶匠——本章用于制作演示火器"
+    ]
+  },
+
+  "world_context": "北魏武泰元年（528 年）四月，尔朱荣准备发动河阴之变，尔朱兆从秀容赶来协助。尔朱兆是尔朱荣的侄子，粗鲁残暴，后成为历史上有名的屠夫。",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "刚获得资源，正在研发火器，被尔朱兆找茬",
+      "voice": "冷静、理性，用实力说话",
+      "goal": "完成演示，震慑尔朱兆，同时隐藏真实实力"
+    },
+    "尔朱兆": {
+      "current_state": "从秀容归来，听闻火器之事，前来找茬",
+      "voice": "粗鲁、傲慢，崇尚武力",
+      "goal": "当众羞辱李曜，证明火器无用"
+    },
+    "高欢": {
+      "current_state": "奉命保护李曜，暗中观察局势",
+      "voice": "话少、精准，偶尔点破",
+      "goal": "保护李曜，同时评估尔朱兆的威胁"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "尔朱兆闯营，当众羞辱李曜",
+      "length": "0-600 字",
+      "focus": "冲突开场，建立尔朱兆的粗鲁形象"
+    },
+    {
+      "scene": 2,
+      "purpose": "尔朱兆要求当场演示，否则就是欺瞒",
+      "length": "600-1200 字",
+      "focus": "刁难升级，李曜被迫接招"
+    },
+    {
+      "scene": 3,
+      "purpose": "李曜改良火药，准备演示",
+      "length": "1200-1800 字",
+      "focus": "专业细节，冷静应对"
+    },
+    {
+      "scene": 4,
+      "purpose": "炸翻土墙，全场震惊",
+      "length": "1800-2400 字",
+      "focus": "威力展示，尔朱兆吃瘪"
+    },
+    {
+      "scene": 5,
+      "purpose": "尔朱兆记恨，埋下杀机",
+      "length": "2400-3000 字",
+      "focus": "悬念收尾，河阴伏笔"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复前文信息",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇"
+  ]
+}

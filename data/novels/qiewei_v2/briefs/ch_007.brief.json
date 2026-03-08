@@ -1,0 +1,161 @@
+{
+  "chapter_number": 7,
+  "chapter_title": "府内有鬼",
+  "target_word_count": 3500,
+  "target_tension": 7,
+
+  "narrative_rhythm": {
+    "position": "rising_action",
+    "recent_tensions": [6, 7, 6],
+    "reasoning": "第 6 章结尾发现内鬼，第 7 章需要展开调查，同时引出新的危机"
+  },
+
+  "opening": {
+    "style": "continuation",
+    "hook": "第二天清晨，李曜找元玉奴商讨，发现公主府内鬼比想象的多",
+    "first_sentence_hint": "从清晨李曜敲元玉奴的门开始"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "600-1000 字",
+      "type": "reveal",
+      "description": "元玉奴揭露公主府已被崔光渗透多年",
+      "intensity": 6
+    },
+    {
+      "position_hint": "1500-2000 字",
+      "type": "face_slap",
+      "description": "李曜设局，当众揪出内鬼福伯",
+      "intensity": 8
+    },
+    {
+      "position_hint": "2800-3200 字",
+      "type": "danger",
+      "description": "崔光的人马包围公主府，要抓李曜",
+      "intensity": 7
+    },
+    {
+      "position_hint": "3200-3500 字",
+      "type": "cliffhanger",
+      "description": "元玉奴亮出底牌——她还有尔朱荣给的令牌",
+      "intensity": 8
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "公主府内鬼众多，崔光的人马包围府邸",
+    "explosion": "李曜设局揪出福伯，元玉奴亮出尔朱荣令牌",
+    "harvest": "崔光的人退去，但两人决定立刻离开平城"
+  },
+
+  "cliffhanger": {
+    "type": "danger",
+    "content": "两人乔装出城，身后追兵已至。元玉奴忽然说：'其实，我还有一个身份没告诉你。'",
+    "next_chapter_hook": "第 8 章：元玉奴的真正身份？"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "元玉奴",
+      "who_doesnt": "李曜",
+      "what": "她还有尔朱荣给的令牌，可以调动晋阳兵马",
+      "tension_effect": "读者好奇她还有什么秘密"
+    },
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "崔光的人",
+      "what": "他已经发现内鬼，将计就计",
+      "tension_effect": "读者期待设局成功"
+    },
+    {
+      "who_knows": "读者",
+      "who_doesnt": "李曜、元玉奴",
+      "what": "崔光已经调集了三百人马，势在必得",
+      "tension_effect": "读者替主角捏汗"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：清晨的公主府、福伯变化的脸色、崔光人马的铠甲",
+    "secondary": "听觉：脚步声、兵器碰撞声、元玉奴的冷喝",
+    "tactile": "令牌的冰凉、刀柄的粗糙"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜 vs 福伯——内鬼对峙；元玉奴 vs 崔光使者——权力对抗",
+    "subtext": "福伯表面恭敬实际轻蔑，崔光使者表面客气实际威胁",
+    "bystander_reactions": ["其他下人的惊恐", "侍卫的犹豫"]
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜设局，观察福伯", "weight": "60%"},
+    {"pov": "observer", "purpose": "元玉奴的内心活动", "weight": "30%"},
+    {"pov": "antagonist", "purpose": "福伯被揭穿时的心理", "weight": "10%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "元玉奴还有尔朱荣令牌——后续可调动兵马",
+      "元玉奴的真正身份——可能不是表面那么简单"
+    ],
+    "payoff": [
+      "第 6 章的内鬼线索"
+    ]
+  },
+
+  "world_context": "平城公主府：崔光与元玉奴的权力较量",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "发现府内有内鬼，决定设局揪出",
+      "voice": "冷静、果断、有谋略",
+      "goal": "保护元玉奴，尽快离开平城"
+    },
+    "元玉奴": {
+      "current_state": "发现府中被渗透，决定清理门户",
+      "voice": "表面柔弱，实际有威严",
+      "goal": "离开平城，前往晋阳"
+    },
+    "福伯": {
+      "current_state": "被崔光收买，潜伏公主府三年",
+      "voice": "表面恭敬，实际轻蔑",
+      "goal": "偷取火药配方，交给崔光"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "李曜找元玉奴商讨，揭露内鬼",
+      "length": "0-800 字",
+      "focus": "情报交换，建立信任"
+    },
+    {
+      "scene": 2,
+      "purpose": "李曜设局，引福伯上钩",
+      "length": "800-1800 字",
+      "focus": "智斗，揭露内鬼"
+    },
+    {
+      "scene": 3,
+      "purpose": "崔光的人马包围公主府",
+      "length": "1800-2800 字",
+      "focus": "危机升级"
+    },
+    {
+      "scene": 4,
+      "purpose": "元玉奴亮出尔朱荣令牌，退敌",
+      "length": "2800-3500 字",
+      "focus": "反转，爽点"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复前文信息",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇"
+  ]
+}

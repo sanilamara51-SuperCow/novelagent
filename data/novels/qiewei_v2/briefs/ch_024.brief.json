@@ -1,0 +1,172 @@
+{
+  "chapter_number": 24,
+  "chapter_title": "高欢的邀请",
+  "target_word_count": 3000,
+  "target_tension": 8,
+
+  "narrative_rhythm": {
+    "position": "climax_setup",
+    "recent_tensions": [
+      {"chapter": 22, "tension": 7, "event": "立帝军议，孝庄帝密信"},
+      {"chapter": 23, "tension": 7, "event": "元子攸登基，李曜被封将军，高欢密约"}
+    ],
+    "reasoning": "第 23 章以高欢'指一条活路'收尾，紧张度 7。第 24 章需要揭晓高欢的真实意图，这是李曜命运的关键转折点。紧张度应该持续爬升至 8，为后续冲突蓄力"
+  },
+
+  "opening": {
+    "style": "continuation",
+    "hook": "承接第 23 章结尾，高欢说出'指一条活路'后，李曜的反应。直接切入对话，不要重新描写环境",
+    "first_sentence_hint": "从李曜的回应开始，快速进入高欢的真正计划揭露"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "600-900 字",
+      "type": "reveal",
+      "description": "高欢正式揭露尔朱荣必败的判断，并说明理由——朝堂人心、宗室反抗、军事布局",
+      "intensity": 7
+    },
+    {
+      "position_hint": "1500-1800 字",
+      "type": "power_up",
+      "description": "高欢点明李曜的价值：火器能改变战场，清醒的头脑能看清乱世，邀请他早做打算",
+      "intensity": 8
+    },
+    {
+      "position_hint": "2400-2700 字",
+      "type": "mystery",
+      "description": "分别时高欢暗示元玉奴身份不简单，埋下新悬念",
+      "intensity": 8
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "李曜身处绝境——皇帝拉拢被尔朱荣猜忌，不去徐州被皇帝视为不可靠，高欢指出这是死局",
+    "explosion": "高欢提出第三条路：暗中合作，等待时机，并揭露自己已在尔朱荣阵营中布局多年",
+    "harvest": "李曜获得新的盟友和退路，但也卷入更深的阴谋，意识到高欢才是真正的布局者"
+  },
+
+  "cliffhanger": {
+    "type": "reveal",
+    "content": "分别时，高欢忽然说：'对了，元玉奴的身份，恐怕不止是公主那么简单。'",
+    "next_chapter_hook": "高欢知道元玉奴的什么秘密？元玉奴还有什么隐藏身份？"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "高欢",
+      "who_doesnt": "李曜、读者",
+      "what": "高欢的真实布局和实力，他在尔朱荣阵营中经营多年的人脉",
+      "tension_effect": "神秘感，为日后高欢崛起埋线"
+    },
+    {
+      "who_knows": "高欢",
+      "who_doesnt": "李曜",
+      "what": "元玉奴的真实身份可能不止是公主",
+      "tension_effect": "制造新悬念，让读者好奇元玉奴的真实背景"
+    },
+    {
+      "who_knows": "读者",
+      "who_doesnt": "尔朱荣",
+      "what": "高欢已暗中接触李曜，开始拉拢",
+      "tension_effect": "读者为李曜捏汗，担心被发现"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：破庙的残垣断壁、月光下高欢的侧脸、烛火跳动的光影",
+    "secondary": "听觉：夜风吹过破庙的呜咽声、远处野狗的吠叫、两人对话的回声",
+    "tactile": "石桌的冰冷、酒杯的凉意、夜风的寒意"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜与高欢的博弈——高欢要拉拢，李曜要试探对方的真实意图",
+    "subtext": "高欢表面说为李曜指路，实则在为自己招揽人才；李曜表面犹豫，实则在评估风险与收益",
+    "bystander_reactions": "破庙外高欢亲兵的警戒，远处偶尔传来的马蹄声"
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜的视角，经历高欢的拉拢与试探", "weight": "90%"},
+    {"pov": "observer", "purpose": "破庙外亲兵的旁观视角，增加紧张感", "weight": "10%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "高欢在尔朱荣阵营中的布局——为日后高欢独立建国埋线",
+      "元玉奴身份不简单——为日后公主身份揭露埋线",
+      "秘密约定——日后李曜与高欢的合作基础"
+    ],
+    "payoff": [
+      "第 23 章高欢'指一条活路'——本章正式揭晓"
+    ]
+  },
+
+  "world_context": "高欢此时仍在尔朱荣麾下，但已暗中布局。历史上高欢在尔朱荣死后收编其部众，最终建立北齐",
+  "historical_notes": "高欢（496-547）是北齐实际奠基人，死后其子高洋建立北齐，追尊为神武帝",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "镇东将军，被皇帝拉拢，被尔朱荣猜忌，寻求破局之道",
+      "voice": "谨慎、理性、善于权衡",
+      "goal": "在多方势力博弈中生存并寻找最佳出路"
+    },
+    "高欢": {
+      "current_state": "尔朱荣麾下大将，暗中布局多年",
+      "voice": "沉稳、自信、话中有话",
+      "goal": "招揽李曜，为日后独立积蓄力量"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "承接第 23 章结尾，高欢说出'指活路'，李曜追问",
+      "length": "0-600 字",
+      "focus": "李曜的警惕，高欢的自信"
+    },
+    {
+      "scene": 2,
+      "purpose": "高欢分析尔朱荣必败的理由",
+      "length": "600-1200 字",
+      "focus": "朝堂人心、宗室反抗、军事隐患"
+    },
+    {
+      "scene": 3,
+      "purpose": "高欢提出合作邀请，点明李曜的价值",
+      "length": "1200-1800 字",
+      "focus": "火器的战略价值，李曜的清醒头脑"
+    },
+    {
+      "scene": 4,
+      "purpose": "李曜的权衡与回应",
+      "length": "1800-2400 字",
+      "focus": "李曜的内心挣扎，最终达成秘密约定"
+    },
+    {
+      "scene": 5,
+      "purpose": "分别时的 cliffhanger",
+      "length": "2400-3000 字",
+      "focus": "高欢暗示元玉奴身份不简单"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复第 23 章的具体对话内容",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇",
+    "高欢的揭露要层层递进，不要一次性说尽"
+  ],
+
+  "continuation_notes": {
+    "from_previous_chapter": "第 23 章结尾高欢说'我是来给你指一条活路的'",
+    "character_state": "李曜处于警惕状态，等待高欢的下文",
+    "unresolved_threads": [
+      "高欢的'活路'具体是什么",
+      "高欢的真实意图和布局",
+      "元玉奴的真实身份",
+      "李曜最终如何选择"
+    ]
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "chapter_number": 19,
+  "chapter_title": "第一声雷",
+  "target_word_count": 3000,
+  "target_tension": 9,
+
+  "narrative_rhythm": {
+    "position": "climax",
+    "recent_tensions": [6, 8, 9],
+    "reasoning": "第 17 章紧张度 6（南下），第 18 章紧张度 8（河阴对峙）。本章火器首次实战，是河阴之变的第一个高潮，紧张度爬升至 9"
+  },
+
+  "opening": {
+    "style": "action",
+    "hook": "李曜点燃引线，火折子在夜空中划出一道弧线，直奔敌船而去。",
+    "first_sentence_hint": "直接以火器发射的动作开场，不要铺垫"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "800-1000 字",
+      "type": "power_up",
+      "description": "火药首次用于实战，一声巨响",
+      "intensity": 8
+    },
+    {
+      "position_hint": "1800-2000 字",
+      "type": "reveal",
+      "description": "尔朱荣眼中闪过精光，看到统一希望",
+      "intensity": 7
+    },
+    {
+      "position_hint": "2800-3000 字",
+      "type": "danger",
+      "description": "尔朱荣下令召集反对者到河阴堤坝",
+      "intensity": 9
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "敌军战船逼近，尔朱荣部将有人面露惧色；李曜承受巨大压力——火器必须成功",
+    "explosion": "一声巨响，战船被炸出大洞，敌军大乱，尔朱荣大笑",
+    "harvest": "火器威力得到认可，但尔朱荣的杀心更重——河阴之变的血腥即将开始"
+  },
+
+  "cliffhanger": {
+    "type": "danger",
+    "content": "尔朱荣下令：'明日，河阴堤坝。将所有反对者，都叫来开会。'高欢看向李曜，眼神复杂。",
+    "next_chapter_hook": "第 20 章：血染河阴——大屠杀开始"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "尔朱荣、敌军",
+      "what": "火药真实威力远超展示，且还有'十斤雷'等更强火器",
+      "tension_effect": "读者期待火器展示效果"
+    },
+    {
+      "who_knows": "尔朱荣",
+      "who_doesnt": "李曜",
+      "what": "尔朱荣已决定在河阴进行大屠杀，不仅是军事打击",
+      "tension_effect": "读者知道历史结局"
+    },
+    {
+      "who_knows": "高欢",
+      "who_doesnt": "尔朱荣",
+      "what": "高欢已在暗中布局，准备在适当时机脱离尔朱荣",
+      "tension_effect": "读者期待高欢的行动"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：引线燃烧的火花、火折子弧线、战船被炸飞的碎片、冲天的火光",
+    "secondary": "听觉：引线滋滋声、爆炸巨响、敌军惨叫声、黄河涛声",
+    "tactile": "地面震动、气浪扑面、耳膜嗡嗡作响"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜 vs 战争——技术天才被迫卷入血腥屠杀的内心冲突",
+    "subtext": "尔朱荣：'此物可破天下坚城。' 李曜：'是。'（内心：我创造了什么怪物）",
+    "bystander_reactions": [
+      "尔朱兆眼中闪过贪婪——想独占火器",
+      "高欢低头不语，眼神深邃",
+      "敌军士卒惊恐万状，有人跳水逃生"
+    ]
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜的视角：操作火器，感受威力，内心挣扎", "weight": "60%"},
+    {"pov": "observer", "purpose": "尔朱荣的视角：评估火器价值，规划未来", "weight": "25%"},
+    {"pov": "villain", "purpose": "敌军的视角：面对未知武器的恐惧", "weight": "15%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "尔朱荣的'开会'——后续大屠杀",
+      "高欢的复杂眼神——后续他会保护李曜",
+      "李曜的内心挣扎——后续他会反思火器的使用"
+    ],
+    "payoff": [
+      "第 18 章尔朱荣询问火器威力——本章实战展示",
+      "第 17 章李曜准备火器——本章首次使用"
+    ]
+  },
+
+  "world_context": "北魏武泰元年（528 年）四月，尔朱荣在河阴渡口与胡太后军队对峙。火器首次用于实战，改变了战争格局。",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "准备发射火器，承受巨大压力",
+      "voice": "冷静但内心挣扎，意识到自己在创造怪物",
+      "goal": "完成火器演示，但开始担心后果"
+    },
+    "尔朱荣": {
+      "current_state": "观察火器威力，已开始规划统一天下",
+      "voice": "兴奋、威严，眼中闪过精光",
+      "goal": "确认火器价值，准备发动大屠杀"
+    },
+    "高欢": {
+      "current_state": "旁观，评估局势变化",
+      "voice": "沉默，偶尔与尔朱荣对视",
+      "goal": "保护李曜，同时评估尔朱荣的威胁"
+    },
+    "尔朱兆": {
+      "current_state": "嫉妒李曜受重视，想独占火器",
+      "voice": "粗鲁、直接",
+      "goal": "获取火器控制权"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "李曜准备火器，点燃引线",
+      "length": "0-600 字",
+      "focus": "紧张氛围，发射准备"
+    },
+    {
+      "scene": 2,
+      "purpose": "火器发射，命中敌船",
+      "length": "600-1200 字",
+      "focus": "动作描写，爆炸场面"
+    },
+    {
+      "scene": 3,
+      "purpose": "敌军大乱，尔朱荣大笑",
+      "length": "1200-2000 字",
+      "focus": "战果展示，众人反应"
+    },
+    {
+      "scene": 4,
+      "purpose": "尔朱荣评估火器价值",
+      "length": "2000-2600 字",
+      "focus": "尔朱荣的野心，李曜的担忧"
+    },
+    {
+      "scene": 5,
+      "purpose": "尔朱荣下令召集反对者",
+      "length": "2600-3200 字",
+      "focus": "悬念收尾，大屠杀前奏"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复前文信息",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇"
+  ]
+}

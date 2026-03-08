@@ -20,6 +20,7 @@ class ProjectConfig(BaseModel):
     version: str
     data_dir: str = "./data"
     log_level: str = "INFO"
+    writing_mode: str = "quality"  # quality / volume / hybrid
 
 
 class ModelConfig(BaseModel):
@@ -62,12 +63,22 @@ class SummarizerAgentConfig(AgentConfig):
     max_tokens: int = 2048
 
 
+class PacingOptimizerAgentConfig(AgentConfig):
+    """节奏优化器配置（通用，原 fanqie_optimizer）."""
+    model_config = ConfigDict(extra="forbid")
+
+    model: str
+    max_tokens: int = 4096
+    enabled_in_modes: list[str] = ["volume", "hybrid"]
+
+
 class AgentsConfig(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     world_builder: AgentConfig
     plot_designer: AgentConfig
     writer: AgentConfig
+    pacing_optimizer: PacingOptimizerAgentConfig
     consistency_checker: AgentConfig
     style_polisher: AgentConfig
     emotion_risk_control: AgentConfig
@@ -103,6 +114,17 @@ class WorkflowConfig(BaseModel):
     role_model_chains: Dict[str, List[str]] = {}
     trace_logging: Dict[str, Any] = {}
 
+    # Writing mode configuration
+    writing_modes: Dict[str, Dict[str, Any]] = {}
+
+
+class PacingConfig(BaseModel):
+    """节奏配置."""
+    model_config = ConfigDict(extra="forbid")
+
+    conflict_types: List[str] = []
+    cliffhanger_patterns: Dict[str, List[str]] = {}
+
 
 class AppConfig(BaseModel):
     model_config = ConfigDict(extra="forbid")
@@ -113,6 +135,21 @@ class AppConfig(BaseModel):
     rag: RAGConfig
     memory: MemoryConfig
     workflow: WorkflowConfig
+    pacing: PacingConfig = None
+
+    def get_writing_mode(self) -> str:
+        """Get current writing mode: quality / volume / hybrid."""
+        return self.project.writing_mode
+
+    def get_writing_mode_config(self) -> dict:
+        """Get configuration for the current writing mode."""
+        mode = self.project.writing_mode
+        modes = self.workflow.writing_modes or {}
+        return modes.get(mode, {})
+
+    def is_mode(self, mode: str) -> bool:
+        """Check if current mode matches the given mode."""
+        return self.project.writing_mode == mode
 
 
 def _resolve_env_vars(data: Any) -> Any:

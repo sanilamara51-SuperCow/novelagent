@@ -5,6 +5,7 @@ project:
   version: "0.1.0"
   data_dir: "./data"
   log_level: "INFO"
+  writing_mode: "quality"  # 写作模式：quality(历史正剧) / volume(商业快消) / hybrid(平衡)
 
 # LLM 配置
 llm:
@@ -78,6 +79,13 @@ agents:
     model: "deepseek-chat"
     max_tokens: 3072
 
+  # 节奏优化器（通用，原 fanqie_optimizer）
+  pacing_optimizer:
+    model: "deepseek-chat"
+    max_tokens: 4096
+    # 仅在 volume 模式下启用
+    enabled_in_modes: ["volume", "hybrid"]
+
   sandbox_debater:
     npc_model: "deepseek-chat"
     host_model: "deepseek-chat"
@@ -120,6 +128,40 @@ workflow:
     - world_setting
     - outline
     - emotion_risk_fail
+
+  # 写作模式配置
+  writing_modes:
+    quality:
+      # 历史正剧模式：完整 pipeline，注重质量
+      skip_polish: false
+      skip_consistency_retry: false
+      skip_debate: false
+      chapter_word_min: 2500
+      chapter_word_max: 3500
+      pacing_target: 0.5  # 每千字冲突次数（较低，允许铺垫）
+      cliffhanger_mode: "soft"  # soft=悬念钩子，hard=强卡点
+      historical_accuracy_check: true  # 强制历史准确性检查
+    volume:
+      # 商业快消模式：快速 pipeline，注重节奏
+      skip_polish: true
+      skip_consistency_retry: true
+      skip_debate: true
+      chapter_word_min: 1500
+      chapter_word_max: 2000
+      pacing_target: 1.0  # 每千字冲突次数（较高）
+      cliffhanger_mode: "hard"
+      historical_accuracy_check: false
+    hybrid:
+      # 平衡模式：保留质量检查，适度增强节奏
+      skip_polish: false
+      skip_consistency_retry: false
+      skip_debate: true
+      chapter_word_min: 2000
+      chapter_word_max: 2800
+      pacing_target: 0.7
+      cliffhanger_mode: "soft"
+      historical_accuracy_check: true
+
   write_range_defaults:
     default_range: "1-10"
     overwrite: false
@@ -134,3 +176,10 @@ workflow:
     enable: true
     log_path: "./logs"
     format: "json"
+
+# 节奏配置（通用）
+pacing:
+  conflict_types: ["打脸", "反转", "金手指", "碾压", "危机解除", "智斗", "揭秘"]
+  cliffhanger_patterns:
+    soft: ["悬念", "转折", "伏笔"]
+    hard: ["绝境", "倒计时", "身份暴露", "突现"]

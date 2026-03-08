@@ -1,0 +1,183 @@
+{
+  "chapter_number": 28,
+  "chapter_title": "斛斯椿",
+  "target_word_count": 4000,
+  "target_tension": 9,
+
+  "narrative_rhythm": {
+    "position": "rising_action",
+    "recent_tensions": [
+      {"chapter": 26, "tension": 8, "event": "诏令两难，元玉奴替身入宫"},
+      {"chapter": 27, "tension": 9, "event": "河阴屠杀，李曜暗救七人"}
+    ],
+    "reasoning": "第 27 章紧张度 9，第 28 章需维持 9。尔朱荣召见李曜入洛阳，表面奖赏实则试探；斛斯椿深夜造访带来新的危机，将紧张度推向更高层次"
+  },
+
+  "opening": {
+    "style": "continuation",
+    "hook": "承接第 27 章结尾，李曜推开太极殿大门，面见尔朱荣。奖赏还是鸿门宴？",
+    "first_sentence_hint": "从李曜入殿开始，快速展开与尔朱荣的对峙"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "800-1200 字",
+      "type": "reveal",
+      "description": "尔朱荣奖赏李曜——封洛阳县伯，增邑五百户，但同时元天穆警告这是'捧杀'",
+      "intensity": 7
+    },
+    {
+      "position_hint": "2000-2600 字",
+      "type": "danger",
+      "description": "斛斯椿深夜造访，揭露尔朱荣清剿名单上有李曜的名字",
+      "intensity": 9
+    },
+    {
+      "position_hint": "3200-3600 字",
+      "type": "mystery",
+      "description": "毒箭出现，箭上纸条揭示三日后大将军要见",
+      "intensity": 8
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "李曜入宫面见尔朱荣，表面奖赏实则暗藏杀机；斛斯椿带来清剿名单",
+    "explosion": "李曜发现毒箭，意识到自己已身处棋局中央",
+    "harvest": "获得洛阳县伯爵位，但生命危险逼近；斛斯椿成为潜在盟友"
+  },
+
+  "cliffhanger": {
+    "type": "danger",
+    "content": "李曜看着毒箭，箭上纸条写着：'三日后，大将军要见你。'他抬起头，看向窗外——夜色深沉，杀机四伏。",
+    "next_chapter_hook": "三日后的大将军府之约，是生路还是死路？"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "尔朱荣",
+      "who_doesnt": "李曜",
+      "what": "清剿计划的真实范围和时间表",
+      "tension_effect": "读者知道李曜在名单上，担心他如何应对"
+    },
+    {
+      "who_knows": "斛斯椿",
+      "who_doesnt": "尔朱荣、李曜",
+      "what": "他为何背叛尔朱荣向李曜通风报信",
+      "tension_effect": "读者好奇他的真实动机和立场"
+    },
+    {
+      "who_knows": "李曜",
+      "who_doesnt": "所有人",
+      "what": "他已经暗中救下七名朝臣，手握未来筹码",
+      "tension_effect": "读者期待他如何使用这张底牌"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：太极殿的威严、尔朱荣的冷笑、斛斯椿的憔悴面容、毒箭的寒光",
+    "secondary": "听觉：殿门开启的吱呀声、尔朱荣的笑声、深夜脚步声、箭矢射入桌面的闷响",
+    "tactile": "爵位诏书的冰冷、刀柄的温润、毒箭的寒意、烛火的温度"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜与尔朱荣——奖赏与试探并存的对话；李曜与斛斯椿——危机与信任的博弈",
+    "subtext": "尔朱荣表面奖赏实则试探；斛斯椿表面示好实则另有目的",
+    "bystander_reactions": "元天穆的复杂眼神、高欢的沉默旁观"
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜视角，面见尔朱荣，接受奖赏", "weight": "50%"},
+    {"pov": "observer", "purpose": "斛斯椿视角，深夜造访，揭露危机", "weight": "30%"},
+    {"pov": "omniscient", "purpose": "太极殿内的权力博弈", "weight": "20%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "斛斯椿的背叛——他日后会真正成为尔朱荣的掘墓人",
+      "清剿名单——三月后的政变伏笔",
+      "毒箭警告——有人要阻止李曜赴约"
+    ],
+    "payoff": [
+      "第 27 章洛阳召见——本章李曜入宫面圣",
+      "第 24 章高欢提醒——本章斛斯椿证实尔朱荣的杀心"
+    ]
+  },
+
+  "world_context": "永安二年（529 年），尔朱荣掌控朝政后开始清洗异己，斛斯椿作为其谋士暗中转向孝庄帝",
+  "historical_notes": "历史上斛斯椿确实是尔朱荣谋士，后参与诛杀尔朱荣的策划",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "河阴之变后因'功'受封，但已被尔朱荣视为潜在威胁",
+      "voice": "冷静理性，在权力博弈中保持清醒",
+      "goal": "在尔朱荣的猜忌中求生，同时保护盟友"
+    },
+    "尔朱荣": {
+      "current_state": "权倾朝野，通过河阴之变彻底清除门阀",
+      "voice": "威严中带着杀意，让人捉摸不透",
+      "goal": "巩固权力，清除所有潜在威胁"
+    },
+    "斛斯椿": {
+      "current_state": "尔朱荣谋士，但暗中转向孝庄帝",
+      "voice": "低沉急促，带着焦虑和决绝",
+      "goal": "拉拢李曜，共同对抗尔朱荣"
+    },
+    "元玉奴": {
+      "current_state": "活着回到洛阳，可能与孝庄帝有接触",
+      "voice": "沉稳果决",
+      "goal": "保护李曜，同时推进自己的计划"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "李曜入太极殿，面见尔朱荣",
+      "length": "0-1000 字",
+      "focus": "奖赏与试探并存的对话"
+    },
+    {
+      "scene": 2,
+      "purpose": "尔朱荣封李曜为洛阳县伯",
+      "length": "1000-1600 字",
+      "focus": "表面恩宠，实则捧杀"
+    },
+    {
+      "scene": 3,
+      "purpose": "深夜斛斯椿造访火器监",
+      "length": "1600-2800 字",
+      "focus": "揭露清剿计划，建议先下手为强"
+    },
+    {
+      "scene": 4,
+      "purpose": "斛斯椿离开后发现毒箭",
+      "length": "2800-3600 字",
+      "focus": "新的威胁，三日后之约"
+    },
+    {
+      "scene": 5,
+      "purpose": "李曜与程平商议对策",
+      "length": "3600-4000 字",
+      "focus": "去与不去都是两难"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇",
+    "对话要符合身份，尔朱荣的威严、斛斯椿的焦虑"
+  ],
+
+  "continuation_notes": {
+    "from_previous_chapter": "第 27 章结尾李曜推开太极殿大门，准备面见尔朱荣",
+    "character_state": "李曜刚完成河阴焚尸任务，暗中救了七人",
+    "unresolved_threads": [
+      "元玉奴的下落",
+      "七名朝臣是否安全逃离",
+      "尔朱荣对李曜的真实态度",
+      "高欢的下一步布局"
+    ]
+  }
+}

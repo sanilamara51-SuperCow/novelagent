@@ -1,0 +1,172 @@
+{
+  "chapter_number": 26,
+  "chapter_title": "两难诏令",
+  "target_word_count": 3000,
+  "target_tension": 8,
+
+  "narrative_rhythm": {
+    "position": "crisis",
+    "recent_tensions": [
+      {"chapter": 24, "tension": 8, "event": "高欢密谈，暗中合作"},
+      {"chapter": 25, "tension": 7, "event": "尔朱兆刁难，炸石立威"}
+    ],
+    "reasoning": "第 25 章紧张度 7，第 26 章需要升至 8。孝庄帝诏令入朝是新的危机——去可能被尔朱荣怀疑，不去则是抗旨。元玉奴献计女扮男装，制造新的悬念和看点"
+  },
+
+  "opening": {
+    "style": "continuation",
+    "hook": "承接第 25 章结尾，李曜回到火器监后不久，宫中传来诏令。清晨的使者打破平静",
+    "first_sentence_hint": "直接从宫中使者到来开始，快速切入两难困境"
+  },
+
+  "shuangdian_nodes": [
+    {
+      "position_hint": "600-900 字",
+      "type": "danger",
+      "description": "李曜意识到这是孝庄帝的拉拢陷阱——去则被尔朱荣猜忌，不去则是抗旨",
+      "intensity": 7
+    },
+    {
+      "position_hint": "1800-2200 字",
+      "type": "reveal",
+      "description": "元玉奴献计女扮男装替李曜入朝，展现她的智谋和胆识",
+      "intensity": 9
+    }
+  ],
+
+  "dopamine_cycle": {
+    "suppress": "孝庄帝诏令入朝谢恩，看似恩典实为陷阱；尔朱荣那边也在等李曜的反应",
+    "explosion": "元玉奴提出女扮男装替身的冒险计划，化解两难困境",
+    "harvest": "暂时渡过难关，但元玉奴的身份更加危险，李曜欠下大人情"
+  },
+
+  "cliffhanger": {
+    "type": "danger",
+    "content": "太极殿前，'李曜'刚下马车，就被一群禁军围住：'反贼！竟敢冒充朝廷命官！'",
+    "next_chapter_hook": "元玉奴的替身计划暴露？她如何脱身？"
+  },
+
+  "information_asymmetry": [
+    {
+      "who_knows": "孝庄帝",
+      "who_doesnt": "尔朱荣、李曜",
+      "what": "诏令的真实目的是试探和拉拢",
+      "tension_effect": "读者知道这是陷阱，担心李曜如何应对"
+    },
+    {
+      "who_knows": "元玉奴、李曜",
+      "who_doesnt": "孝庄帝、尔朱荣",
+      "what": "女扮男装的替身计划",
+      "tension_effect": "读者期待计划执行，担心被发现"
+    },
+    {
+      "who_knows": "读者",
+      "who_doesnt": "所有人",
+      "what": "元玉奴的真实身份可能不止是公主",
+      "tension_effect": "为日后身份揭露埋下期待"
+    }
+  ],
+
+  "sensory_focus": {
+    "primary": "视觉：宫中使者的黄袍诏书、元玉奴的女装与男装对比、太极殿的威严",
+    "secondary": "听觉：诏书展开的声音、马蹄声、禁军的呵斥声",
+    "tactile": "诏书的 silk 质感、男装束胸的紧绷感、剑柄的冰凉"
+  },
+
+  "dialogue_tension": {
+    "core_confrontation": "李曜与元玉奴讨论如何应对诏令——去与不去都是死路",
+    "subtext": "元玉奴主动请缨替身，实则在试探李曜对她的信任程度",
+    "bystander_reactions": "程平等人的担忧，宫中使者的观察"
+  },
+
+  "pov_structure": [
+    {"pov": "protagonist", "purpose": "李曜视角，接收诏令，分析困境", "weight": "60%"},
+    {"pov": "observer", "purpose": "元玉奴视角，献计过程，内心活动", "weight": "30%"},
+    {"pov": "omniscient", "purpose": "太极殿前的紧张气氛", "weight": "10%"}
+  ],
+
+  "foreshadowing": {
+    "plant": [
+      "元玉奴熟悉宫廷礼仪——为日后身份揭露埋线",
+      "女扮男装的成功——为日后多次替身埋线",
+      "孝庄帝的急切——为日后政变埋线"
+    ],
+    "payoff": [
+      "第 24 章高欢提醒元玉奴身份不简单——本章展示她的智谋",
+      "第 23 章孝庄帝拉拢——本章正式行动"
+    ]
+  },
+
+  "world_context": "孝庄帝即位后急于培植势力，但尔朱荣掌控朝政，任何动作都可能引发冲突",
+  "historical_notes": "历史上孝庄帝元子攸确实暗中联络各方势力，最终于 530 年设计诛杀尔朱荣",
+
+  "character_notes": {
+    "李曜": {
+      "current_state": "火器监总管，镇东将军，刚与高欢合作，被尔朱兆记恨",
+      "voice": "谨慎、理性、善于权衡",
+      "goal": "在两难困境中找到生路"
+    },
+    "元玉奴": {
+      "current_state": "平城公主，暗中帮助李曜",
+      "voice": "机智、果断、胆大心细",
+      "goal": "帮助李曜化解危机，同时加深两人关系"
+    },
+    "孝庄帝": {
+      "current_state": "新即位皇帝，试图摆脱傀儡身份",
+      "voice": "年轻气盛但不失稳重",
+      "goal": "拉拢李曜，积蓄力量对付尔朱荣"
+    }
+  },
+
+  "scene_plan": [
+    {
+      "scene": 1,
+      "purpose": "宫中使者到来，宣读诏令",
+      "length": "0-600 字",
+      "focus": "诏令内容，李曜的第一反应"
+    },
+    {
+      "scene": 2,
+      "purpose": "李曜分析困境，与程平商量",
+      "length": "600-1200 字",
+      "focus": "去与不去都是死路"
+    },
+    {
+      "scene": 3,
+      "purpose": "元玉奴来访，献计替身",
+      "length": "1200-2000 字",
+      "focus": "女扮男装的计划细节"
+    },
+    {
+      "scene": 4,
+      "purpose": "元玉奴换装入宫",
+      "length": "2000-2600 字",
+      "focus": "换装过程，李曜的反应"
+    },
+    {
+      "scene": 5,
+      "purpose": "太极殿前 cliffhanger",
+      "length": "2600-3000 字",
+      "focus": "元玉奴被禁军围住"
+    }
+  ],
+
+  "ai_trace_avoidance": [
+    "不要使用 em-dash（——）过度",
+    "不要使用'他不禁想到'等偷懒过渡",
+    "不要重复第 25 章炸石的具体内容",
+    "不要超过 100 字的纯风景描写",
+    "不要使用英文词汇",
+    "女扮男装不要写成喜剧，保持紧张感"
+  ],
+
+  "continuation_notes": {
+    "from_previous_chapter": "第 25 章结尾李曜继续扩建火器监",
+    "character_state": "李曜刚立威，但尔朱兆的威胁还在",
+    "unresolved_threads": [
+      "元玉奴身份秘密",
+      "尔朱荣眼线密报后的反应",
+      "孝庄帝的真实计划"
+    ]
+  }
+}

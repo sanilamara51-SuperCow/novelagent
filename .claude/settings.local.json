@@ -24,7 +24,10 @@
       "Bash(dir C:\\\\docker\\\\novel\\\\novelagent\\\\data\\\\novels\\\\qiewei_001:*)",
       "Bash(dir C:\\\\docker\\\\novel\\\\novelagent\\\\data\\\\knowledge_base:*)",
       "Bash(cat:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(chcp 65001:*)",
+      "Bash(dir F:\\\\GIT\\\\novel\\\\data\\\\novels\\\\qiewei_v2\\\\chapters:*)",
+      "Bash(PYTHONIOENCODING=utf-8 python3:*)"
     ]
   }
 }

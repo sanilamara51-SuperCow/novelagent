@@ -333,6 +333,7 @@ class NovelSession:
         self,
         chapter_number: int,
         max_consistency_retries: int = 1,
+        brief_path: str | None = None,
     ) -> SkillResult:
         """Write a chapter through the full quality pipeline.
 
@@ -341,11 +342,12 @@ class NovelSession:
         Args:
             chapter_number: 1-based chapter number.
             max_consistency_retries: Max times to rewrite on consistency failure.
+            brief_path: Optional path to WritingBrief JSON file.
         """
         self._ensure_init()
 
         # 1. Draft
-        draft = await self.draft_chapter(chapter_number)
+        draft = await self.draft_chapter(chapter_number, brief_path=brief_path)
         if not draft.success:
             return draft
 
@@ -392,8 +394,14 @@ class NovelSession:
 
     # ── individual pipeline stages ─────────────────────────────────────
 
-    async def draft_chapter(self, chapter_number: int) -> SkillResult:
-        """Generate a chapter draft (no quality checks)."""
+    async def draft_chapter(self, chapter_number: int, brief_path: str | None = None) -> SkillResult:
+        """Generate a chapter draft (no quality checks).
+
+        Args:
+            chapter_number: 1-based chapter number.
+            brief_path: Optional path to WritingBrief JSON file. If provided or auto-detected,
+                        the brief will be injected into the instruction for the Writer LLM.
+        """
         self._ensure_init()
         assert self._writer is not None and self._storage is not None and self._context is not None
 
@@ -405,11 +413,38 @@ class NovelSession:
         messages = await self._context.assemble_writer(self._novel_id, outline)
         context_str = "\n\n".join(m["content"] for m in messages if m["role"] == "user")
 
+        # Load WritingBrief if provided or auto-detect
+        brief_content = ""
+        if brief_path:
+            brief_file = Path(brief_path)
+            if brief_file.exists():
+                brief_content = brief_file.read_text(encoding="utf-8")
+                logger.info("WritingBrief loaded from: %s", brief_path)
+        else:
+            # Auto-detect brief file
+            novel_dir = self._storage._novel_dir(self._novel_id)
+            auto_brief = novel_dir / "briefs" / f"ch_{chapter_number:03d}.brief.json"
+            if auto_brief.exists():
+                brief_content = auto_brief.read_text(encoding="utf-8")
+                logger.info("WritingBrief auto-detected: %s", auto_brief)
+
+        # Build instruction with optional brief injection
+        instruction = f"请创作第{chapter_number}章：{outline.title}"
+        if brief_content:
+            instruction = f"""请创作第{chapter_number}章：{outline.title}
+
+=== 导演写作简报（WritingBrief）===
+以下是本章的详细写作指令，请严格遵循：
+
+{brief_content}
+
+=== 写作简报结束 ==="""
+
         result = await self._writer.process(
             AgentInput(
                 task_type="chapter_writing",
                 context=context_str,
-                instruction=f"请创作第{chapter_number}章：{outline.title}",
+                instruction=instruction,
             )
         )
 

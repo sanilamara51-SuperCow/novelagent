@@ -8,6 +8,8 @@ from src.models.data_models import ChapterOutline
 
 
 SOURCE_PRIORITY = [
+    "chapters_1_40_outline.json",  # 前 40 章详细大纲（最高优先级）
+    "chapters_1_20_outline.json",  # 前 20 章详细大纲
     "outline_mega_200.json",
     "outline_expanded.json",
     "outline.json",

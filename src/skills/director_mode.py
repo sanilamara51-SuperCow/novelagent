@@ -1,8 +1,12 @@
 """
 Director Mode - 导演模式超级 Skill
 
-这是 Director（总控规划官）的核心接口。启动后，Claude 作为 Director，
-通过 LLM 大脑进行战前分析，生成 WritingBrief，指挥 Pipeline 执行写作。
+这是 Director（总控规划官）的核心接口。Claude 作为 Director，
+通过自身推理进行战前分析，生成 WritingBrief JSON，指挥 Pipeline 执行写作。
+
+核心架构：
+- Claude = 导演大脑（分析决策、生成 Brief、语义审查）
+- Python = 执行手脚（数据读取、Brief 注入、Pipeline 调用）
 
 用法：
     from src.skills import director_mode
@@ -10,14 +14,14 @@ Director Mode - 导演模式超级 Skill
     # 启动 Director 模式
     await director_mode.activate("qiewei_v2")
 
-    # 写一章（Director 模式）
-    result = await director_mode.write_chapter(11)
+    # 收集上下文（给 Claude 做分析）
+    ctx = director_mode.collect_context(32)
 
-    # 批量写（Director 模式）
-    result = await director_mode.batch_write(11, 15)
+    # 使用已生成的 Brief 执行写作
+    result = await director_mode.write_with_brief(32)
 
-    # 获取导演报告
-    report = await director_mode.get_director_report()
+    # 带反馈重写
+    result = await director_mode.revise_with_feedback(32, "爽点力度不足...")
 """
 
 from __future__ import annotations
@@ -29,29 +33,8 @@ from typing import Any, Optional
 
 
 @dataclass
-class WritingBrief:
-    """写作简报（Director → Writer）"""
-    chapter_outline: str = ""
-    opening_hook: str = ""  # 上章悬念
-    closing_hook: str = ""  # 本章结尾悬念
-    foreshadowing_plant: list[str] = field(default_factory=list)  # 需要埋设的伏笔
-    foreshadowing_payoff: list[str] = field(default_factory=list)  # 需要回收的伏笔
-    characters: list[dict] = field(default_factory=list)  # 本章出场角色
-    scenes: list[str] = field(default_factory=list)  # 场景约束
-    previous_ending: str = ""  # 上章结尾
-    thread_context: str = ""  # 多线叙事进展
-    target_tension: int = 5  # 目标紧张度 1-10
-    sensory_focus: str = ""  # 感官描写重点
-    information_asymmetry: list[str] = field(default_factory=list)  # 信息不对称
-    opening_style: str = ""  # 开头方式：dialogue/action/flashback/atmosphere/mystery
-    paragraph_plan: list[dict] = field(default_factory=list)  # 段落级规划 [{purpose, focus, length}]
-    pov_structure: list[dict] = field(default_factory=list)  # 多视角结构 [{pov, purpose, reveal}]
-    world_context: str = ""  # 世界线背景（天下大势）
-
-
-@dataclass
 class DirectorReport:
-    """导演报告"""
+    """导演报告 - 全局状态快照"""
     novel_id: str
     current_chapter: int
     written_chapters: list[int]
@@ -59,20 +42,16 @@ class DirectorReport:
     rhythm_analysis: str = ""
     foreshadowing_status: list[dict] = field(default_factory=list)
     character_arcs: list[dict] = field(default_factory=list)
-    writing_brief: Optional[WritingBrief] = None
-    qa_focus: list[str] = field(default_factory=list)
 
 
 class DirectorMode:
     """
-    Director 模式 - 总控规划官
+    Director 模式 - 总控规划官（瘦身版）
 
     职责：
-    1. 全局状态分析 - 进度、节奏、伏笔、多线叙事
-    2. 战前分析 - 每章开写前做 LLM 推理
-    3. 生成 WritingBrief - 给 Writer 的精炼指令
-    4. 指挥 Pipeline - 执行写作 + 审查
-    5. 质量把关 - 审查结果，决定是否需要修改
+    1. 数据读取工具 - 为 Claude 提供分析所需的上下文
+    2. Brief 注入 - 将 Claude 生成的 WritingBrief 注入到 Writer Pipeline
+    3. Pipeline 调用 - 执行写作、重写、记忆更新
     """
 
     def __init__(self):
@@ -84,19 +63,22 @@ class DirectorMode:
         self._session: Any = None  # Lazy load
         self._initialized: bool = False
         self._written_chapters: list[int] = []
-        self._rhythm_sequence: list[int] = []  # 节奏序列
 
     async def activate(self, novel_id: str) -> DirectorReport:
         """
         激活 Director 模式
 
-        初始化项目，分析全局状态，生成导演报告
+        初始化项目，加载数据，返回全局状态报告
         """
         self._novel_id = novel_id
         self._novel_dir = Path(f"data/novels/{novel_id}")
 
-        # 加载项目数据
-        self._outline = self._load_json("outline.json")
+        # 加载项目数据 - 优先读取 chapters_1_40_outline.json（如果存在），否则 1-20，最后 outline.json
+        self._outline = self._load_json("chapters_1_40_outline.json")
+        if not self._outline:
+            self._outline = self._load_json("chapters_1_20_outline.json")
+        if not self._outline:
+            self._outline = self._load_json("outline.json")
         self._world_setting = self._load_json("world_setting.json")
         self._characters = self._load_json("characters.json")
 
@@ -111,9 +93,6 @@ class DirectorMode:
 
         # 统计已写章节
         self._written_chapters = self._get_written_chapters()
-
-        # 加载节奏序列
-        self._rhythm_sequence = self._load_rhythm_sequence()
 
         self._initialized = True
 
@@ -136,6 +115,12 @@ class DirectorMode:
             return path.read_text(encoding="utf-8")
         return None
 
+    def _load_summary(self, chapter_num: int) -> dict | None:
+        path = self._novel_dir / "summaries" / f"ch_{chapter_num:03d}.json"
+        if path.exists():
+            return json.loads(path.read_text(encoding="utf-8"))
+        return None
+
     def _get_written_chapters(self) -> list[int]:
         """获取已写章节列表"""
         chapters_dir = self._novel_dir / "chapters"
@@ -146,26 +131,39 @@ class DirectorMode:
             for p in chapters_dir.glob("ch_*.md")
         )
 
-    def _load_rhythm_sequence(self) -> list[int]:
-        """加载节奏序列（从 memory 中读取）"""
-        if not self._session or not self._session._memory:
-            return []
-
-        try:
-            rhythm_data = self._session._memory.long_term.get_rhythm_sequence()
-            return [item["tension_score"] for item in rhythm_data]
-        except Exception:
-            return []
-
     def _get_chapter_outline(self, chapter_num: int) -> dict | None:
-        """获取某章大纲"""
+        """获取某章大纲 - 支持两种数据结构"""
         if not self._outline:
             return None
+
+        # 结构 1: chapters_1_20_outline.json - {"chapters": [...]}
+        if "chapters" in self._outline:
+            for ch in self._outline.get("chapters", []):
+                if ch.get("chapter_number") == chapter_num:
+                    return ch
+            return None
+
+        # 结构 2: outline.json - {"volumes": [{"chapters": [...]}]}
         for vol in self._outline.get("volumes", []):
             for ch in vol.get("chapters", []):
                 if ch.get("chapter_number") == chapter_num:
                     return ch
         return None
+
+    def _get_outline_chapter_count(self) -> int:
+        """获取大纲章节总数 - 支持两种数据结构"""
+        if not self._outline:
+            return 0
+
+        # 结构 1: chapters_1_20_outline.json - {"chapters": [...]}
+        if "chapters" in self._outline:
+            return len(self._outline.get("chapters", []))
+
+        # 结构 2: outline.json - {"volumes": [{"chapters": [...]}]}
+        total = 0
+        for vol in self._outline.get("volumes", []):
+            total += len(vol.get("chapters", []))
+        return total
 
     async def _generate_director_report(self) -> DirectorReport:
         """生成导演报告"""
@@ -225,535 +223,222 @@ class DirectorMode:
             })
         return arcs
 
-    def _get_outline_chapter_count(self) -> int:
-        """获取大纲章节总数"""
-        if not self._outline:
-            return 0
-        total = 0
-        for vol in self._outline.get("volumes", []):
-            total += len(vol.get("chapters", []))
-        return total
+    # ========================================================================
+    # 核心工具方法 - 为 Claude 导演提供数据
+    # ========================================================================
 
-    async def generate_writing_brief(self, chapter_num: int) -> WritingBrief:
+    def collect_context(self, chapter_num: int) -> dict:
         """
-        生成写作简报（Director 核心职责）
+        收集 Claude 导演分析所需的全部上下文
 
-        战前分析：
-        1. 审视全局 - 大纲完成度、节奏曲线、伏笔状态、多线进展
-        2. 生成 WritingBrief - 精炼指令给 Writer
-        3. 生成 QA 重点 - 给质检 pipeline
+        返回 dict 包含：
+        - outline: 本章大纲
+        - recent_summaries: 近 3 章摘要
+        - previous_ending: 上章结尾 500 字
+        - character_states: 涉及角色状态
+        - world_setting_brief: 世界设定摘要
+        - recent_openings: 近 3 章开头方式统计
         """
         self._ensure_init()
 
+        # 本章大纲
         outline = self._get_chapter_outline(chapter_num)
-        if not outline:
-            raise ValueError(f"第{chapter_num}章无大纲")
 
-        # 获取上章结尾
-        prev_ending = ""
+        # 近 3 章摘要
+        recent_summaries = []
+        for i in range(max(1, chapter_num - 3), chapter_num):
+            summary = self._load_summary(i)
+            if summary:
+                recent_summaries.append(summary)
+
+        # 上章结尾 500 字
+        previous_ending = ""
         if chapter_num > 1:
             prev_content = self._load_chapter(chapter_num - 1)
             if prev_content:
-                # 提取最后 200 字
-                lines = prev_content.strip().split("\n")
-                prev_ending = "\n".join(lines[-3:])[:200]
+                previous_ending = prev_content[-500:]
 
-        # 节奏分析 - 设定目标紧张度（使用 MemoryManager 新接口）
-        target_tension = 5
-        rhythm_suggestion = ""
-        if self._session and self._session._memory:
-            try:
-                rhythm_directive = self._session._memory.get_rhythm_directive(chapter_num)
-                target_tension = rhythm_directive.get("target_tension", 5)
-                rhythm_suggestion = rhythm_directive.get("suggestion", "")
-            except Exception:
-                pass
+        # 涉及角色状态
+        character_states = {}
+        if outline:
+            involved = outline.get("involved_characters", [])
+            if self._characters:
+                for char_name in involved:
+                    char_data = self._characters.get("characters", {}).get(char_name, {})
+                    character_states[char_name] = {
+                        "current_status": char_data.get("current_status", {}),
+                        "voice": char_data.get("voice", {}),
+                        "goals": char_data.get("goals", []),
+                    }
 
-        # 伏笔检查 - 到期伏笔需要回收（使用 MemoryManager 新接口）
-        foreshadowing_plant = []
-        foreshadowing_payoff = []
-        if self._session and self._session._memory:
-            try:
-                foreshadowing_directive = self._session._memory.get_foreshadowing_directive(chapter_num)
-                foreshadowing_plant = foreshadowing_directive.get("plant", [])
-                foreshadowing_payoff = foreshadowing_directive.get("payoff", [])
-            except Exception:
-                pass
+        # 世界设定摘要
+        world_setting_brief = ""
+        if self._world_setting:
+            world_setting_brief = json.dumps({
+                "era": self._world_setting.get("era", ""),
+                "timeline": self._world_setting.get("timeline", [])[:5],
+                "factions": self._world_setting.get("factions", [])[:5],
+            }, ensure_ascii=False, indent=2)
 
-        # 角色指令 - 只取本章出场角色
-        characters = []
-        involved = outline.get("involved_characters", [])
-        if self._characters:
-            for char_name in involved:
-                char_data = self._characters.get("characters", {}).get(char_name, {})
-                characters.append({
-                    "name": char_name,
-                    "current_state": char_data.get("current_status", {}).get("location", ""),
-                    "voice": char_data.get("voice", {}),
-                })
+        # 近 3 章开头方式统计
+        recent_openings = self._analyze_recent_openings(chapter_num)
 
-        # 信息不对称（REQUIREMENTS.md 8.5）
-        information_asymmetry = self._generate_information_asymmetry(outline, characters)
+        return {
+            "chapter_number": chapter_num,
+            "outline": outline,
+            "recent_summaries": recent_summaries,
+            "previous_ending": previous_ending,
+            "character_states": character_states,
+            "world_setting_brief": world_setting_brief,
+            "recent_openings": recent_openings,
+        }
 
-        # 开头多样性检查 - 避免套路化
-        opening_style = self._analyze_opening_pattern(chapter_num)
-
-        # 段落级规划
-        paragraph_plan = self._generate_paragraph_plan(chapter_num, outline, opening_style)
-
-        # 多视角结构 - 避免单一视角
-        pov_structure = self._generate_pov_structure(chapter_num, outline)
-
-        # 世界线展开 - 根据章节位置加入大势信息
-        world_context = self._get_world_context(chapter_num)
-
-        return WritingBrief(
-            chapter_outline=outline.get("summary", ""),
-            opening_hook=f"上章结尾：{prev_ending}",
-            closing_hook=outline.get("emotional_arc", {}).get("end", ""),
-            foreshadowing_plant=foreshadowing_plant,
-            foreshadowing_payoff=foreshadowing_payoff,
-            characters=characters,
-            scenes=[s.get("description", "") if isinstance(s, dict) else str(s)
-                    for s in outline.get("key_scenes", [])],
-            previous_ending=prev_ending,
-            thread_context=self._get_thread_context(chapter_num),
-            target_tension=target_tension,
-            sensory_focus=self._get_sensory_focus(chapter_num),
-            information_asymmetry=information_asymmetry,
-            opening_style=opening_style,
-            paragraph_plan=paragraph_plan,
-            pov_structure=pov_structure,
-            world_context=world_context,
-        )
-
-    def _get_world_context(self, chapter_num: int) -> str:
-        """
-        生成世界线背景（天下大势）
-
-        北魏末年（528-532 年）历史背景：
-        - 胡太后专权，与孝明帝母子不和
-        - 尔朱荣崛起于晋阳，图谋天下
-        - 六镇起义此起彼伏
-        - 南梁萧衍伺机北伐
-        - 未来枭雄：高欢、宇文泰、贺拔岳等尚在尔朱荣麾下
-
-        根据章节位置，逐步展开各条世界线
-        """
-        # 每 10 章展开一条新的世界线
-        world_lines = [
-            "洛阳宫廷：胡太后与孝明帝权力斗争白热化",
-            "晋阳：尔朱荣练兵蓄锐，图谋不轨",
-            "六镇：起义军蜂起，边镇失控",
-            "建康：南梁萧衍整顿军备，伺机北伐",
-            "河北：葛荣聚众数十万，称帝建国",
-        ]
-
-        # 计算当前应展开的世界线
-        active_lines = world_lines[:min(len(world_lines), (chapter_num - 1) // 10 + 1)]
-
-        # 根据章节位置，突出某条线
-        highlight_idx = (chapter_num - 1) % len(world_lines)
-        if highlight_idx < len(active_lines):
-            active_lines[highlight_idx] = "**" + active_lines[highlight_idx] + "**"
-
-        return " | ".join(active_lines)
-
-    def _generate_information_asymmetry(self, outline: dict, characters: list[dict]) -> list[str]:
-        """生成信息不对称表（REQUIREMENTS.md 8.5）"""
-        # 根据角色已知信息生成
-        asymmetry = []
-        for char in characters:
-            knows = char.get("voice", {}).get("knows", [])
-            # 简单示例，实际应该从角色状态读取
-        return asymmetry
-
-    def _get_thread_context(self, chapter_num: int) -> str:
-        """获取多线叙事上下文"""
-        # 简化版，实际应该从 StoryThreads 读取
-        return f"第{chapter_num}章，主线推进中"
-
-    def _get_sensory_focus(self, chapter_num: int) -> str:
-        """获取感官描写重点"""
-        # 简化版，实际应该从近章摘要读取
-        return "视觉、听觉、触觉"
-
-    def _analyze_opening_pattern(self, chapter_num: int) -> str:
-        """
-        分析开头模式，避免套路化
-
-        开头方式分类：
-        - dialogue: 对话开场
-        - action: 动作/事件开场
-        - flashback: 回忆/倒叙开场
-        - atmosphere: 氛围/环境开场
-        - mystery: 悬念/问题开场
-        - introspection: 内心独白开场
-
-        检查近 3 章的开头方式，避免连续使用相同模式
-        """
+    def _analyze_recent_openings(self, chapter_num: int) -> list[dict]:
+        """分析近 3 章的开头方式，供 Claude 参考避免重复"""
         OPENING_STYLES = ['dialogue', 'action', 'flashback', 'atmosphere', 'mystery', 'introspection']
+        results = []
 
-        # 检查近 3 章的开头
-        recent_openings = []
         for i in range(max(1, chapter_num - 3), chapter_num):
             content = self._load_chapter(i)
             if content:
-                # 提取前 200 字分析
                 opening_text = content[:300].lower()
 
                 # 简单启发式分类
+                style = 'introspection'
                 if any(c in opening_text for c in ['"', '"', ''', ''', ':', ':']):
-                    recent_openings.append('dialogue')
+                    style = 'dialogue'
                 elif any(w in opening_text for w in ['突然', '猛地', '瞬间', '轰', '炸', '跑', '冲']):
-                    recent_openings.append('action')
+                    style = 'action'
                 elif any(w in opening_text for w in ['想起', '回忆', '曾经', '那时', '当年']):
-                    recent_openings.append('flashback')
+                    style = 'flashback'
                 elif any(w in opening_text for w in ['夜', '暮', '晨', '日', '风', '雨', '山', '天']):
-                    recent_openings.append('atmosphere')
-                elif any(w in opening_text for w in ['为什么', '如何', '难道', '?', '？']):
-                    recent_openings.append('mystery')
-                else:
-                    recent_openings.append('introspection')
+                    style = 'atmosphere'
+                elif any(w in opening_text for w in ['为什么', '如何', '难道', '?', '?']):
+                    style = 'mystery'
 
-        # 选择最少使用的开头方式
-        style_counts = {style: recent_openings.count(style) for style in OPENING_STYLES}
-        min_count = min(style_counts.values())
-        candidates = [s for s, c in style_counts.items() if c == min_count]
+                results.append({
+                    "chapter": i,
+                    "style": style,
+                    "first_100_chars": content[:100],
+                })
 
-        # 优先选择与最近一章不同的方式
-        if recent_openings:
-            last_opening = recent_openings[-1]
-            candidates = [c for c in candidates if c != last_opening] or candidates
-
-        return candidates[0] if candidates else 'action'
-
-    async def generate_batch_outline(
-        self,
-        start_chapter: int,
-        end_chapter: int,
-    ) -> list[dict]:
-        """
-        批量生成章节大纲（重塑大纲核心方法）
-
-        每章大纲包含：
-        - 核心事件
-        - 多视角结构
-        - 伏笔埋设/回收
-        - 节奏目标
-        - 世界线展开
-        - 角色弧线进展
-        """
-        outlines = []
-
-        for ch_num in range(start_chapter, end_chapter + 1):
-            # 根据章节位置决定视角分配
-            pov_plan = self._generate_pov_structure(ch_num, {})
-
-            # 根据章节位置决定世界线
-            world_context = self._get_world_context(ch_num)
-
-            # 节奏规划
-            target_tension = self._calculate_target_tension(ch_num)
-
-            # 伏笔规划
-            foreshadowing_plan = self._generate_foreshadowing_plan(ch_num)
-
-            outlines.append({
-                "chapter_number": ch_num,
-                "pov_structure": pov_plan,
-                "world_context": world_context,
-                "target_tension": target_tension,
-                "foreshadowing": foreshadowing_plan,
-            })
-
-        return outlines
-
-    def _calculate_target_tension(self, chapter_num: int) -> int:
-        """
-        计算目标紧张度（1-10）
-
-        节奏曲线设计：
-        - 每 3 章一个小起伏
-        - 每 10 章一个大高潮
-        - 高潮后必有回落
-        """
-        # 基础节奏：3 章周期
-        base_rhythm = [5, 6, 7, 5, 6, 8, 5, 6, 7, 4]
-        cycle_pos = (chapter_num - 1) % 10
-
-        # 特殊章节调整（高潮章）
-        if chapter_num % 10 == 0:
-            return 9
-        elif chapter_num % 5 == 0:
-            return 8
-
-        return base_rhythm[cycle_pos]
-
-    def _generate_foreshadowing_plan(self, chapter_num: int) -> dict:
-        """
-        生成伏笔规划
-
-        伏笔类型：
-        - 物品伏笔：火药、军牌、信物等
-        - 人物伏笔：身世、关系、秘密等
-        - 事件伏笔：未来的战争、政变等
-        - 对话伏笔：随口说的话日后应验
-        """
-        # 根据章节位置生成伏笔
-        foreshadowing_plant = []
-        foreshadowing_payoff = []
-
-        # 示例：每 5 章埋一个新伏笔
-        if chapter_num % 5 == 1:
-            foreshadowing_plant.append(f"ch{chapter_num}_item_{len(foreshadowing_plant)+1}")
-
-        # 示例：伏笔在 3-5 章后回收
-        if chapter_num > 5:
-            foreshadowing_payoff.append(f"ch{chapter_num-4}_item_1")
-
-        return {
-            "plant": foreshadowing_plant,
-            "payoff": foreshadowing_payoff,
-        }
-
-    def _generate_paragraph_plan(
-        self,
-        chapter_num: int,
-        outline: dict,
-        opening_style: str,
-    ) -> list[dict]:
-        """
-        生成段落级规划
-
-        将章节拆分为 6-8 个段落，每段有明确的目的和重点
-        """
-        summary = outline.get("summary", "")
-        scenes = outline.get("key_scenes", [])
-
-        # 根据大纲场景生成段落规划
-        paragraph_plan = []
-
-        # 第一段：开头（根据 opening_style 决定写法）
-        paragraph_plan.append({
-            "paragraph": 1,
-            "purpose": f"开场 - 使用{opening_style}方式",
-            "focus": "吸引读者，建立场景",
-            "length": "150-200 字",
-            "tip": "避免风景描写套路，直接进入情境",
-        })
-
-        # 中间段落：场景推进
-        for i, scene in enumerate(scenes[:4], start=2):
-            scene_desc = scene.get("description", "")[:50] if isinstance(scene, dict) else str(scene)[:50]
-            paragraph_plan.append({
-                "paragraph": i,
-                "purpose": f"场景{i-1} 推进",
-                "focus": scene_desc,
-                "length": "200-300 字",
-                "tip": "保持节奏，避免冗长说明",
-            })
-
-        # 最后一段：结尾悬念
-        paragraph_plan.append({
-            "paragraph": len(paragraph_plan) + 1,
-            "purpose": "结尾悬念",
-            "focus": outline.get("emotional_arc", {}).get("end", "留下钩子"),
-            "length": "100-150 字",
-            "tip": "让读者迫不及待想看下一章",
-        })
-
-        return paragraph_plan
-
-    def _generate_pov_structure(self, chapter_num: int, outline: dict) -> list[dict]:
-        """
-        生成多视角结构（避免单一视角）
-
-        POV 类型：
-        - protagonist: 主角视角（李曜）
-        - antagonist: 反派视角（尔朱荣/追兵）
-        - observer: 旁观者视角（元玉奴/路人）
-        - omniscient: 上帝视角（大势信息）
-
-        每 3-4 章切换一次主视角，保持悬念
-        """
-        pov_structure = []
-
-        # 根据章节位置决定视角切换
-        # 奇数章：主角视角为主
-        # 偶数章：加入反派/旁观者视角
-
-        if chapter_num % 3 == 0:
-            # 每 3 章加入一次反派视角
-            pov_structure.append({
-                "pov": "antagonist",
-                "purpose": "展示敌方行动/盘算",
-                "reveal": "读者知道但主角不知道的信息",
-            })
-        elif chapter_num % 5 == 0:
-            # 每 5 章加入一次大势视角
-            pov_structure.append({
-                "pov": "omniscient",
-                "purpose": "展示天下大势",
-                "reveal": "历史背景/多方势力动向",
-            })
-
-        # 默认加入主角视角
-        pov_structure.append({
-            "pov": "protagonist",
-            "purpose": "主角行动/决策",
-            "reveal": "主角的已知信息和计划",
-        })
-
-        # 有女性角色出场时，加入女性视角
-        characters = outline.get("involved_characters", [])
-        if any(name in characters for name in ["元玉奴", " Princess"]):
-            pov_structure.append({
-                "pov": "observer",
-                "purpose": "女性角色的内心感受",
-                "reveal": "主角看不到的情感细节",
-            })
-
-        return pov_structure
-
-    async def write_chapter(
-        self,
-        chapter_num: int,
-        auto_review: bool = True,
-        auto_fix: bool = True,
-    ) -> dict:
-        """
-        Director 模式写一章
-
-        流程：
-        1. 生成 WritingBrief
-        2. 调用 session.write_chapter（完整 Pipeline）
-        3. 审查结果，决定是否需要修改
-        """
-        self._ensure_init()
-
-        # 1. 生成 WritingBrief
-        brief = await self.generate_writing_brief(chapter_num)
-
-        # 2. 写作（Pipeline 自动执行）
-        result = await self._session.write_chapter(chapter_num)
-
-        if not result.success:
-            return {
-                "success": False,
-                "error": "写作失败",
-                "detail": result.error,
-            }
-
-        # 3. Director 审查
-        if auto_review:
-            review_result = await self._review_chapter(chapter_num, brief)
-
-            if not review_result["passed"] and auto_fix:
-                # 需要重写
-                return await self._rewrite_chapter(chapter_num, brief, review_result)
-
-        return {
-            "success": True,
-            "chapter": chapter_num,
-            "writing_brief": brief,
-            "word_count": len(self._load_chapter(chapter_num) or ""),
-        }
-
-    async def _review_chapter(self, chapter_num: int, brief: WritingBrief) -> dict:
-        """Director 审查章节"""
-        content = self._load_chapter(chapter_num)
-        if not content:
-            return {"passed": False, "reason": "章节不存在"}
-
-        issues = []
-
-        # 检查大纲一致性
-        outline = self._get_chapter_outline(chapter_num)
-        if outline:
-            summary = outline.get("summary", "")
-            keywords = summary.split()[:5]
-            match_count = sum(1 for kw in keywords if kw in content)
-            if match_count < len(keywords) * 0.5:
-                issues.append("内容可能与大纲偏离较大")
-
-        # 检查伏笔
-        if brief.foreshadowing_payoff:
-            for payoff in brief.foreshadowing_payoff:
-                if payoff not in content:
-                    issues.append(f"伏笔未回收：{payoff}")
-
-        # 检查紧张度
-        # （需要调用 EmotionRiskControl）
-
-        return {
-            "passed": len(issues) == 0,
-            "issues": issues,
-        }
-
-    async def _rewrite_chapter(
-        self,
-        chapter_num: int,
-        brief: WritingBrief,
-        review: dict,
-        max_retries: int = 2,
-    ) -> dict:
-        """重写章节"""
-        for attempt in range(max_retries):
-            # 重写
-            result = await self._session.write_chapter(chapter_num)
-            if not result.success:
-                return {
-                    "success": False,
-                    "error": f"重写失败（尝试{attempt+1}/{max_retries}）",
-                    "detail": result.error,
-                }
-
-            # 重新审查
-            review = await self._review_chapter(chapter_num, brief)
-            if review["passed"]:
-                break
-
-        return {
-            "success": review["passed"],
-            "chapter": chapter_num,
-            "attempted_rewrites": max_retries,
-            "final_issues": review.get("issues", []),
-        }
-
-    async def batch_write(
-        self,
-        start: int,
-        end: int,
-        auto_review: bool = True,
-        auto_fix: bool = True,
-    ) -> dict:
-        """批量写作（Director 模式）"""
-        self._ensure_init()
-
-        results = {}
-        for ch in range(start, end + 1):
-            result = await self.write_chapter(ch, auto_review, auto_fix)
-            results[ch] = result
-
-            if not result["success"]:
-                return {
-                    "success": False,
-                    "message": f"批量写作在第{ch}章中断",
-                    "completed": len([r for r in results.values() if r["success"]]),
-                    "errors": result.get("error", ""),
-                }
-
-        return {
-            "success": True,
-            "message": f"批量完成：第{start}-{end}章",
-            "results": results,
-        }
+        return results
 
     async def get_director_report(self) -> DirectorReport:
         """获取导演报告"""
         self._ensure_init()
         return await self._generate_director_report()
+
+    # ========================================================================
+    # 写作执行方法 - 调用 Pipeline
+    # ========================================================================
+
+    async def write_with_brief(self, chapter_num: int) -> dict:
+        """
+        使用已保存的 WritingBrief 执行写作
+
+        前置条件：
+        data/novels/{novel_id}/briefs/ch_{NNN}.brief.json 已存在
+        （由 Claude 导演分析后保存）
+        """
+        self._ensure_init()
+
+        brief_path = self._novel_dir / "briefs" / f"ch_{chapter_num:03d}.brief.json"
+        if not brief_path.exists():
+            return {"success": False, "error": f"WritingBrief not found: {brief_path}"}
+
+        # 调用 session.write_chapter，brief 会被自动检测并注入
+        result = await self._session.write_chapter(chapter_num)
+
+        if not result.success:
+            return {"success": False, "error": result.error}
+
+        return {
+            "success": True,
+            "chapter": chapter_num,
+            "word_count": len(result.content),
+            "brief_path": str(brief_path),
+            "data": result.data,
+        }
+
+    async def revise_with_feedback(self, chapter_num: int, feedback: str) -> dict:
+        """
+        Claude 审查后带反馈重写
+
+        Args:
+            chapter_num: 章节号
+            feedback: Claude 生成的具体修改意见
+        """
+        self._ensure_init()
+
+        result = await self._session.revise_chapter(chapter_num, feedback)
+
+        return {
+            "success": result.success,
+            "chapter": chapter_num,
+            "word_count": len(result.content) if result.content else 0,
+            "error": result.error,
+        }
+
+    async def update_memory(self, chapter_num: int) -> dict:
+        """更新记忆系统（写作完成后的收尾工作）"""
+        self._ensure_init()
+
+        result = await self._session.update_memory(chapter_num)
+
+        return {
+            "success": result.success,
+            "chapter": chapter_num,
+        }
+
+    async def get_chapter_status(self, chapter_num: int) -> dict:
+        """获取某章的状态（用于 Claude 审查）"""
+        self._ensure_init()
+
+        # 读取章节
+        content = self._load_chapter(chapter_num)
+        if not content:
+            return {"exists": False, "error": "章节不存在"}
+
+        # 读取摘要
+        summary = self._load_summary(chapter_num)
+
+        # 字数统计（中文）
+        import re
+        word_count = len(re.sub(r'\s+', '', content))
+
+        return {
+            "exists": True,
+            "word_count": word_count,
+            "content_preview": content[:500],
+            "content_ending": content[-300:],
+            "summary": summary,
+        }
+
+    # ========================================================================
+    # 数据保存方法 - 保存 Claude 生成的 Brief
+    # ========================================================================
+
+    def save_brief(self, chapter_num: int, brief: dict) -> Path:
+        """
+        保存 Claude 生成的 WritingBrief 到 JSON 文件
+
+        Args:
+            chapter_num: 章节号
+            brief: WritingBrief dict（由 Claude 生成）
+
+        Returns:
+            保存的文件路径
+        """
+        self._ensure_init()
+
+        briefs_dir = self._novel_dir / "briefs"
+        briefs_dir.mkdir(exist_ok=True)
+
+        brief_path = briefs_dir / f"ch_{chapter_num:03d}.brief.json"
+        brief_path.write_text(json.dumps(brief, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        return brief_path
 
 
 # ============================================================================
@@ -771,12 +456,19 @@ if __name__ == "__main__":
     async def cli():
         if len(sys.argv) < 3:
             print("用法：python -m src.skills.director_mode <novel_id> <command> [args]")
-            print("命令：status, write <ch>, batch <start> <end>, report")
+            print("命令:")
+            print("  status                      - 查看项目状态")
+            print("  report                      - 生成导演报告")
+            print("  collect-context <ch>        - 收集上下文（给 Claude 分析）")
+            print("  write-with-brief <ch>       - 使用 Brief 执行写作")
+            print("  revise <ch> --feedback \"..\" - 带反馈重写")
+            print("  update-memory <ch>          - 更新记忆")
             return
 
         novel_id = sys.argv[1]
         command = sys.argv[2]
 
+        # 激活
         report = await director_mode.activate(novel_id)
         print(f"Director 模式已激活：{novel_id}")
         print(f"已写章节：{report.written_chapters}")
@@ -786,19 +478,6 @@ if __name__ == "__main__":
             print(f"大纲章节：{report.outline_chapters}")
             print(f"节奏分析：{report.rhythm_analysis}")
 
-        elif command == "write" and len(sys.argv) > 3:
-            ch = int(sys.argv[3])
-            result = await director_mode.write_chapter(ch)
-            if result["success"]:
-                print(f"第{ch}章完成 ({result.get('word_count', '?')}字)")
-            else:
-                print(f"第{ch}章失败：{result.get('error', '未知')}")
-
-        elif command == "batch" and len(sys.argv) > 4:
-            start, end = int(sys.argv[3]), int(sys.argv[4])
-            result = await director_mode.batch_write(start, end)
-            print(f"结果：{result['message']}")
-
         elif command == "report":
             full_report = await director_mode.get_director_report()
             print(f"\n=== 导演报告 ===")
@@ -806,5 +485,55 @@ if __name__ == "__main__":
             print(f"已写章节：{full_report.written_chapters}")
             print(f"下一章：{full_report.current_chapter}")
             print(f"节奏分析：{full_report.rhythm_analysis}")
+
+        elif command == "collect-context" and len(sys.argv) > 3:
+            ch = int(sys.argv[3])
+            ctx = director_mode.collect_context(ch)
+            print(f"\n=== 第{ch}章上下文 ===")
+            print(f"大纲：{json.dumps(ctx['outline'], ensure_ascii=False, indent=2) if ctx['outline'] else '无'}")
+            print(f"\n近 3 章摘要数量：{len(ctx['recent_summaries'])}")
+            print(f"上章结尾字数：{len(ctx['previous_ending'])}")
+            print(f"涉及角色：{list(ctx['character_states'].keys())}")
+            print(f"\nJSON 输出：")
+            print(json.dumps(ctx, ensure_ascii=False, indent=2))
+
+        elif command == "write-with-brief" and len(sys.argv) > 3:
+            ch = int(sys.argv[3])
+            result = await director_mode.write_with_brief(ch)
+            if result["success"]:
+                print(f"第{ch}章完成 ({result.get('word_count', '?')}字)")
+                print(f"Brief 路径：{result.get('brief_path')}")
+            else:
+                print(f"第{ch}章失败：{result.get('error', '未知')}")
+
+        elif command == "revise" and len(sys.argv) > 4:
+            ch = int(sys.argv[3])
+            # 解析 --feedback 参数
+            feedback = ""
+            for i, arg in enumerate(sys.argv[4:], start=4):
+                if arg == "--feedback" and i + 1 < len(sys.argv):
+                    feedback = sys.argv[i + 1]
+                    break
+            if not feedback:
+                print("错误：请提供 --feedback 参数")
+                return
+            result = await director_mode.revise_with_feedback(ch, feedback)
+            if result["success"]:
+                print(f"第{ch}章重写完成 ({result.get('word_count', '?')}字)")
+            else:
+                print(f"第{ch}章重写失败：{result.get('error', '未知')}")
+
+        elif command == "update-memory" and len(sys.argv) > 3:
+            ch = int(sys.argv[3])
+            result = await director_mode.update_memory(ch)
+            if result["success"]:
+                print(f"第{ch}章记忆已更新")
+            else:
+                print(f"第{ch}章记忆更新失败：{result.get('error', '未知')}")
+
+        elif command == "chapter-status" and len(sys.argv) > 3:
+            ch = int(sys.argv[3])
+            status = await director_mode.get_chapter_status(ch)
+            print(f"第{ch}章状态：{json.dumps(status, ensure_ascii=False, indent=2)}")
 
     asyncio.run(cli())
